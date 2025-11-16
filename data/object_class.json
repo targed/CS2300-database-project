@@ -1,0 +1,512 @@
+[
+    {
+        "class_name": 2,
+        "description": "Object class: 2",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Adventure",
+        "description": "Object class: Adventure",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Aisna",
+        "description": "Object class: Aisna",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Anomalous",
+        "description": "Object class: Anomalous",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Apollyon",
+        "description": "Object class: Apollyon",
+        "is_esoteric": "TRUE"
+    },
+    {
+        "class_name": "Archived",
+        "description": "Object class: Archived",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Archon",
+        "description": "Object class: Archon",
+        "is_esoteric": "TRUE"
+    },
+    {
+        "class_name": "Archon1",
+        "description": "Object class: Archon1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Argus",
+        "description": "Object class: Argus",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Artifact",
+        "description": "Object class: Artifact",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Atypical",
+        "description": "Object class: Atypical",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Audiovisual",
+        "description": "Object class: Audiovisual",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Azathoth",
+        "description": "Object class: Azathoth",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Bff",
+        "description": "Object class: Bff",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Canine",
+        "description": "Object class: Canine",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Cernunnos1",
+        "description": "Object class: Cernunnos1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Cor",
+        "description": "Object class: Cor",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Damballah1",
+        "description": "Object class: Damballah1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Declassified",
+        "description": "Object class: Declassified",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Decommissioned",
+        "description": "Object class: Decommissioned",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Di",
+        "description": "Object class: Di",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Ectoentropic",
+        "description": "Object class: Ectoentropic",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Edifice",
+        "description": "Object class: Edifice",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Electronic",
+        "description": "Object class: Electronic",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Enochian1",
+        "description": "Object class: Enochian1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Entos1",
+        "description": "Object class: Entos1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Eparch1",
+        "description": "Object class: Eparch1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Euclid",
+        "description": "Object class: Euclid",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Euclid1",
+        "description": "Object class: Euclid1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Euclidobject",
+        "description": "Object class: Euclidobject",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Explained",
+        "description": "Object class: Explained",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Extranormal",
+        "description": "Object class: Extranormal",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Extraterrestrial",
+        "description": "Object class: Extraterrestrial",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Geographical",
+        "description": "Object class: Geographical",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Gevurah1",
+        "description": "Object class: Gevurah1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Glorious",
+        "description": "Object class: Glorious",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Gödel",
+        "description": "Object class: Gödel",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Gödel1",
+        "description": "Object class: Gödel1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Hera",
+        "description": "Object class: Hera",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Hiemal",
+        "description": "Object class: Hiemal",
+        "is_esoteric": "TRUE"
+    },
+    {
+        "class_name": "Hiemal1",
+        "description": "Object class: Hiemal1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Humanoid",
+        "description": "Object class: Humanoid",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Insectoid",
+        "description": "Object class: Insectoid",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Instrument",
+        "description": "Object class: Instrument",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Irrelevant",
+        "description": "Object class: Irrelevant",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Joke",
+        "description": "Object class: Joke",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Ke",
+        "description": "Object class: Ke",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Keter",
+        "description": "Object class: Keter",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Keter1",
+        "description": "Object class: Keter1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Keter2",
+        "description": "Object class: Keter2",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Keterthe",
+        "description": "Object class: Keterthe",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Khonsu1",
+        "description": "Object class: Khonsu1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Legally",
+        "description": "Object class: Legally",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Malchut",
+        "description": "Object class: Malchut",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Memet",
+        "description": "Object class: Memet",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Memetic",
+        "description": "Object class: Memetic",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Multiple",
+        "description": "Object class: Multiple",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "N",
+        "description": "Object class: N",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Neutralised",
+        "description": "Object class: Neutralised",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Neutralized",
+        "description": "Object class: Neutralized",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Neutralized1",
+        "description": "Object class: Neutralized1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "None",
+        "description": "Object class: None",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Official",
+        "description": "Object class: Official",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Parauniversal",
+        "description": "Object class: Parauniversal",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Pathogen",
+        "description": "Object class: Pathogen",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Pending",
+        "description": "Object class: Pending",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Pending1",
+        "description": "Object class: Pending1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Pending2",
+        "description": "Object class: Pending2",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Perfect",
+        "description": "Object class: Perfect",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Phenomenon",
+        "description": "Object class: Phenomenon",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Plant",
+        "description": "Object class: Plant",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Presumed",
+        "description": "Object class: Presumed",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Primary",
+        "description": "Object class: Primary",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Safe",
+        "description": "Object class: Safe",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Safe1",
+        "description": "Object class: Safe1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Safe6",
+        "description": "Object class: Safe6",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Scarf",
+        "description": "Object class: Scarf",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Sköll1",
+        "description": "Object class: Sköll1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Special",
+        "description": "Object class: Special",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Spectrum",
+        "description": "Object class: Spectrum",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Spiritual",
+        "description": "Object class: Spiritual",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Standard",
+        "description": "Object class: Standard",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Sunrays",
+        "description": "Object class: Sunrays",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Textual",
+        "description": "Object class: Textual",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Thaumiel",
+        "description": "Object class: Thaumiel",
+        "is_esoteric": "TRUE"
+    },
+    {
+        "class_name": "Thaumiel1",
+        "description": "Object class: Thaumiel1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "This",
+        "description": "Object class: This",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Tiamat",
+        "description": "Object class: Tiamat",
+        "is_esoteric": "TRUE"
+    },
+    {
+        "class_name": "Ticonderoga",
+        "description": "Object class: Ticonderoga",
+        "is_esoteric": "TRUE"
+    },
+    {
+        "class_name": "Ticonderoga1",
+        "description": "Object class: Ticonderoga1",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "To",
+        "description": "Object class: To",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Unassigned",
+        "description": "Object class: Unassigned",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Unclassed",
+        "description": "Object class: Unclassed",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Uncontainable",
+        "description": "Object class: Uncontainable",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Uncontained",
+        "description": "Object class: Uncontained",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Undefined",
+        "description": "Object class: Undefined",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Unknown",
+        "description": "Object class: Unknown",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Unnecessary",
+        "description": "Object class: Unnecessary",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Whatever",
+        "description": "Object class: Whatever",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Youklid",
+        "description": "Object class: Youklid",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "Zeno",
+        "description": "Object class: Zeno",
+        "is_esoteric": "FALSE"
+    },
+    {
+        "class_name": "____",
+        "description": "Object class: ____",
+        "is_esoteric": "FALSE"
+    }
+]

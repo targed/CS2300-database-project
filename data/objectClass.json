@@ -1,0 +1,17 @@
+[
+    {
+        "class_name": "Safe",
+        "description": "Anomalies that are easily and safely contained.",
+        "is_esoteric": false
+    },
+    {
+        "class_name": "Euclid",
+        "description": "Anomalies that require more resources to contain completely or where containment is not always reliable.",
+        "is_esoteric": false
+    },
+    {
+        "class_name": "Keter",
+        "description": "Anomalies that are exceedingly difficult to contain consistently or reliably.",
+        "is_esoteric": false
+    }
+]

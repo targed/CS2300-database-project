@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "mysql-db",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "SCPDB",
+            "database": "scp_db",
+            "username": "scp_user",
+            "askForPassword": true
+        }
+    ]
+}

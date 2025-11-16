@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SCP Foundation Archives - Secure Login</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#141414",
+              "background-light": "#f7f7f7",
+              "background-dark": "#191919",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .form-input::placeholder {
+            color: #4A4A4A;
+        }
+        .form-input {
+            caret-color: #F7F7F7;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-white/90">
+<div class="flex items-center justify-center min-h-screen p-4">
+<div class="w-full max-w-sm">
+<div class="bg-primary p-6 rounded-lg border border-white/10">
+<div class="text-center mb-6">
+<h1 class="text-xl font-bold tracking-wider text-white uppercase">S C P /// A R C H I V E S</h1>
+<p class="text-xs text-white/50 tracking-[0.2em]">SECURE ACCESS PORTAL</p>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-medium text-white/70 tracking-widest uppercase mb-1" for="username">Agent ID</label>
+<input class="form-input w-full bg-background-dark border-2 border-white/20 focus:border-white/50 text-white placeholder-white/30 rounded-none h-12 px-3 text-sm tracking-wider transition-colors duration-300 focus:outline-none focus:ring-0" id="username" placeholder="[CLASSIFIED]" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-medium text-white/70 tracking-widest uppercase mb-1" for="password">Passphrase</label>
+<input class="form-input w-full bg-background-dark border-2 border-white/20 focus:border-white/50 text-white placeholder-white/30 rounded-none h-12 px-3 text-sm tracking-wider transition-colors duration-300 focus:outline-none focus:ring-0" id="password" placeholder="************" type="password"/>
+</div>
+<button class="w-full h-12 px-4 bg-background-dark text-white/80 border-2 border-white/20 hover:bg-white/5 hover:border-white/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary focus:ring-white/50 transition-all duration-300 ease-in-out uppercase text-sm font-bold tracking-widest">
+                        Authenticate
+                    </button>
+</div>
+</div>
+<div class="text-center mt-4">
+<p class="text-xs text-white/30 tracking-widest">v1.2.3-build456 :: FOR INTERNAL USE ONLY</p>
+</div>
+</div>
+</div>
+
+</body></html>

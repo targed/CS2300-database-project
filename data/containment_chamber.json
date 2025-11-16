@@ -1,0 +1,74 @@
+[
+    {
+        "facility_id": 1,
+        "chamber_no": "C-101",
+        "chamber_type": "Standard Humanoid",
+        "capacity": 1,
+        "special_equipment": "Bed, toilet, basic amenities, surveillance cameras",
+        "chamber_notes": "Standard containment for cooperative humanoid entities"
+    },
+    {
+        "facility_id": 1,
+        "chamber_no": "C-205",
+        "chamber_type": "Reinforced Object",
+        "capacity": 5,
+        "special_equipment": "Climate control, vibration dampening, magnetic shielding",
+        "chamber_notes": "For small to medium anomalous objects"
+    },
+    {
+        "facility_id": 2,
+        "chamber_no": "H-047",
+        "chamber_type": "High-Security Humanoid",
+        "capacity": 1,
+        "special_equipment": "Reinforced walls, airlock entry, sedative gas system",
+        "chamber_notes": "Maximum security humanoid containment"
+    },
+    {
+        "facility_id": 3,
+        "chamber_no": "A-012",
+        "chamber_type": "Armed Containment",
+        "capacity": 1,
+        "special_equipment": "Automated turrets, blast doors, kill switches",
+        "chamber_notes": "For hostile and dangerous entities"
+    },
+    {
+        "facility_id": 4,
+        "chamber_no": "S-301",
+        "chamber_type": "Standard Storage",
+        "capacity": 50,
+        "special_equipment": "Climate control, fire suppression, inventory system",
+        "chamber_notes": "Mass storage for low-risk artifacts"
+    },
+    {
+        "facility_id": 5,
+        "chamber_no": "H-089",
+        "chamber_type": "Medical Containment",
+        "capacity": 1,
+        "special_equipment": "Medical monitoring, life support, decontamination shower",
+        "chamber_notes": "For entities requiring medical supervision"
+    },
+    {
+        "facility_id": 6,
+        "chamber_no": "T-015",
+        "chamber_type": "Testing Chamber",
+        "capacity": 3,
+        "special_equipment": "Observation windows, remote manipulation arms, blast shielding",
+        "chamber_notes": "Secure testing environment"
+    },
+    {
+        "facility_id": 7,
+        "chamber_no": "B-203",
+        "chamber_type": "Biological Containment",
+        "capacity": 10,
+        "special_equipment": "Biohazard protocols, air filtration, sterilization systems",
+        "chamber_notes": "For biological anomalies"
+    },
+    {
+        "facility_id": 8,
+        "chamber_no": "D-404",
+        "chamber_type": "Dimensional Isolation",
+        "capacity": 1,
+        "special_equipment": "Reality anchors, Scranton field generators, spatial monitors",
+        "chamber_notes": "For dimensional and reality-bending anomalies"
+    }
+]

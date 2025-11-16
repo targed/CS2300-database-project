@@ -1,0 +1,58 @@
+[
+    {
+        "person_id": 1,
+        "lab_affiliation": "Personnel Department"
+    },
+    {
+        "person_id": 2,
+        "lab_affiliation": "Reality Manipulation Research"
+    },
+    {
+        "person_id": 3,
+        "lab_affiliation": "Biological Sciences Division"
+    },
+    {
+        "person_id": 4,
+        "lab_affiliation": "Mechanical Engineering Lab"
+    },
+    {
+        "person_id": 5,
+        "lab_affiliation": "Biological Containment Lab"
+    },
+    {
+        "person_id": 6,
+        "lab_affiliation": "Medical Research Division"
+    },
+    {
+        "person_id": 7,
+        "lab_affiliation": "Psychiatric Evaluation Department"
+    },
+    {
+        "person_id": 8,
+        "lab_affiliation": "Cryogenics Research Lab"
+    },
+    {
+        "person_id": 20,
+        "lab_affiliation": "Physics Department"
+    },
+    {
+        "person_id": 21,
+        "lab_affiliation": "Chemistry Department"
+    },
+    {
+        "person_id": 23,
+        "lab_affiliation": "Memetics and Infohazards Division"
+    },
+    {
+        "person_id": 25,
+        "lab_affiliation": "Materials Analysis Lab"
+    },
+    {
+        "person_id": 27,
+        "lab_affiliation": "Linguistic Research Department"
+    },
+    {
+        "person_id": 29,
+        "lab_affiliation": "Anomalous Technology Lab"
+    }
+]

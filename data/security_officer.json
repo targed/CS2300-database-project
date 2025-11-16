@@ -1,0 +1,30 @@
+[
+    {
+        "person_id": 15,
+        "certifications": "Advanced Firearms, Containment Breach Response, Site Security Management"
+    },
+    {
+        "person_id": 16,
+        "certifications": "Tactical Response, Emergency Protocols, Hazmat Level C"
+    },
+    {
+        "person_id": 17,
+        "certifications": "Perimeter Defense, Surveillance Systems, Access Control"
+    },
+    {
+        "person_id": 18,
+        "certifications": "Armed Response Team Leader, Tactical Command, Crisis Management"
+    },
+    {
+        "person_id": 19,
+        "certifications": "Access Control Systems, Biometric Security, Monitoring Operations"
+    },
+    {
+        "person_id": 24,
+        "certifications": "Night Operations, Emergency Response, Personnel Safety"
+    },
+    {
+        "person_id": 28,
+        "certifications": "Emergency Coordination, Disaster Response, Medical First Aid"
+    }
+]

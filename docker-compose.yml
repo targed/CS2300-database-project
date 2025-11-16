@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  mysql-db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: '055' 
+      MYSQL_DATABASE: 'scp_db'
+      MYSQL_USER: 'scp_user'
+      MYSQL_PASSWORD: 'scp_password'
+    ports:
+      - "3307:3306"
+    volumes:
+      # persists database data outside the container in a 'mysql_data' volume.
+      # mounts init.sql script into the container's entrypoint directory.
+      # MySQL will automatically run any .sql scripts found here on first startup.
+      - mysql_data:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql-db
+    volumes:
+      - .:/workspace:cached
+
+volumes:
+  mysql_data:

@@ -1,0 +1,90 @@
+[
+    {
+        "name": "Site-19",
+        "code": "SITE-19",
+        "street": "████ Research Blvd",
+        "city": "Undisclosed",
+        "state_province": "Undisclosed",
+        "country": "United States",
+        "postal_code": "█████",
+        "coords": "38.8977°N, 77.0365°W",
+        "purpose": "Primary containment and research facility for Safe and Euclid-class objects"
+    },
+    {
+        "name": "Site-17",
+        "code": "SITE-17",
+        "street": "████ Foundation Way",
+        "city": "Undisclosed",
+        "state_province": "Undisclosed",
+        "country": "United States",
+        "postal_code": "█████",
+        "coords": "40.7128°N, 74.0060°W",
+        "purpose": "High-security containment facility specializing in humanoid entities"
+    },
+    {
+        "name": "Area-14",
+        "code": "AREA-14",
+        "street": "████ Desert Road",
+        "city": "Undisclosed",
+        "state_province": "Nevada",
+        "country": "United States",
+        "postal_code": "█████",
+        "coords": "37.2350°N, 115.8111°W",
+        "purpose": "Armed containment facility for hostile and dangerous anomalies"
+    },
+    {
+        "name": "Site-77",
+        "code": "SITE-77",
+        "street": "████ Mountain Pass",
+        "city": "Undisclosed",
+        "state_province": "Undisclosed",
+        "country": "Italy",
+        "postal_code": "█████",
+        "coords": "41.9028°N, 12.4964°E",
+        "purpose": "Storage facility for low-risk anomalous artifacts"
+    },
+    {
+        "name": "Site-06-3",
+        "code": "SITE-06-3",
+        "street": "████ Industrial Park",
+        "city": "Undisclosed",
+        "state_province": "Undisclosed",
+        "country": "United States",
+        "postal_code": "█████",
+        "coords": "34.0522°N, 118.2437°W",
+        "purpose": "Humanoid containment and research facility"
+    },
+    {
+        "name": "Area-02",
+        "code": "AREA-02",
+        "street": "████ Military Base",
+        "city": "Undisclosed",
+        "state_province": "Undisclosed",
+        "country": "Canada",
+        "postal_code": "█████",
+        "coords": "45.4215°N, 75.6972°W",
+        "purpose": "Armed containment and testing facility"
+    },
+    {
+        "name": "Site-81",
+        "code": "SITE-81",
+        "street": "████ University Drive",
+        "city": "Undisclosed",
+        "state_province": "Indiana",
+        "country": "United States",
+        "postal_code": "█████",
+        "coords": "39.7684°N, 86.1581°W",
+        "purpose": "Research and containment facility with focus on biological anomalies"
+    },
+    {
+        "name": "Site-88",
+        "code": "SITE-88",
+        "street": "████ Baldwin Hills",
+        "city": "Undisclosed",
+        "state_province": "California",
+        "country": "United States",
+        "postal_code": "█████",
+        "coords": "34.0195°N, 118.3528°W",
+        "purpose": "Dimensional anomaly research and containment facility"
+    }
+]

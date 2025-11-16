@@ -1,0 +1,38 @@
+[
+    {
+        "designation": "Alpha-1",
+        "nickname": "Red Right Hand",
+        "primary_role": "O5 Council direct operations",
+        "notes": "Reports directly to O5 Council"
+    },
+    {
+        "designation": "Epsilon-11",
+        "nickname": "Nine-Tailed Fox",
+        "primary_role": "Facility security and recontainment",
+        "notes": "Specialized in handling containment breaches"
+    },
+    {
+        "designation": "Omega-7",
+        "nickname": "Pandora''s Box",
+        "primary_role": "Anomalous entity utilization",
+        "notes": "Disbanded due to ethical concerns"
+    },
+    {
+        "designation": "Nu-7",
+        "nickname": "Hammer Down",
+        "primary_role": "Armed response and large-scale threats",
+        "notes": "Battalion-strength force"
+    },
+    {
+        "designation": "Tau-5",
+        "nickname": "Samsara",
+        "primary_role": "High-threat entity neutralization",
+        "notes": "Cybernetically enhanced operatives"
+    },
+    {
+        "designation": "Beta-7",
+        "nickname": "Maz Hatters",
+        "primary_role": "Biological and chemical hazards",
+        "notes": "Specialized in biohazard containment"
+    }
+]

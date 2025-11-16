@@ -1,0 +1,26 @@
+[
+    {
+        "level_name": "Level 0",
+        "privileges": "Unauthorized personnel. No access to classified information."
+    },
+    {
+        "level_name": "Level 1",
+        "privileges": "Access to basic Foundation information and non-sensitive areas."
+    },
+    {
+        "level_name": "Level 2",
+        "privileges": "Access to most Foundation facilities and information on Safe-class objects."
+    },
+    {
+        "level_name": "Level 3",
+        "privileges": "Access to sensitive information, Euclid-class objects, and most facilities."
+    },
+    {
+        "level_name": "Level 4",
+        "privileges": "Senior staff access to Keter-class objects and high-level operational data."
+    },
+    {
+        "level_name": "Level 5",
+        "privileges": "O5 Council access. Complete access to all Foundation information and facilities."
+    }
+]

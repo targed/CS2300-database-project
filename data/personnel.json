@@ -1,0 +1,263 @@
+[
+    {
+        "callsign": "Bright",
+        "given_name": "Jack",
+        "surname": "Bright",
+        "role": "Researcher",
+        "hire_date": "1990-03-15",
+        "notes": "Director of Personnel, SCP-963 host",
+        "clearance_id": 5
+    },
+    {
+        "callsign": "Clef",
+        "given_name": "Alto",
+        "surname": "Clef",
+        "role": "Researcher",
+        "hire_date": "1992-06-20",
+        "notes": "Reality bender specialist",
+        "clearance_id": 4
+    },
+    {
+        "callsign": "Kondraki",
+        "given_name": "Benjamin",
+        "surname": "Kondraki",
+        "role": "Researcher",
+        "hire_date": "1995-08-12",
+        "notes": "Photography and entomology expert",
+        "clearance_id": 4
+    },
+    {
+        "callsign": "Gears",
+        "given_name": "Charles",
+        "surname": "Gears",
+        "role": "Researcher",
+        "hire_date": "1988-01-30",
+        "notes": "Emotionless researcher, mechanical specialist",
+        "clearance_id": 4
+    },
+    {
+        "callsign": "Rights",
+        "given_name": "Theresa",
+        "surname": "Rights",
+        "role": "Researcher",
+        "hire_date": "1998-11-05",
+        "notes": "Biological anomalies specialist",
+        "clearance_id": 3
+    },
+    {
+        "callsign": "Mann",
+        "given_name": "Everett",
+        "surname": "Mann",
+        "role": "Researcher",
+        "hire_date": "1993-04-18",
+        "notes": "Medical and biological research",
+        "clearance_id": 4
+    },
+    {
+        "callsign": "Glass",
+        "given_name": "Simon",
+        "surname": "Glass",
+        "role": "Researcher",
+        "hire_date": "1996-09-22",
+        "notes": "Psychiatrist and psychological evaluator",
+        "clearance_id": 3
+    },
+    {
+        "callsign": "Iceberg",
+        "given_name": "Julian",
+        "surname": "Iceberg",
+        "role": "Researcher",
+        "hire_date": "1994-07-14",
+        "notes": "Cryogenics and cold-based anomalies",
+        "clearance_id": 3
+    },
+    {
+        "callsign": "Crow",
+        "given_name": "Marcus",
+        "surname": "Crow",
+        "role": "Agent",
+        "hire_date": "2000-02-10",
+        "notes": "Field operations specialist",
+        "clearance_id": 3
+    },
+    {
+        "callsign": "Strelnikov",
+        "given_name": "Dmitri",
+        "surname": "Strelnikov",
+        "role": "Agent",
+        "hire_date": "1997-12-03",
+        "notes": "Former GRU Division P operative",
+        "clearance_id": 4
+    },
+    {
+        "callsign": "Ukulele",
+        "given_name": "Sarah",
+        "surname": "Ukulele",
+        "role": "Agent",
+        "hire_date": "2003-05-28",
+        "notes": "Undercover operations expert",
+        "clearance_id": 3
+    },
+    {
+        "callsign": "Merlo",
+        "given_name": "Vincent",
+        "surname": "Merlo",
+        "role": "Agent",
+        "hire_date": "2001-08-19",
+        "notes": "Tactical operations and reconnaissance",
+        "clearance_id": 3
+    },
+    {
+        "callsign": "Navarro",
+        "given_name": "Elena",
+        "surname": "Navarro",
+        "role": "Agent",
+        "hire_date": "2005-03-07",
+        "notes": "Intelligence gathering specialist",
+        "clearance_id": 2
+    },
+    {
+        "callsign": "Chen",
+        "given_name": "Wei",
+        "surname": "Chen",
+        "role": "Agent",
+        "hire_date": "2002-10-15",
+        "notes": "Asian operations coordinator",
+        "clearance_id": 3
+    },
+    {
+        "callsign": "Rodriguez",
+        "given_name": "Carlos",
+        "surname": "Rodriguez",
+        "role": "Security Officer",
+        "hire_date": "1999-06-25",
+        "notes": "Site-19 security chief",
+        "clearance_id": 3
+    },
+    {
+        "callsign": "Johnson",
+        "given_name": "Michael",
+        "surname": "Johnson",
+        "role": "Security Officer",
+        "hire_date": "2004-01-12",
+        "notes": "Containment breach response",
+        "clearance_id": 2
+    },
+    {
+        "callsign": "Williams",
+        "given_name": "Patricia",
+        "surname": "Williams",
+        "role": "Security Officer",
+        "hire_date": "2006-09-08",
+        "notes": "Perimeter security specialist",
+        "clearance_id": 2
+    },
+    {
+        "callsign": "Martinez",
+        "given_name": "David",
+        "surname": "Martinez",
+        "role": "Security Officer",
+        "hire_date": "2003-11-30",
+        "notes": "Armed response team leader",
+        "clearance_id": 3
+    },
+    {
+        "callsign": "Anderson",
+        "given_name": "Jennifer",
+        "surname": "Anderson",
+        "role": "Security Officer",
+        "hire_date": "2007-04-17",
+        "notes": "Access control and monitoring",
+        "clearance_id": 2
+    },
+    {
+        "callsign": "Taylor",
+        "given_name": "Robert",
+        "surname": "Taylor",
+        "role": "Researcher",
+        "hire_date": "2008-02-20",
+        "notes": "Junior researcher, physics department",
+        "clearance_id": 2
+    },
+    {
+        "callsign": "Moore",
+        "given_name": "Lisa",
+        "surname": "Moore",
+        "role": "Researcher",
+        "hire_date": "2009-07-11",
+        "notes": "Junior researcher, chemistry department",
+        "clearance_id": 2
+    },
+    {
+        "callsign": "Jackson",
+        "given_name": "James",
+        "surname": "Jackson",
+        "role": "Agent",
+        "hire_date": "2010-05-03",
+        "notes": "Field agent, North American operations",
+        "clearance_id": 2
+    },
+    {
+        "callsign": "White",
+        "given_name": "Barbara",
+        "surname": "White",
+        "role": "Researcher",
+        "hire_date": "2005-12-14",
+        "notes": "Memetics and information hazards",
+        "clearance_id": 3
+    },
+    {
+        "callsign": "Harris",
+        "given_name": "Thomas",
+        "surname": "Harris",
+        "role": "Security Officer",
+        "hire_date": "2008-08-22",
+        "notes": "Night shift supervisor",
+        "clearance_id": 2
+    },
+    {
+        "callsign": "Martin",
+        "given_name": "Nancy",
+        "surname": "Martin",
+        "role": "Researcher",
+        "hire_date": "2011-03-09",
+        "notes": "Anomalous materials analysis",
+        "clearance_id": 2
+    },
+    {
+        "callsign": "Thompson",
+        "given_name": "Daniel",
+        "surname": "Thompson",
+        "role": "Agent",
+        "hire_date": "2006-10-27",
+        "notes": "Retrieval operations specialist",
+        "clearance_id": 3
+    },
+    {
+        "callsign": "Garcia",
+        "given_name": "Maria",
+        "surname": "Garcia",
+        "role": "Researcher",
+        "hire_date": "2007-01-19",
+        "notes": "Linguistic anomalies researcher",
+        "clearance_id": 3
+    },
+    {
+        "callsign": "Lee",
+        "given_name": "Christopher",
+        "surname": "Lee",
+        "role": "Security Officer",
+        "hire_date": "2009-11-05",
+        "notes": "Emergency response coordinator",
+        "clearance_id": 2
+    },
+    {
+        "callsign": "Walker",
+        "given_name": "Susan",
+        "surname": "Walker",
+        "role": "Researcher",
+        "hire_date": "2012-06-16",
+        "notes": "Junior researcher, anomalous technology",
+        "clearance_id": 1
+    }
+]

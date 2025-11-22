@@ -13,5 +13,20 @@
         "class_name": "Keter",
         "description": "Anomalies that are exceedingly difficult to contain consistently or reliably.",
         "is_esoteric": false
+    },
+    {
+        "class_name": "Thaumiel",
+        "description": "Anomalies that are used by the Foundation to contain or counteract other anomalies.",
+        "is_esoteric": true
+    },
+    {
+        "class_name": "Apollyon",
+        "description": "Anomalies that are uncontainable and will inevitably lead to widespread destruction or the end of the world.",
+        "is_esoteric": true
+    },
+    {
+        "class_name": "Neutralized",
+        "description": "Anomalies that have been rendered inert or non-anomalous.",
+        "is_esoteric": false
     }
 ]

@@ -2,37 +2,415 @@
     {
         "designation": "Alpha-1",
         "nickname": "Red Right Hand",
-        "primary_role": "O5 Council direct operations",
-        "notes": "Reports directly to O5 Council"
+        "primary_role": "Mobile Task Force Alpha-1 is a task force that reports directly to the O5 Council and is used in situations that require the strictest operational security. The task force consists of the Foundation's best and most loyal operatives, and serves as the O5 Council's special operations unit. Further information regarding MTF Alpha-1 is classified Level 5.",
+        "notes": "Reports directly to the o5 council ."
     },
     {
-        "designation": "Epsilon-11",
-        "nickname": "Nine-Tailed Fox",
-        "primary_role": "Facility security and recontainment",
-        "notes": "Specialized in handling containment breaches"
+        "designation": "Alpha-4",
+        "nickname": "Pony Express",
+        "primary_role": "Mobile Task Force Alpha-4 consists primarily of personnel trained to act as undercover employees and specialize in tracking, intercepting, and securing anomalous objects sent through postal and package delivery services worldwide.",
+        "notes": null
     },
     {
-        "designation": "Omega-7",
-        "nickname": "Pandora''s Box",
-        "primary_role": "Anomalous entity utilization",
-        "notes": "Disbanded due to ethical concerns"
+        "designation": "Alpha-9",
+        "nickname": "Last Hope",
+        "primary_role": "Training and utilizing humanoid SCP objects in the field, Mobile Task Force Alpha-9 \"Last Hope\" resurrects the original premise of Mobile Task Force Omega-7.",
+        "notes": null
     },
     {
-        "designation": "Nu-7",
-        "nickname": "Hammer Down",
-        "primary_role": "Armed response and large-scale threats",
-        "notes": "Battalion-strength force"
+        "designation": "Beta-1",
+        "nickname": "Cauterizers",
+        "primary_role": "Highly classified task force specializing in dealing with suspected cases of enemy infiltration within Foundation personnel and possible information leaks to other Groups of Interest.",
+        "notes": null
     },
     {
-        "designation": "Tau-5",
-        "nickname": "Samsara",
-        "primary_role": "High-threat entity neutralization",
-        "notes": "Cybernetically enhanced operatives"
+        "designation": "Beta-2",
+        "nickname": "Bayou Boys",
+        "primary_role": "Region-specific task force based in Louisiana. Trained to act in swamp/wetland environments.",
+        "notes": null
+    },
+    {
+        "designation": "Beta-4",
+        "nickname": "Castaways",
+        "primary_role": "MTF Beta-4 is a task force created with the sole purpose of assisting and monitoring GoI-466 (Wilson's Wildlife Solutions) in their interactions with local fauna-based anomalies.",
+        "notes": null
     },
     {
         "designation": "Beta-7",
         "nickname": "Maz Hatters",
-        "primary_role": "Biological and chemical hazards",
-        "notes": "Specialized in biohazard containment"
+        "primary_role": "Mobile Task Force Beta-7 specializes in the acquisition and containment of anomalies exhibiting extreme biological, chemical, or radiological hazards as well as the rapid containment and cleanup of areas affected by such anomalies. This includes the planning and deployment of contingencies for wide-area or pandemic spread of anomalous disease agents or other contagious phenomena.",
+        "notes": null
+    },
+    {
+        "designation": "Beta-777",
+        "nickname": "Hecate's Spear",
+        "primary_role": "Specializes in thaumaturgical ritual analysis and countermeasures; including thaumaturgical combat. Based out of Site-91. A five-man task force specialized in performing tasks in low to zero-gravity and vacuum environments. Based out of Lunar Area-32.",
+        "notes": "Based out of Site-91."
+    },
+    {
+        "designation": "Gamma-4",
+        "nickname": "Green Stags",
+        "primary_role": "Mobile Task Force Gamma-4 specialises in operations involving anomalies in forested or otherwise nature-based environments. Skilled in ecology, recovery, and tracking targets. Based out of Site-44, and operating on behalf of the Cryptozoology Division.",
+        "notes": "Based out of Site-44."
+    },
+    {
+        "designation": "Gamma-5",
+        "nickname": "Red Herrings",
+        "primary_role": "Mobile Task Force Gamma-5 specializes in preventing the dissemination of knowledge of anomalous events or phenomena in cases where initial suppression efforts have proven ineffective or insufficient, or in cases where such knowledge has already reached critical levels of public exposure. This includes the research and deployment of experimental amnestics as well as memory fabrication procedures.",
+        "notes": null
+    },
+    {
+        "designation": "Gamma-6",
+        "nickname": "Deep Feeders",
+        "primary_role": "Mobile Task Force Gamma-6 specializes in the investigation and tracking of deep-sea or oceanic anomalies. Mobile Task Force Gamma-13 specializes in the investigation, tracking, and apprehension of anomalous objects, persons, and entities associated with GoI-1115 (Anderson Robotics). This includes identification of Anderson customers, location of Anderson products and conduction of raids on Anderson offices.",
+        "notes": null
+    },
+    {
+        "designation": "Delta-5",
+        "nickname": "Front Runners",
+        "primary_role": "Mobile Task Force Delta-5 is composed of multiple autonomous deep-cover cells specializing in the identification and pre-emptive acquisition of anomalous objects and entities of interest to other Groups of Interest.",
+        "notes": null
+    },
+    {
+        "designation": "Delta-4",
+        "nickname": "Minutemen",
+        "primary_role": "A rapid response task force that specializes in being the first deployed to a scene. They're tasked with establishing a perimeter and assessing the situation, as well as providing additional manpower to other task forces when they arrive. Task force specializing in handling and containing anomalies in subzero or cold environments, or anomalies related to snow. An Aerial task force, deployed as air support during Foundation operations.",
+        "notes": null
+    },
+    {
+        "designation": "Epsilon-6",
+        "nickname": "Village Idiots",
+        "primary_role": "Specializes in the investigation, containment, and subsequent cleanup of anomalies in rural and suburban environments.",
+        "notes": null
+    },
+    {
+        "designation": "Epsilon-7",
+        "nickname": "Forget Me Nots",
+        "primary_role": "Undercover disruption of the research and development of mnestic drugs.",
+        "notes": null
+    },
+    {
+        "designation": "Epsilon-9",
+        "nickname": "Fire Eaters",
+        "primary_role": "Epsilon-9 specializes in the use of incendiary weaponry and operations in high-temperature environments. Mobile Task Force Epsilon-11 handles internal security for the SCP Foundation, under oversight by MTF Alpha-1. They are a special ops force deployed to Foundation Sites when standard protocols fail and multiple breaches are imminent. As such, most of their operations are classified. Epsilon-13 is a task force trained in the exploration of expansive unknown terrain. Based out of Site-81.",
+        "notes": "Based out of Site-81."
+    },
+    {
+        "designation": "Zeta-9",
+        "nickname": "Mole Rats",
+        "primary_role": "Mobile Task Force Zeta-9 specializes in the investigation, exploration, and containment of underground or enclosed areas exhibiting anomalous phenomena, particularly those with inconsistent topography or unstable spacetime.",
+        "notes": null
+    },
+    {
+        "designation": "Eta-4",
+        "nickname": "Begone Thoth",
+        "primary_role": "Mobile Task Force Eta-4 is a unit of intelligent SCP-3095-affected seabirds. Eta-4 specializes in information collection and analysis, complementary field research and support, and in extreme cases, airborne combat. The task force was ultimately charged with protecting humanity after the BE-Class \"Migration\" End-of-Consciousness Scenario.",
+        "notes": null
+    },
+    {
+        "designation": "Eta-5",
+        "nickname": "Jäeger Bombers",
+        "primary_role": "Mobile Task Force Eta-5 is a rapidresponse unit specializing in the tracking, capturing, and containment of Large-Scale Aggressors (entities over 30m in height). Deploys from, and detains LSAs within DimensionalSite-172.",
+        "notes": null
+    },
+    {
+        "designation": "Eta-10",
+        "nickname": "See No Evil",
+        "primary_role": "Mobile Task Force Eta-10 specializes in the investigation, acquisition, and initial containment of objects or entities exhibiting visual cognitohazards, visual memetic agents, or otherwise require indirect or alternative observation in order to safely handle.",
+        "notes": null
+    },
+    {
+        "designation": "Eta-11",
+        "nickname": "Savage Beasts",
+        "primary_role": "Mobile Task Force Eta-11 specializes in the investigation, acquisition, and containment of auditory and musical anomalies, including any auditory cognitohazards or sound-based anomalous threats. The Department of Tactical Theology's personalized operational unit, consisting of fifteen specialized members. All personnel in the task force have expertise in dealing with aggressive or threatening religion-related anomalies.",
+        "notes": null
+    },
+    {
+        "designation": "Theta-4",
+        "nickname": "Gardeners",
+        "primary_role": "Mobile Task Force Theta-4 specializes in the acquisition and containment of plant or plant-like anomalous objects and entities, especially fieldwork involving wide-spread infestations of such anomalies.",
+        "notes": null
+    },
+    {
+        "designation": "Theta-5",
+        "nickname": "The Bigger Boat",
+        "primary_role": "Specializes in anomalies involving or threatening marine vehicles.",
+        "notes": null
+    },
+    {
+        "designation": "Theta-90",
+        "nickname": "Angle Grinders",
+        "primary_role": "Mobile Task Force Theta-90, the \"Angle Grinders\", specialize in operating in locations of anomalous topology/geometry and in securing anomalies connected with these kinds of spacetime distortions.",
+        "notes": null
+    },
+    {
+        "designation": "Iota-10",
+        "nickname": "Damn Feds",
+        "primary_role": "Mobile Task Force Iota-10 maintains undercover operatives in various international, federal, and provincial law enforcement agencies and specializes in facilitating the transfer of anomalous evidence and objects into Foundation control as well as the transfer of jurisdiction over anomalous event locations from local law enforcement to Foundation containment and response teams.",
+        "notes": null
+    },
+    {
+        "designation": "Kappa-10",
+        "nickname": "Skynet",
+        "primary_role": "Mobile Task Force Kappa-10 is a temporary designation until such time it is either officially dissolved or sanctioned. It is strictly tasked in investigating and engaging 'cyber-anomalies' using a combination of virtual agents (AICs) and Foundation researchers to track, neutralize, and/or contain such intangible threats.",
+        "notes": null
+    },
+    {
+        "designation": "Kappa-43",
+        "nickname": "The Mediators",
+        "primary_role": "Specialize in the investigation, tracking, and apprehension of anomalous objects and media associated with GoI-5889 (Vikander-Kneed Technical Media) and amnestization of any witnesses.",
+        "notes": null
+    },
+    {
+        "designation": "Lambda-4",
+        "nickname": "Birdwatchers",
+        "primary_role": "Mobile Task Force Lambda-4 specializes in the identification, tracking, and containment of airborne biological anomalies, especially anomalous avian organisms.",
+        "notes": null
+    },
+    {
+        "designation": "Lambda-5",
+        "nickname": "White Rabbits",
+        "primary_role": "Mobile Task Force Lambda-5 specializes in traversing unstable, surreal, and controlled reality, and containing potentially dangerous persons and artifacts capable of manipulating space and time.",
+        "notes": null
+    },
+    {
+        "designation": "Lambda-12",
+        "nickname": "Pest Control",
+        "primary_role": "Specializes in tracking, containing, and exterminating anomalous vermin. Often used as a firstresponse team when tracking anomalous organisms.",
+        "notes": null
+    },
+    {
+        "designation": "Mu-0",
+        "nickname": "Maxwell's Demons",
+        "primary_role": "Specializes in containing demons or demonology-related anomalies.",
+        "notes": null
+    },
+    {
+        "designation": "Mu-3",
+        "nickname": "Highest Bidders",
+        "primary_role": "Mobile Task Force Mu-3 is dedicated to monitoring GoI 'Marshall, Carter & Dark Ltd'. Through the combined efforts of undercover agents and covert-ops specialists, their objective is: identifying objects of interest in possession of Marshall, Carter and Dark; isolating opportunities to recover these objects; and, ultimately achieving their containment.",
+        "notes": null
+    },
+    {
+        "designation": "Mu-4",
+        "nickname": "Debuggers",
+        "primary_role": "Mobile Task Force Mu-4 specializes in the identification, tracking, retrieval, and containment of electronic devices and transmissions, especially anomalous computers and network-related anomalies. This includes the investigation of internet sites suspected of anomalous capabilities or involved in anomalous events.",
+        "notes": null
+    },
+    {
+        "designation": "Mu-13",
+        "nickname": "Ghostbusters",
+        "primary_role": "Mobile Task Force Mu-13 specializes in the tracking, analysis, and containment of incorporeal or intangible manifestations and entities, particularly those believed to be sentient, sapient, or otherwise intelligent and adaptive.",
+        "notes": null
+    },
+    {
+        "designation": "Nu-7",
+        "nickname": "Hammer Down",
+        "primary_role": "Armed Mobile Task Force Nu-7 is a battalion-strength force consisting of three company-sized elements of special operations infantry forces, a light armored vehicle company, tank platoon, helicopter squadron, chemicalbiological-radiological-nuclear (CBRN) platoon, combat engineer platoon, nuclear weapon specialist (NWS) squad, plus additional combat specialist and support personnel. AMTF Nu-7 is based primarily out of Armed Bio-Containment Area-14 and is tasked with responding to incidents involving loss of communication with major Foundation facilities under circumstances wherein a site-wide breach, enemy compromise, or other similarly catastrophic event is suspected.",
+        "notes": null
+    },
+    {
+        "designation": "Xi-8",
+        "nickname": "Last to Fall",
+        "primary_role": "Mobile Task Force Xi-8 is a battalionstrength task force dedicated to the acquisition and/or termination of Sarkic entities and artifacts. Created as a response to the growing Sarkic threat, Xi-8's operational scope encompasses all six major continents, with naval support provided by the Foundation as needed.",
+        "notes": null
+    },
+    {
+        "designation": "Xi-13",
+        "nickname": "Sequere Nos",
+        "primary_role": "Platoon-strength rapid response unit, tasked with responding quickly to dangerous and/or anomalous situations where the threat has not yet been identified but military-grade force is deemed likely, including but not limited to large scale containment and security breaches. The Foundation has discovered the method of becoming Oneiroi, and now with this power are more capable of containing them. For decades they teach their agents the technique that allows one consciousness to join another’s. The few mentally hardened individuals that succeed are organized into a task force. The first of these was Mobile Task Force Omicron Rho.",
+        "notes": null
+    },
+    {
+        "designation": "Pi-1",
+        "nickname": "City Slickers",
+        "primary_role": "Mobile Task Force Pi-1 specializes in the investigation, containment, and subsequent cleanup of anomalies in densely-populated urban environments, particularly in the New York metropolitan area.",
+        "notes": null
+    },
+    {
+        "designation": "Rho-1",
+        "nickname": "The Professors",
+        "primary_role": "Mobile Task Force Rho-1 specializes in the acquisition, containment, and transport of anomalies related to Group of Interest Alpha-388, \"Alexylva University\". With the reduction of the threat posed by the specific GoI, the MTF has expanded its focus to any and all containment for anomalous academic endeavors.",
+        "notes": null
+    },
+    {
+        "designation": "Rho-9",
+        "nickname": "Technical Support",
+        "primary_role": "Mobile Task Force Rho-9 handles computer security for the Foundation. When memetic kill agents can lurk throughout a data structure, this is no simple task.",
+        "notes": null
+    },
+    {
+        "designation": "Rho-19",
+        "nickname": "Cythereans",
+        "primary_role": "Mobile Task Force Rho-19 has been sent to Venus, in the hopes to establish a Foundation presence where there may be considerable anomalous activity.",
+        "notes": null
+    },
+    {
+        "designation": "Sigma-3",
+        "nickname": "Bibliographers",
+        "primary_role": "Mobile Task Force Sigma-3 is charged with covert infiltration of the anomalous community for the purpose of gathering intel, with a particular focus on the vast otherworldly location of The Wanderers' Library.",
+        "notes": null
+    },
+    {
+        "designation": "Sigma-9",
+        "nickname": "Valkyries",
+        "primary_role": "Small unit providing air support for ground operations or combat against aerial anomalies. Based at Site-87, dedicated to the containment of dangerous anomalies within Nexus-18, better known as Sloth's Pit, Wisconsin.",
+        "notes": null
+    },
+    {
+        "designation": "Sigma-66",
+        "nickname": "Sixteen Tons",
+        "primary_role": "Mobile Task Force Sigma-66 is formed of captured members from other GoI. Despite the lack of loyalty the Foundation expects from the assembled team, they find the members' expertise of value.",
+        "notes": null
+    },
+    {
+        "designation": "Tau-5",
+        "nickname": "Samsara",
+        "primary_role": "Immortal cyborg clones created from the flesh of a dead god, Mobile Task Force Tau-5 \"Samsara\" utilizes esoteric and experimental Foundation weaponry to investigate and contain thaumaturgic and psionic threats.",
+        "notes": null
+    },
+    {
+        "designation": "Tau-9",
+        "nickname": "Bookworms",
+        "primary_role": "Deals with anomalies related to the Library, the Serpent's Hand, and 'magic'; A more traditional counterpart to Sigma-3.",
+        "notes": null
+    },
+    {
+        "designation": "Tau-51",
+        "nickname": "Urban Brawl",
+        "primary_role": "Specializes in the containment and recovery of SCP objects from urban environments, especially the Three Portlands Location of Interest.",
+        "notes": null
+    },
+    {
+        "designation": "Upsilon-4",
+        "nickname": "Sugar Pill",
+        "primary_role": "Originally formed in order to contain SCP2559, Mobile Task Force Upsilon-4 is tasked with epidemiological containment, especially with the containment of memetic outbreaks. Operating with SCP-4793 in combat against members of the Chaos Insurgency. Specializes in defense against hostiles. Contains anomalies found in Toronto, Ontario, Canada, and the surrounding areas. Stationed at Site201.",
+        "notes": "Stationed at Site201."
+    },
+    {
+        "designation": "Upsilon-23",
+        "nickname": "Art Critics",
+        "primary_role": "Specialize in the containment of anart, mainly originating from GoI-0267 (Are We Cool Yet?).",
+        "notes": null
+    },
+    {
+        "designation": "Phi-2",
+        "nickname": "Clever Girls",
+        "primary_role": "Specializes in the study, tracking, capture, and hunting of prehistoric anomalies, especially dinosaurs.",
+        "notes": null
+    },
+    {
+        "designation": "Chi-7",
+        "nickname": "Plague Tamers",
+        "primary_role": "Specializes in the containment of microbiological, biochemical, and pathogenic anomalies. Based out of Site-234.",
+        "notes": "Based out of Site-234."
+    },
+    {
+        "designation": "Chi-9",
+        "nickname": "Page Turners",
+        "primary_role": "Specializes in the detection, recovery, and neutralisation of anomalous literature. Mobile Task Force Psi-7 specializes in the undercover investigation, containment, and/or demolition of anomalous buildings or buildings affected by anomalies, particularly residential homes in populated areas. This includes the acquisition or transfer of affected buildings to Foundation control as well as initial observation and documentation of such buildings prior to transfer to local containment teams for long-term or ongoing containment. Based out of Site-77.",
+        "notes": "Based out of Site-77."
+    },
+    {
+        "designation": "Psi-8",
+        "nickname": "The Silencers",
+        "primary_role": "Mobile Task Force Psi-8 specializes in the investigation, tracking, containment and/or destruction of individuals suspected to be capable of or having been affected by reanimation anomalies, as well as investigating suspected cases of communication with deceased individuals. This includes the severing of devices intended to allow communication with individuals buried alive, such as bells, pipes, and phones, as well as detainment and interrogation of individuals claiming to have had contact with deceased individuals.",
+        "notes": null
+    },
+    {
+        "designation": "Psi-9",
+        "nickname": "Abyss Gazers",
+        "primary_role": "Mobile Task Force Psi-9 (\"Abyss Gazers\") is a battalion-strength force, consisting of personnel from the Foundation and Global Occult Coalition, trained in unconventional warfare against invading enemies through the use of heavy artillery, DMT enhanced perception, and Counter Occult Stratagems (COS).",
+        "notes": null
+    },
+    {
+        "designation": "Psi-13",
+        "nickname": "Witch Hunters",
+        "primary_role": "A highly classified joint Foundation/GOC task force designed for the infiltration of Sarkic organizations and the termination of high threat members. Operatives are trained in Counter Occult Stratagems (COS) and the use of corrosive/incendiary armaments.",
+        "notes": null
+    },
+    {
+        "designation": "Omega-0",
+        "nickname": "Ará Orún",
+        "primary_role": "The \"saints\" of MTF Omega-0 are informational constructs with the memories of deceased Foundation personnel able to manifest through access of the Foundation's intranet terminals. Using Identity Warfare Training (IWT) they protect their living comrades against informational threats and entities. The existence of MTF ω-0 is unknown to most or all of the living members of the Foundation. Empowered to remove or execute highranking Foundation personnel if they are determined to be acting unethically. Answers only to the Ethics Committee; counterpart to the O5's \"Red Right Hand\".",
+        "notes": null
+    },
+    {
+        "designation": "Omega-7",
+        "nickname": "Pandora's Box",
+        "primary_role": "Mobile Task Force Omega-7 is an experimental task force specializing in the acquisition and containment of anomalies utilizing cooperative anomalous humanoid entities, particularly SCP-076 and SCP-105. Mobile Task Force Omega-7 has been disbanded and decommissioned; this entry is to be deleted by order of the Records and Information Security Administration. A task force composed of reality bending Foundation personnel from an alternate universe. Omega-12 is tasked with capturing SCP-3480-2 instances, guarding the many entities imprisoned in Area-13, and hunting down powerful uncontained reality benders elsewhere. Consists of two groups of operatives: the WOLFs (Psychics) and the LANCEs (Non psychics). Specialized in detainment of Persons of Interest. An elite fighting force that specialized in the use of anomalous weaponry, armor, and vehicles. Dispatched on missions to retrieve high-risk anomalies and in combat against hostile Groups of Interest. Based out of Site-78 —Historically, the Church of the Broken God had always prided itself on its artificiality - that its faith is proven with tangible artifacts and physical devices of miracles. So, when the time came to destabilize the Church, the Foundation put forth a team of forgers, and Stigma-9 was it.",
+        "notes": "Based out of Site-78 —Historically."
+    },
+    {
+        "designation": "Gamma-44",
+        "nickname": "Meat Lockers",
+        "primary_role": "Tasked with investigating and dismantling all possible GoI-0432 (\"The Hunter's Black Lodge\") cells located within the Western United States.",
+        "notes": null
+    },
+    {
+        "designation": "Delta-3",
+        "nickname": "Solomon's Hand",
+        "primary_role": "Formed in late 1985 as a test case for the Special Asset Task Force Program (an initiative to employ persons with paranormal abilities as field agents), Delta-3 was stationed at Site-246 underneath Lake Superior for the duration of its existence. Dissolved in 1990 after the loss of its primary Special Asset Agent.",
+        "notes": "stationed at Site-246 underneath Lake Superior for the duration of its existence."
+    },
+    {
+        "designation": "Eta-13",
+        "nickname": "Gulliver's Tourists",
+        "primary_role": "Created to journey into a massive series of tunnels extending through extra-dimensional space, colloquially known as \"The Gate\".",
+        "notes": null
+    },
+    {
+        "designation": "Kappa-14",
+        "nickname": "AH! Sideshow Bob!",
+        "primary_role": "Investigation of GoI-233, \"Herman Fuller's Circus of the Disquieting.\"",
+        "notes": null
+    },
+    {
+        "designation": "Nu-3",
+        "nickname": "Limnophobia",
+        "primary_role": "Contains anomalies within Lake Ontario. Stationed at Site-201.",
+        "notes": "Stationed at Site-201."
+    },
+    {
+        "designation": "Xi-5",
+        "nickname": "Newton's Bullies",
+        "primary_role": "Specially trained and equipped for anomalous zones and alt-dimensional spaces deviating from baseline scientific principles.",
+        "notes": null
+    },
+    {
+        "designation": "Pi-43",
+        "nickname": "Garbage In, Garbage Out",
+        "primary_role": "Transfer of prisoners and anomalies to and from Site-43.",
+        "notes": null
+    },
+    {
+        "designation": "Rho-43",
+        "nickname": "Home Invaders",
+        "primary_role": "Rho-43 is dispatched to interior locations to investigate and or manage events relating to Site-43 and its personnel. Responsible for establishing and maintaining covert access to various social media and file sharing sites for the purposes of disinformation and controlling the spread of computer-based anomalies.",
+        "notes": null
+    },
+    {
+        "designation": "Phi-Eolh",
+        "nickname": "Provident Trawlers",
+        "primary_role": "Specially trained agents armed with amnestics, tasked with covertly retrieving civilians with anomalous connections from the general populace.",
+        "notes": null
+    },
+    {
+        "designation": "Omega-9",
+        "nickname": "The Scrubs",
+        "primary_role": "Mobile Task Force Omega-9 consists of 3 anomalous entities available for near-instantaneous deployment into extreme circumstances requiring the delivery of overwhelming force. Its primary purpose is as a rapidresponse team for containment breaches involving violent, hostile anomalies. As part of the agreement reached with these 3 entities, MTF Omega-9 is only to be used to eliminate hostile non-human targets.",
+        "notes": null
+    },
+    {
+        "designation": "Rēsh-1",
+        "nickname": "Seat of Consciousness",
+        "primary_role": "Mobile Task Force Rēsh-1 reports directly to the Administrator, serving as a counterpart to Alpha-1 to balance the power of the O5 Council.",
+        "notes": "Reports directly to the administrator, serving as a counterpart to alpha-1 to balance the power of the o5 council."
+    },
+    {
+        "designation": "Titan-1",
+        "nickname": "Off the Books",
+        "primary_role": "Mobile Task Force Titan-1 is deployed to safeguard VIPs and eliminate hostile groups of interest. They specialize in unconventional warfare, subterfuge, and fear tactics to throw enemies off-balance before raids. Protects and maintains SCP-120’s facility and location outposts; composed of multiple units. Division 9 is stationed at Lunar Area-32. Rho-7 is an STF tasked with the preliminary evaluation of an anomaly, allowing for quick, partial containment, and the informed delegation of an appropriate MTF unit.",
+        "notes": "stationed at Lunar Area-32."
     }
 ]

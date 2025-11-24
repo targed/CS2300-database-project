@@ -54,7 +54,32 @@ TABLE_MAPPINGS = {
             (callsign, given_name, surname, role, hire_date, notes, clearance_id)
             VALUES (%s, %s, %s, %s, %s, %s, %s)
         """,
-        'json_keys': ['callsign', 'given_name', 'surname', 'role', 'hire_date', 'notes', 'clearance_id']
+        'json_keys': [
+            'callsign', 
+            'given_name', 
+            'surname', 
+            'role', 
+            'hire_date', 
+            'notes', 
+            'clearance_id'
+            ]
+    },
+    'SCP': {
+        'file': '../data/scpjsonmoreatrributes.json',
+        'sql': """
+            INSERT INTO SCP 
+            (scp_code, title, short_description, containment_procedures, full_description, tags_list, object_class)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
+        """,
+        'json_keys': [
+            'code', 
+            'title', 
+            'short_description', 
+            'containment_procedures', 
+            'full_description', 
+            'tags', 
+            'object_class'
+        ]
     }
     # To add SCPs later, just add a new entry here:
 }

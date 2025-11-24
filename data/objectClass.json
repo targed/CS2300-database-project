@@ -28,5 +28,25 @@
         "class_name": "Neutralized",
         "description": "Anomalies that have been rendered inert or non-anomalous.",
         "is_esoteric": false
+    },
+    {
+        "class_name": "Blocked",
+        "description": "Anomalies that are no longer accessible or have been sealed off.",
+        "is_esoteric": false
+    },
+    {
+        "class_name": "Explained",
+        "description": "Anomalies that have been fully understood and can be explained by current scientific knowledge.",
+        "is_esoteric": false
+    },
+    {
+        "class_name": "Anomalous Human",
+        "description": "Anomalies that pertain specifically to humans with anomalous properties or abilities.",
+        "is_esoteric": false
+    },
+    {
+        "class_name": "None",
+        "description": "Anomalies that do not fit into any established object class or have unique containment requirements.",
+        "is_esoteric": false
     }
 ]

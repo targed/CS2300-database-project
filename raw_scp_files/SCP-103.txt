@@ -1,0 +1,800 @@
+<h1>Page source</h1>
+
+<div class="page-source">
+	=====
+
+[[include <a href="/component:preview">component:preview</a>
+
+text=You can't always get what you want.]]
+
+=====
+
+
+
+[[>]]
+
+[[module rate]]
+
+[[/>]]
+
+
+
+**Item #:** SCP-103
+
+
+
+**Object Class:** Safe
+
+
+
+**Special Containment Procedures:**
+
+
+
+SCP-103-1 is to be suspended in an indefinite vegetative state. Under no circumstances is SCP-103-1 to die, with all efforts to be taken to ensure its survival.
+
+
+
+SCP-103 itself is not relevant in the context of containment.
+
+
+
+**Description:**
+
+
+
+SCP-103 describes a phenomenon currently affecting Dr. Ewan Mara, a White male in his mid-forties, and Head of Site-██'s Department of Extradimensional Studies. During an aggressive experimental treatment for metastatic stomach cancer, Dr. Mara was placed into a medically-induced coma. Concurrently, Dr. Jacob Rhys, Dr. Mara's research partner, reported a drastic uptick in local hume levels. Believing this to be due to Dr. Mara's proximity to dimensional-based anomalies, Dr. Rhys requested Dr. Mara's relocation to the Department of Extradimensional Studies for containment under the designation SCP-103-1.
+
+
+
+Presently, SCP-103-1's stomach is missing, replaced by a similarly sized extradimensional rift, but is believed to be in otherwise stable condition. Additionally, SCP-103-1 does not produce any waste despite being regularly provided nutrients and fluids through intravenous means. An upper endoscopy was conducted during SCP-103-1's initial containment, with the scope disappearing shortly after insertion. A follow-up surgery was conducted  to recover the scope, instead revealing an absence of biological materials and reflected light within SCP-103.
+
+
+
+**Addendum SCP-103.1 - Object Testing**
+
+
+
+[[div class="blockquote"]]
+
+Currently, we possess very little knowledge of Dr. Ewan Mara's condition. I had the honor of working closely with Dr. Mara during his tenure as the Head of Extradimensional Studies, and even as his diagnosis progressed he was still committed to the pursuit of knowledge. In his current state, Dr. Mara continues to provide us with a means to pursue knowledge, a once in a lifetime chance to advance the Foundation's knowledge of parabiology and dimensional mechanics. It is with his mission in mind that I carry this burden.
+
+
+
+Although he is dying in the dark, his sacrifice will preserve those who still live in the light.
+
+
+
+[[>]]
+
+//-- Dr. Jacob Rhys, Interim Head of Extradimensional Studies//
+
+[[/>]]
+
+[[/div]]
+
+
+
+Dr. Rhys was assigned as the Lead Researcher for SCP-103, and was tasked with the initial creation of containment and testing documentation. Following an internal Ethics Committee review, Dr. Rhys' request to test SCP-103 was granted.
+
+
+
+[[div class="blockquote"]]
+
+= [[size larger]]**SCP-103 Test #1**[[/size]]
+
+
+
+**Problem:** Presently, any and all forms of energy or matter that enter SCP-103's stomach are entirely consumed. As there is no calculated change in entropy following consumption, questions surrounding where energy or matter consumed by SCP-103 goes have been raised.
+
+
+
+**Proposed Solution:** Adding multidimensional nano-trackers developed in the Department of Extradimensional Studies to SCP-103-1's liquid nutritional diet, we may be able to determine the location of materials consumed by SCP-103.
+
+
+
+**Outcome:** Failure; SCP-103 has spread to encompass the small intestines.
+
+[[/div]]
+
+
+
+[[div class="blockquote"]]
+
+= [[size larger]]**Test #1 - Video Log**[[/size]]
+
+
+
+**Personnel Present:** Dr. Ewan Mara, Head of Extradimensional Studies; Dr. Jacob Rhys, Interim Head of Extradimensional Studies; Junior Researcher ██████ ███████, Site-██ Medical Staff
+
+**Date:** November 28th, 2007
+
+-----
+
+
+
+= **<<Begin Log>>**
+
+
+
+//<A researcher sits on a stool in front of the camera. Behind him, a gowned figure holding a clipboard stands next to a metallic rolling table. A large syringe filled with a tan paste sitting atop it.>//
+
+
+
+//<He clears his throat.>//
+
+
+
+**Rhys:** Greetings. My name is Dr. Jacob Rhys and with me is Dr. Mara, the //current// Head of Extradimensional Studies. My... assistant here, is from the site's medical wing.
+
+
+
+//<He looks down at SCP-103-1, who is laying down on a hospital bed. Wires and tubes protrude from it, plugged into a collection of different machines that buzz and beep in the background.>//
+
+
+
+**Rhys:** How's he-- it doing?
+
+
+
+//<He chuckles before the recording goes silent for a moment.>//
+
+
+
+**Rhys:** Apologies. I'm still trying to get used to everything.
+
+
+
+**███████:** No worries, sir. We offer grief counseling if that's something you would find beneficial? From what I've heard the two of you were close, so I thought it might be worthwhile to bring up.
+
+
+
+**Rhys:** Your concern is noted, but I can assure you I'm fine. Once we learn more about Dr. Mara's condition, we can start to figure out how to fix it. Are you ready to proceed?
+
+
+
+//<//███████ //flips back to the first page of their clipboard and adjusts their glasses.>//
+
+
+
+**███████:** SCP-103-1 appears stable, and the anesthesiologist made sure everything was good to go about an hour ago.
+
+
+
+**Rhys:** Perfect, in that case we can begin.
+
+
+
+//<Rhys wheels over to the bedside, sliding the table over with him. He takes the syringe and places it into an IV port, pushing the plunger in and gently lays the empty tube on SCP-103-1's torso.// ███████ //stands beside him.>//
+
+
+
+**███████:** Do you think this will work?
+
+
+
+**Rhys:** We developed these trackers for extradimensional locating. If we're dealing with a rift, mapping it would be the first step to figuring out how we can stabilize it.
+
+
+
+//<He chuckles.>//
+
+
+
+**Rhys:** You know, before-- well everything, Dr. Mara and I were planning on using these to map pocket dimensions.
+
+
+
+**███████:** Is this safe?
+
+
+
+**Rhys:** Biocompatibility wasn't something we necessarily tested for, but it can't be worse for him than the chemo at this point. Also they're quite robust, so we shouldn't have to worry about the paste breaking them down.
+
+
+
+**███████:** I see.
+
+
+
+//<//███████ //pauses.>//
+
+
+
+**███████:** Did you want to, I don't know, talk about him?
+
+
+
+**Rhys:** Once he gets better, you can learn all about him yourself. For now, focus on the sensors. They should be coming online soon.
+
+
+
+**███████:** Denial is common in situations like this. You can tell me how you ma--
+
+
+
+//<Rhys clears his throat.// ███████ //goes silent.>//
+
+
+
+**Rhys:** Respectfully, his story is not mine to tell. Now, work.
+
+
+
+//<The room goes silent.>//
+
+
+
+//<Over the course of the next half hour, Rhys alternates between the desk and bedside, checking his computer every 2 minutes.// ███████ //stands in the corner of the room.>//
+
+
+
+**███████:** Have the sensors sent anything back?
+
+
+
+//<Rhys sighs.>//
+
+
+
+**Rhys:** They have not. Since these were prototypes, though, their mapping time may take longer. I'll check again tomorrow.
+
+
+
+**███████:** I can come back later to check? If you're okay--
+
+
+
+**Rhys:** I'd rather you not. Let's finish up here.
+
+
+
+//<//███████ //collects their items and stands by the door. Rhys refreshes the computer once more and frowns before shutting it off. He walks towards the camera and pauses, turning to look at SCP-103-1.>//
+
+
+
+**Rhys:** I'll see you tomorrow, Ewan. I promise I can still fix this.
+
+
+
+= **<<End Log>>**
+
+[[/div]]
+
+
+
+Following the conclusion of Test #1, an anonymous tip was raised to Site-██'s Ethics Committee Liaison, specifically citing a concern for Dr. Rhys' behavior and wellbeing. When asked, Dr. Rhys noted that his comments were specifically pertaining to "owing" Dr. Mara for their time together and "reflected no personal stake in the anomaly."
+
+
+
+[[div class="blockquote"]]
+
+= [[size larger]]**SCP-103 Test #2**[[/size]]
+
+
+
+**Problem:** SCP-103, should it spread past the confines of the subject's body, poses a threat to the remainder of the site and, by extension, the world. The mechanics of how and why SCP-103 grows are currently unknown.
+
+
+
+**Proposed Solution:** Thaumaturgically binding SCP-103 to SCP-103-1.
+
+
+
+**Outcome:** Success; SCP-103 has spread to encompass the large intestine and rectum.
+
+[[/div]]
+
+
+
+[[div class="blockquote"]]
+
+= [[size larger]]**Test #2 - Video Log**[[/size]]
+
+
+
+**Personnel Present:** Dr. Ewan Mara, Head of Extradimensional Studies; Dr. Jacob Rhys, Interim Head of Extradimensional Studies; Chief Thaumaturge ██████ ███████.
+
+**Date:** January 11th, 2008
+
+-----
+
+
+
+= **<<Begin Log>>**
+
+
+
+//<Two figures stand in front of the camera on opposite sides of SCP-103-1. One wears short sleeves, and is covered with tattoos. The other wears a half-tucked button down shirt and loosely knotted tie. His face is red with sweat.>//
+
+
+
+**Rhys:** With all due respect, //ma'am//, now that I have the camera on, can you please repeat what exactly you plan on doing to him?
+
+
+
+**███████:** Blood-based runes are some of the strongest tools a thaumaturge has when stabilizing humanoid anomalies.
+
+
+
+//<She crosses her arms.>//
+
+
+
+**███████:** That is, unless you'd prefer we cover his entire body with tattoos, but even then--
+
+
+
+**Rhys:** No such thing will be happening. We don't even know how this will affect the rest of his body. How do we know this won't kill him outright?
+
+
+
+**███████:** Runic-based medical treatments have been used longer than we've had written history. On top of that, //you// were the one who sought thaumaturgic treatment in the first place. This was cleared with medical, so let me do my job.
+
+
+
+//<Rhys pauses for a second. He grabs a towel from a nearby chair, wiping his face with it.>//
+
+
+
+**Rhys:** Right. //<He clears his throat.>// I did do that. Please, carry on.
+
+
+
+**███████:** Thanks.
+
+
+
+//<//███████ //steps towards SCP-103-1 and places her fingers on its neck. Dr. Rhys flinches.>//
+
+
+
+**Rhys:** Is that really necessary?
+
+
+
+**███████:** It is, doctor. I don't think //they// would be too pleased if they discovered you were messing around with a corpse this whole time.
+
+
+
+//<Dr. Rhys opens his mouth but says nothing.// ███████ //produces an ornate, silvery blade from a sheath.>//
+
+
+
+**███████:** If you're squeamish, I would recommend looking away.
+
+
+
+//<Dr. Rhys turns away, facing the camera. In the background// ███████ //removes SCP-103-1's pants and shirt and begins carving runic sequences into his skin.>//
+
+
+
+**Rhys:** I'm assuming you plan on cleaning up after yourself?
+
+
+
+**███████:**//(Sarcastically)// Of course. I'm a package deal.
+
+
+
+//<After two hours,// ███████ //finishes. She places her knife in a tray of disinfectant and walks over to the lab's sink. Rhys speedwalks over to SCP-103-1, inspecting it. He balls his fists.>//
+
+
+
+**Rhys:** Please tell me after all of this, he's going to improve.
+
+
+
+**███████:** I can't guarantee results, doctor. This is your experiment after all.
+
+
+
+**Rhys:** He-- It is still alive. My goal here is recovery, not experimentation. I just want to make sure this doesn't spread further than it already has.
+
+
+
+//<//███████ //walks back over to the tray and removes her knife, wiping the liquid off and returning it to its sheath.>//
+
+
+
+**███████:** That's... not what we agreed on. The rift is now bound to its body and will die when its does, but the rift //will// consume it eventually.
+
+
+
+//<She places a hand on Rhys' shoulder.>//
+
+
+
+**███████:** Personally, I would make that sooner rather than later. There's no point in continuing his suffering.
+
+
+
+//<Rhys forcefully removes her hand before straightening up his appearance.>//
+
+
+
+**Rhys:** Your input is noted, Chief Thaumaturge. We still have hope for his recovery, however, and Mara wouldn't have wanted me to give up so easily.
+
+
+
+**███████:** If you say so.
+
+
+
+//<//███████ //turns and leaves the frame. After the door closes, Dr. Rhys kicks a table, knocking its contents to the floor. He stands in frame, breathing heavily, before walking over to the camera.>//
+
+
+
+= **<<End Log>>**
+
+[[/div]]
+
+
+
+Chief Thaumaturge Iakovos and Dr. Rhys both submitted reports to Site-██'s HR department following their interaction, citing "she was entirely out of line given the circumstances of the situation" and "he really needs to be checked out." Dr. Rhys was put on final notice, with removal as the Head of the SCP-103 project following his next infraction.
+
+
+
+To confirm thaumaturgic binding of the anomaly, an exploratory laparotomy[[footnote]]A large incision to gain access to the abdominal cavity.[[/footnote]] was conducted, and SCP-103's containment chamber was converted into a clean room. Following SCP-103's spread to the large intestine, and unknown artifacting from traditional biological imaging, a more direct means of observation was needed. Examinations confirmed that although SCP-103 is visible through bed sores on the subject's back, materials outside of its body are unaffected.
+
+
+
+[[div class="blockquote"]]
+
+= [[size larger]]**SCP-103 Test #3**[[/size]]
+
+
+
+**Problem:** Spent fuel from the site's nuclear reactor presents an issue of storage and disposal. Current disposal methods are carried out under treaties with the United States government, but occur infrequently, leading to sections of the site needing to be relegated to store hazardous materials. Additionally, a large portion of site funding is focused on spent nuclear fuels, leading to lack in funding for research projects and other essential services.
+
+
+
+**Proposed Solution:** Direct disposal of spent nuclear waste into SCP-103-1.
+
+
+
+**Outcome:** Success; SCP-103 has grown to encompass 65% of the abdominal cavity.  
+
+[[/div]]
+
+
+
+[[div class="blockquote"]]
+
+= [[size larger]]**Test #3 - Video Log**[[/size]]
+
+
+
+**Personnel Present:** Dr. Ewan Mara, Head of Extradimensional Studies; Dr. Jacob Rhys, Interim Head of Extradimensional Studies.
+
+**Date:** January 19th, 2008
+
+-----
+
+
+
+= **<<Begin Log>>**
+
+
+
+//<A figure slouches in front of the camera. He is slightly disheveled; his shirt is untucked and his lab coat unbuttoned, and he wears a heavy lead vest. The footage from the camera is grainy. A geiger counter steadily ticks in the background.>//
+
+
+
+**Rhys:** Greetings. My name is Dr.--
+
+
+
+//<He sighs.>//
+
+
+
+**Rhys:** If you're watching this, I'm sure you know who I am by now. I'd rather skip the formalities so I can return to our conversation.
+
+
+
+//<He motions at SCP-103-1 and a collection of metallic cylinders sitting next to it. Rhys laughs.>//
+
+
+
+**Rhys:** You don't know //half// of the trouble it took me to convince the Ethics Committee to let me run more tests. I'm surprised they approved this one, but at this point, I'd take anything.
+
+
+
+**Rhys:** In these cylinders are depleted fuel from the site's reactor that have accumulated over the past 20 years or so. Before he died, one of Ewan's side projects was to figure out what exactly to do with them. He hoped one day it would all just... disappear so he wouldn't have to worry about it.
+
+
+
+//<Rhys chuckles and wheels over to the bed, grabbing a cylinder.>//
+
+
+
+**Rhys:** Do you find this as funny as I do, Ewan? The universe is cruel in that way--
+
+
+
+//<He removes the surgical sheet covering SCP-103-1's abdomen, pausing for a moment.>//
+
+
+
+**Rhys:** Maybe with enough of these cylinders, the density will seal the anomaly. Your health //has// been improving markedly. Hell, you look pinker than a new born baby.
+
+
+
+//<Dr. Rhys slides the cylinder in SCP-103-1. A squelching noise can be heard before it disappears entirely. He rolls his chair over to the head of the bed.>//
+
+
+
+**Rhys:** Your wife still writes to you, by the way. She was... distraught at first, but I've been updating her about your condition in our correspondence. Your son has been enjoying first grade as well, big fantasy fan.
+
+
+
+//<He grabs another cylinder and repeats the process.>//
+
+
+
+**Rhys:** He says he's going to go on a quest to find you a potion that'll wake you up.
+
+
+
+//<Dr. Rhys grabs another cylinder but pauses before lifting it.>//
+
+
+
+**Rhys:** I think I would trade anything for some 'potion'. A panacea even. Maybe the next test will be transferring SCP-103 into my body. //<He pauses.>// No, you wouldn't want that. Stubborn, as always.
+
+
+
+//<He places the cylinder into SCP-103-1's abdomen. The recording is silent for the remainder of the cylinders, besides the fading clicking of the geiger counter.>//
+
+
+
+**Rhys:** But this is the best I can do, for now. I'm running out of cards to play. There must be something, //anything// I can use to get you back. A faustian bargain doesn't seem too bad given the circumstances.  
+
+
+
+//<Dr. Rhys walks over to the camera.>//
+
+
+
+**Rhys:** I doubt I'm worth much to anyone at this point.
+
+
+
+= **<<End Log>>**  
+
+[[/div]]
+
+
+
+Two months following Test 4, Site-██'s nuclear waste storage was noted to have been emptied by 75% following the protocol laid out by Dr. Rhys. During this time, researchers conducting the protocol observed a noted "decline" in Dr. Rhys' physical state and mental well-being. When asked to speak with on-site psychologists, Rhys declined, replying that he "just needed more time" and "it was almost perfect." When asked to elaborate, Rhys refused to comment.
+
+
+
+[[div class="blockquote"]]
+
+= [[size larger]]**SCP-103 Test #4**[[/size]]
+
+
+
+**Problem:** Before his diagnosis, Ewan was experimenting with a way to contain and neutralize localized extradimensional rifts. I've been looking over his notes for the past month and I think he was on the cusp of something. The math works, I just need to make it a reality. This could be my final chance to save him, and I intend to do so.
+
+
+
+**Proposed Solution:** Make this right.
+
+
+
+**Outcome:** Failure; SCP-103 has grown to encompass 98% of the abdominal cavity.
+
+[[/div]]
+
+
+
+[[div class="blockquote"]]
+
+= [[size larger]]**Test #4 - Video Log**[[/size]]
+
+
+
+**Personnel Present:** Dr. Ewan Mara, Head of Extradimensional Studies; Dr. Jacob Rhys, Interim Head of Extradimensional Studies.
+
+**Date:** March 23rd, 2008
+
+-----
+
+
+
+= **<<Begin Log>>**
+
+
+
+//<The frame is half-covered with a sticky note. Mumbling and shuffling can be heard from the other side, as can the scraping of metal. Something heavy falls, knocking into a metallic object. The word "fuck" is heard before the sound of scraping continues.>//
+
+
+
+//<After 30 minutes, the shuffling ceases and is replaced with panting. The note is removed from the camera, with Dr. Rhys taking up much of the frame. His shirt is unbuttoned and untucked and stained with a mix of sweat and oil. He steps back from the camera and rubs his hands together.>//
+
+
+
+**Rhys:** Greetings. What you see before you now is nothing more than a testament to Ewan's genius.
+
+
+
+//<Dr. Rhys tilts the camera, pointing it directly at SCP-103-1. A metallic tesseract rests atop its chest, with thick cords interfacing with the object's sides. The device emits a soft white glow.>//
+
+
+
+**Rhys:** I'm going to spare you the notes and the math and the amount of funding required to build this; Ewan has been gone too long, and every second that passes by continues to be a disservice to him.
+
+
+
+//<Rhys sits on a stool and slides next to the device.>//
+
+
+
+**Rhys:** I was never religious, but Ewan was. He invited me over for Sunday dinner and his son told me all about the story of Lazarus. Now Lazarus was ill, and his sisters had sent for Jesus to perform a miracle to save his life. Jesus had to walk two days to get back to Lazarus.
+
+
+
+//<Rhys taps a sequence of keys on a keyboard and the object begins to hum.>//
+
+
+
+**Rhys:** 'If a man walk in the day, he stumbleth not, because he seeth the light of this world. But if a man walk in the night, he stumbleth, because the light is not in him.' //<Rhys laughs.>// I'm going to return the light to you, Ewan. I'm going to make you whole again.
+
+
+
+//<Rhys stands, twisting a handle at the top of the box, opening it. The frame goes white.>//
+
+
+
+**Rhys:** 'Jesus saith unto her, Thy brother shall rise again. I am the resurrection, and the life: he that believeth on me, though he die, yet shall he **live**!'
+
+
+
+//<The frame goes dark before the brightness auto-adjusts. Rhys stands next to SCP-103-1, gripping the rails of its bed. A mass of cords feed into SCP-103, partially consumed where they meet the edge of the anomaly.>//
+
+
+
+//<30 minutes pass. Rhys stands next to the bed, swaying.>//
+
+
+
+//<2 hours pass.>//
+
+
+
+//<4 hours pass.>//
+
+
+
+//<Dr. Rhys slumps over in the stool next to the bed and places his head in his hands.>//
+
+
+
+**Rhys:** 'Then Jesus therefore said unto them plainly...' Lazarus is dead.
+
+
+
+//<Rhys wheels over to the camera, looking down. His face is red. A single tear runs down his cheek.>//
+
+
+
+//<He reaches out of frame, but pauses. His hand returns and he folds them in front of him on the desk. He sighs.>//
+
+
+
+**Rhys:** When I was younger, my mother and sister were both diagnosed with cancer less than one year apart from each other. Breast cancer and leukemia. I was a child then, and there was nothing I could do to help either of them-- I could hardly handle being in the same room with them during treatment.
+
+
+
+**Rhys:** They both got better, thankfully, but that changes something in your mind: you don't want to be powerless, anymore. If you have the ability to do something, to help someone, you do it as quickly as you possibly can.
+
+
+
+//<Dr. Rhys turns to look at SCP-103-1.>//
+
+
+
+**Rhys:** Ewan had everything going for him: a fantastic wife, an energetic boy; he was living the dream of more than half of the researchers in this site. He was a good man too, almost like the brother I never had. He saw that drive in me that nobody else did. So when he got sick--
+
+
+
+**Rhys:** I made a decision, a //really// poor decision, but still the best decision I could have. He didn't deserve to suffer, not like that... not like this. I guess I wasn't ready to say goodbye yet. I thought, maybe if I can just keep giving him chances, he'll get through this.
+
+
+
+//<Rhys looks away from the camera and wipes his eyes with one of his hands.>//
+
+
+
+**Rhys:** I'm sorry, Ewan. I've failed you.
+
+
+
+//<He reaches behind the camera and the frame goes black.>//
+
+
+
+= **End Log**
+
+
+
+[[/div]]
+
+
+
+Three hours following Test #4, site security was dispatched to SCP-103's containment chamber to confirm the status of the anomaly, and to detain Dr. Rhys. Upon entering the room, security found Dr. Rhys’ personal effects and research notes on the desk next to the camera, with his shoes next to SCP-103-1's bed. An unsubmitted test was found on the room's computer.
+
+
+
+[[div class="blockquote"]]
+
+= [[size larger]]**SCP-103 Test #5**[[/size]]
+
+
+
+**Problem:** Regret and guilt are emotions related to failing the morality of the individual. They occur when one is disappointed and responsible for the decisions they have made, regardless of whether the outcome was expected or not.
+
+
+
+**Proposed Solution:** Acceptance is the final stage of grief according to the Kübler-Ross model. Acceptance is when an individual finally recognizes their circumstances and, with clarity lacking in the rest of the stages of grief, embraces their future.
+
+
+
+**Outcome:**  
+
+[[/div]]
+
+
+
+Upon observing SCP-103-1, a syringe containing trace amounts of pancuronium bromide[[footnote]]A drug used to induce muscle paralysis and respiratory arrest.[[/footnote]] was found still connected to its IV port. SCP-103-1 was announced dead shortly after and, with the phenomenon neutralized, was buried following standard Foundation protocol.
+
+
+
+Dr. Rhys' location is currently unknown.
+
+
+
+[[=]]
+
+[[module rate]]
+
+[[/=]]
+
+
+
+[[footnoteblock]]
+
+
+
+[[div class="footer-wikiwalk-nav"]]
+
+[[=]]
+
+<< [[[SCP-102]]] | SCP-103 | [[[SCP-104]]] >>
+
+[[/=]]
+
+[[/div]]
+
+
+
+[[include <a href="http://scp-wiki.wikidot.com/component:license-box">:scp-wiki:component:license-box</a>
+
+|author=Spade103, rewritten by tunedtoadeadchannel, fairydoctor, BitOddInnit, and AstersQuill]]
+
+[[div class="blockquote"]]
+
+**Quote(s):** "If a man walk in the day, he stumbleth not, because he seeth the light of this world.  But if a man walk in the night, he stumbleth, because the light is not in him." "Jesus saith unto her, Thy brother shall rise again." "I am the resurrection, and the life: he that believeth on me, though he die, yet shall he live" "Then Jesus therefore said unto them plainly, Lazarus is dead." 
+
+**Name Source:** The Bible, ASV Translation
+
+**License:** [https://support.biblegateway.com/hc/en-us/articles/360001403507-What-Bibles-on-Bible-Gateway-are-in-the-public-domain Public Domain] 
+
+**Source Link:** [https://www.biblegateway.com/passage/?search=John%2011%3A1-44&version=ASV LINK]
+
+[[/div]]
+
+[[include <a href="http://scp-wiki.wikidot.com/component:license-box-end">:scp-wiki:component:license-box-end</a>]]

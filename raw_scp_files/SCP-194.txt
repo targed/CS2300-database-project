@@ -1,0 +1,88 @@
+<h1>Page source</h1>
+
+<div class="page-source">
+	[[div style="display:none;"]]
+
+
+
+Thank You For Your Cooperation
+
+
+
+[[/div]]
+
+
+
+[[>]]
+
+[[module Rate]]
+
+[[/>]]
+
+
+
+[[include <a href="http://scp-wiki.wikidot.com/component:author-label-source">:scp-wiki:component:author-label-source</a> start=--
+
+|name=CityToast and Calibold]]
+
+[[=]]
+
+[[module ListPages range="."]]
+
+**%%title%% -- %%first_paragraph%%**
+
+[[/module]]
+
+
+
+**[[[Reixis Personnel File|Dr. Buchanan, Personnel File (CityToast's Author Page)]]]**
+
+**[[[Calibri Bold's Mega Cool Author Page|Calibold's Mega Cool Author Page]]]**
+
+[[/=]]
+
+[[include <a href="http://scp-wiki.wikidot.com/component:author-label-source">:scp-wiki:component:author-label-source</a> end=--]]
+
+
+
+[!--
+
+Fragment list:
+
+http://scp-wiki.wikidot.com/fragment:scp-194-0
+
+http://scp-wiki.wikidot.com/fragment:scp-194-1
+
+http://scp-wiki.wikidot.com/fragment:scp-194-2
+
+http://scp-wiki.wikidot.com/fragment:scp-194-3
+
+--]
+
+
+
+[[module ListPages category="fragment" parent="." limit="1" order="created_at" offset="@URL|0"]]
+
+%%content%%
+
+[[/module]]
+
+
+
+[[div class="footer-wikiwalk-nav"]]
+
+[[=]]
+
+<< [[[SCP-193]]] | SCP-194 | [[[SCP-195]]] >>
+
+[[/=]]
+
+[[/div]]
+
+
+
+[[include <a href="http://scp-wiki.wikidot.com/component:license-box">:scp-wiki:component:license-box</a>
+
+|author=Calibold and CityToast]]
+
+[[include <a href="http://scp-wiki.wikidot.com/component:license-box-end">:scp-wiki:component:license-box-end</a>]]

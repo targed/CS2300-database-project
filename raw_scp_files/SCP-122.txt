@@ -1,0 +1,614 @@
+<h1>Page source</h1>
+
+<div class="page-source">
+	[[include <a href="http://scp-wiki.wikidot.com/info:start">:scp-wiki:info:start</a>]]
+
+⚠️ **Content warning:** This article contains mentions of suicide. Reader discretion is advised.
+
+[[include <a href="http://scp-wiki.wikidot.com/info:end">:scp-wiki:info:end</a>]]
+
+[[include <a href="http://scp-wiki.wikidot.com/component:info-cw">:scp-wiki:component:info-cw</a>]]
+
+
+
+[[table style="border:none; width:100%;"]][[row]][[cell]]
+
+[[size 125%]]**Item #:** SCP-122[[/size]]
+
+[[/cell]]
+
+[[cell style="text-align:right;"]]
+
+[[size 125%]]##900|**Level 1/122**##[[/size]]
+
+[[/cell]][[/row]]
+
+[[row]][[cell]]
+
+[[size 125%]]**Object Class:** Thaumiel[[/size]]
+
+[[/cell]]
+
+[[cell style="text-align:right;"]]
+
+[[size 125%]]##900|**Classified**##[[/size]]
+
+[[/cell]][[/row]][[/table]]
+
+----
+
+
+
+[[div class="scp-image-block block-center" style="width:100%;"]]
+
+[[image Night_light.jpg style="width:100%; filter:contrast(130%);" link=#]]
+
+[[div class="scp-image-caption" style="width:100%;"]]
+
+SCP-122.
+
+[[/div]][[/div]]
+
+----
+
+
+
+[[include <a href="http://scp-wiki.wikidot.com/theme:night-rush-theme">:scp-wiki:theme:night-rush-theme</a>]]
+
+
+
+**Special Containment Procedures:** Under no circumstances is SCP-122 to enter an unpowered state. At least one redundant failsafe power system is to be installed in order to maintain power to the object in the event of power outages. Regular maintenance is also to be conducted on SCP-122 at the discretion of the head researcher in order to reduce flickering. A security camera is to be installed within the room that the anomaly is placed so as to regularly monitor the occurrence of flickering within the subject.
+
+
+
+Due to its utility and importance in assisting the psychological assistance efforts of Site-135, SCP-122 is to be used on a daily basis, with SCP-122-1 (currently Anna Talinn) being given normal humanoid accommodations within the SCP-122 containment cell at the discretion of the incumbent head researcher. Should the current SCP-122-1 subject become unfit for use with the object, a new SCP-122-1 subject must be procured as soon as is feasible.
+
+
+
+**Description:** SCP-122 is a plastic night light in the shape of a star, thought to have been manufactured between 1960 and 1980.
+
+
+
+When in a powered state, SCP-122 has been reported to be able to exude a sense of calmness, comfort, and safety to those within a roughly 20-kilometer radius. As such, it has been known to alleviate symptoms of currently prevailing psychological conditions in subjects.
+
+
+
+Examples of these psychological conditions include:
+
+* Psychological Stress
+
+* Paranoia
+
+* Phobias
+
+* Anxiety
+
+* Post-Traumatic Stress Disorder
+
+
+
+[[include <a href="/component:image-block">component:image-block</a>
+
+| name=the_girl_who_wanted_me_to_take_her_picture_and_put_it_on_the_Internetbw.jpg
+
+| caption=SCP-122-1, Anna Talinn
+
+]]
+
+
+
+However, these alleviating effects are only present when SCP-122 is within the same room as a child under the age of 14 who subscribes to the beliefs [[footnote]] Children who have shown to score at least an 8/10 on the Aglio-Pontiff Religious Belief Scale have been shown to display the best results as SCP-122-1 subjects. [[/footnote]] of traditional Abrahamic religions [[footnote]] The reasons for this specification are currently unknown, though a link may be established between this fact and previous descriptions of SCP-122-2 as an "angel" (see SCP-122 use records) [[/footnote]]. This aforementioned child subject, referred to henceforth as SCP-122-1, is currently seven year old Anna Talinn, who was procured into Foundation custody in 2017. When in SCP-122’s containment cell, SCP-122-1 has reported sightings of an “angel” in her dreams, henceforth referred to as SCP-122-2 (Refer to SCP-122 use records for further information regarding SCP-122-2).
+
+
+
+SCP 122-2 has also been reported as sometimes appearing within the dreams of personnel affected by SCP-122 [[footnote]] As of now, only younger personnel aged 20-25 have reported having sightings of SCP-122-2 [[/footnote]]. Based on reports, it has been associated with positive feelings such as that of security and relief [[footnote]] However, sightings of SCP-122-2 within the dreams of personnel do not show the "progression" of distance and positive feelings reported by SCP-122-1. The reason for this is unknown [[/footnote]]. From this, it can be inferred that SCP-122-2 is related in some part to the aforementioned positive effects.
+
+
+
+Since the beginning of SCP-122’s use in supplementing psychological assistance efforts in Site-135, annual personnel turnover rates have been reduced by 90 percent, with annual personnel suicide rates being reduced by 85 percent. With Site-135 having recorded the highest instances of either statistic of all sites prior to the use of SCP-122, the subject has been integral to the continued operation of the site.
+
+
+
+[[collapsible show="+ Excerpts of SCP-122 use records" hide="- Hide"]]
+
+[[div class="blockquote"]]
+
+**SCP-122-1 Name:** [DATA EXPUNGED]
+
+**Age:** [DATA EXPUNGED]
+
+**Date of Use:** 2/12/2017
+
+**SCP-122-2 Activity:** [DATA EXPUNGED]
+
+**Incident Notes:** [DATA EXPUNGED]. Positive effects of SCP-122 noted. Electronic failsafe systems implemented soon after.
+
+[[/div]]
+
+
+
+[[div class="blockquote"]]
+
+**SCP-122-1 Name:** Anna Talinn
+
+**Age:** 2 years old
+
+**Date of Use:** 3/01/2017
+
+**SCP-122-2 Activity:** None.
+
+**Incident Notes:** No instances of flickering or dimming. SCP-122-1 was noted to be sleeping without incident.
+
+[[/div]]
+
+
+
+[[div class="blockquote"]]
+
+**SCP-122-1 Name:** Anna Talinn
+
+**Age:** 3 years old
+
+**Date of Use:** 4/28/2018
+
+**SCP-122-2 Activity Description:** “God said he'd give me a guardian angel. And he did! Last night, there was a beautiful angel with wings and he was just standing there, and he was looking at me... beside the door! He did that alllll night!”
+
+**Incident Notes:** One instance of dimming.
+
+[[/div]]
+
+
+
+[[div class="blockquote"]]
+
+**SCP-122-1 Name:** Anna Talinn
+
+**Age:** 5 years old
+
+**Date of Use:** 6/26/2020
+
+**SCP-122-2 Activity Description:** “I saw the angel again today! He was at the edge of my bed, and he was looking at me with the widest smile on his face. His wings were… (stretches arms out) this big! I never realized they were that big before!”
+
+**Incident Notes:** Two instances of dimming, one instance of flickering.
+
+[[/div]]
+
+
+
+[[div class="blockquote"]]
+
+**SCP-122-1 Name:** Anna Talinn
+
+**Age:** 7 years old
+
+**Date of Use:** 9/15/2022
+
+**SCP-122-2 Activity Description:** “He sat in front of me, just looking at me and watching me sleep. He looked like he wanted to hug me, and I wanted to hug him too!”
+
+**Incident Notes:** Four instances of flickering.
+
+[[/div]]
+
+[[/collapsible]]
+
+
+
+However, SCP-122’s components have degraded in the time since its creation, with materials that could be used to replace them no longer being manufactured in the present. This degradation renders SCP-122 vulnerable to fluctuations in its brightness, with flickering and dimming being reported to be the most frequent fluctuations. This causes SCP-122 to assume an unpowered state.
+
+
+
+When in an unpowered state, SCP-122 [REDACTED].
+
+----
+
+
+
+[[div style="background:url(https://scp-wiki.wdfiles.com/local--files/the-great-hippo/scp_trans.png) center no-repeat; border:solid 2px #000; padding:1px 15px; box-shadow:0 1px 3px rgba(0,0,0,.2); text-align:center;"]]
+
++ WARNING: THE FOLLOWING FILE IS LEVEL 4/122 CLASSIFIED
+
+----
+
++++ ANY ATTEMPT TO ACCESS THIS FILE WITHOUT LEVEL 4/122 AUTHORIZATION WILL BE LOGGED AND WILL LEAD TO IMMEDIATE DISCIPLINARY ACTION.
+
+[[/div]]
+
+
+
++ @@ @@
+
++ @@ @@
+
++ @@ @@
+
++ @@ @@
+
++ @@ @@
+
++ @@ @@
+
++ @@ @@
+
++ @@ @@
+
++ @@ @@
+
++ @@ @@
+
++ @@ @@
+
++ @@ @@
+
+
+
+[[=]]
+
++++ Declassified SCP-122 Use Records (Updated)
+
+[[/=]]
+
+
+
+[[div class="blockquote"]]
+
+**SCP-122-1 Name:** ##red|Janna Marston##
+
+**Age:** ##red|6 years old.##
+
+**Date of Use:** 2/12/2017
+
+**SCP-122-2 Activity Description:** ##red|”Had a blackout. He got her on the first night.”##
+
+**Incident Notes:** ##red|Janna Marston lost. Proposal for new SCP-122-1 subject made.## Positive effects of SCP-122 noted. Electronic failsafe systems implemented soon after.
+
+[[/div]]
+
+
+
+[[div class="blockquote"]]
+
+**SCP-122-1 Name:** Anna Talinn
+
+**Age:** 2 years old
+
+**Date of Use:** 3/01/2017
+
+**SCP-122-2 Activity:** None.
+
+**Incident Notes:** No instances of flickering or dimming. SCP-122-1 was noted to be sleeping without incident.
+
+##red|**SCP-122-2 Distance:** Undetected.##
+
+##red|**Image of Greatest Activity:**##
+
+[[collapsible show="+ OPEN ATTACHMENT?" hide="- Hide"]]
+
+[[div class="scp-image-block block-center" style="width:100%;"]]
+
+[[image blank.jpg style="width:100%; filter:contrast(100%);" link=#]]
+
+[[div class="scp-image-caption" style="width:100%;"]]
+
+3/01/2017
+
+[[/div]][[/div]]
+
+[[/collapsible]]
+
+----
+
+[[/div]]
+
+
+
+[[div class="blockquote"]]
+
+**SCP-122-1 Name:** Anna Talinn
+
+**Age:** 3 years old
+
+**Date of Use:** 4/28/2018
+
+**SCP-122-2 Activity Description:** “God said he'd give me a guardian angel. And he did! Last night, there was a beautiful angel with wings and he was just standing there, and he was looking at me... beside the door! He did that alllll night!”
+
+**Incident Notes:** One instance of dimming.
+
+##red|**SCP-122-2 Distance:** 6 meters##
+
+##red|**Image of Greatest Activity:**##
+
+[[collapsible show="+ OPEN ATTACHMENT?" hide="- Hide"]]
+
+[[div class="scp-image-block block-center" style="width:100%;"]]
+
+[[image Ecronak122pics1v3.jpg style="width:100%; filter:contrast(100%);" link=#]]
+
+[[div class="scp-image-caption" style="width:100%;"]]
+
+4/28/2018
+
+[[/div]][[/div]]
+
+[[/collapsible]]
+
+----
+
+[[/div]]
+
+
+
+[[div class="blockquote"]]
+
+**SCP-122-1 Name:** Anna Talinn
+
+**Age:** 5 years old
+
+**Date of Use:** 6/26/2020
+
+**SCP-122-2 Activity Description:** “I saw the angel again today! He was at the edge of my bed, and he was looking at me with the widest smile on his face. His wings were… (stretches arms out) this big! I never realized they were that big before!”
+
+**Incident Notes:** Two instances of dimming, one instance of flickering.
+
+##red|**SCP-122-2 Distance:** 2 meters##
+
+##red|**Image of Greatest Activity:**##
+
+[[collapsible show="+ OPEN ATTACHMENT?" hide="- Hide"]]
+
+[[div class="scp-image-block block-center" style="width:100%;"]]
+
+[[image Ecronak122pics2v3.jpg style="width:100%; filter:contrast(100%);" link=#]]
+
+[[div class="scp-image-caption" style="width:100%;"]]
+
+6/26/2020
+
+[[/div]][[/div]]
+
+[[/collapsible]]
+
+----
+
+[[/div]]
+
+
+
+[[div class="blockquote"]]
+
+**SCP-122-1 Name:** Anna Talinn
+
+**Age:** 7 years old
+
+**Date of Use:** 9/15/2022
+
+**SCP-122-2 Activity Description:** “He sat in front of me, just looking at me and watching me sleep. He looked like he wanted to hug me, and I wanted to hug him too!"
+
+**Incident Notes:** Four instances of flickering.
+
+##red|**SCP-122-2 Distance:** 6 centimeters##
+
+##red|**Image of Greatest Activity:**##
+
+[[collapsible show="+ OPEN ATTACHMENT?" hide="- Hide"]]
+
+[[div class="scp-image-block block-center" style="width:100%;"]]
+
+[[image Ecronak122pics3v3.jpg style="width:100%; filter:contrast(100%);" link=#]]
+
+[[div class="scp-image-caption" style="width:100%;"]]
+
+9/15/2022
+
+[[/div]][[/div]]
+
+[[/collapsible]]
+
+----
+
+[[/div]]
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+
+
+>  ##red|EMERGENCY ALERT:## Site-wide blackout detected. CHECK SCP-122 STATUS ASAP.
+
+
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+@@@@
+
+
+
+[[div class="blockquote"]]
+
+
+
+[[=]]
+
+##red|**LAST IMAGE RECOVERED FROM SCP-122 CONTAINMENT CHAMBER**##
+
+[[/=]]
+
+
+
+[[collapsible show="+ OPEN ATTACHMENT?" hide="- Hide"]]
+
+[[div class="scp-image-block block-center" style="width:100%;"]]
+
+[[image 122writtentext.jpg style="width:100%; filter:contrast(100%);" link=#]]
+
+[[div class="scp-image-caption" style="width:100%;"]]
+
+"HE TELLS ME TO PRAY."
+
+[[/div]][[/div]]
+
+[[/collapsible]]
+
+----
+
+[[/div]]
+
+
+
+[[footnoteblock]]
+
+
+
+[[div class="footer-wikiwalk-nav"]]
+
+[[=]]
+
+------------
+
+
+
+[http://scp-wiki.wikidot.com/ekronak-s-archive-with-commentary More from this author]
+
+
+
+Images created by AnAnomalousWriter and Luxaiko
+
+
+
+<< [[[SCP-121]]] | SCP-122 | [[[SCP-123]]] >>
+
+[[/=]]
+
+[[/div]]
+
+
+
+[[include <a href="http://scp-wiki.wikidot.com/component:license-box">:scp-wiki:component:license-box</a>]]
+
+=====
+
+> **Name:** Nothing better at the end of a working day than to dive into the Atlantic Ocean
+
+> **Author:** Pedro Ribeiro Simões
+
+> **License:** CC BY 2.0
+
+> **Source Link:** https://www.flickr.com/photos/pedrosimoes7/50327336561/
+
+
+
+> **Name:** Eye wide open on me
+
+> **Author:** wladston
+
+> **License:** CC BY 2.0
+
+> **Source Link:** https://www.flickr.com/photos/70973156@N00/283455759/
+
+
+
+> **Filename:** the_girl_who_wanted_me_to_take_her_picture_and_put_it_on_the_Internet
+
+> **Author:** jesse.millan
+
+> **License:** CC BY 2.0
+
+> **Source Link:** https://wordpress.org/openverse/image/0c18f842-2bb1-4266-a63b-f678048d7aa3
+
+
+
+> **Name:** Wing
+
+> **Author:** Chris Cook
+
+> **License:** CC BY-SA 2.0
+
+> **Source Link:** https://flickr.com/photos/chriscook4472/5514713814
+
+=====
+
+[[include <a href="http://scp-wiki.wikidot.com/component:license-box-end">:scp-wiki:component:license-box-end</a>]]

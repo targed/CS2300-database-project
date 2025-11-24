@@ -1,0 +1,574 @@
+<h1>Page source</h1>
+
+<div class="page-source">
+	[[include <a href="/theme:night-rush-theme">theme:night-rush-theme</a>]]
+
+[[include <a href="/theme:scp-trans-pride">theme:scp-trans-pride</a> |trans-pride-logo= --]]]
+
+
+
+[[module CSS]]
+
+.collapsible-block-content {
+
+  margin-top: 1em;
+
+}
+
+[[/module]]
+
+
+
+[[>]]
+
+[[module Rate]]
+
+[[/>]]
+
+
+
+[[div class="blockquote" style="margin-top: 4em; margin-bottom: 2em;"]]
+
+**|@@   @@Credentials {{[ LSAXE ]}} accepted. Time since last login: 5540 days.**
+
+[[/div]]
+
+
+
+[[div class="blockquote" style="margin-bottom: 2em;"]]
+
+**|@@   @@Finding SCiPNET results for "//lucian-saxe//"...**
+
+
+
+**|**@@   @@$
+
+
+
+**|**@@   @@//0 results.//
+
+[[/div]]
+
+
+
+[[div class="blockquote" style="margin-bottom: 2em;"]]
+
+**|@@   @@Finding SCiPNET results for "//site-97//"...**
+
+
+
+**|**@@   @@$
+
+
+
+**|**@@   @@//0 results.//
+
+[[/div]]
+
+
+
+[[div class="blockquote" style="margin-bottom: 4em"]]
+
+**|@@   @@Finding SCiPNET results for "//scp-139//"...**
+
+
+
+**|**@@   @@$
+
+
+
+**|**@@   @@//3 results.//
+
+[[/div]]
+
+
+
+@@ @@
+
+
+
+[[collapsible show="scp-139.pdf" hide="scp-139.pdf"]]
+
+
+
+[[include <a href="http://scp-wiki.wikidot.com/component:flops-header">:scp-wiki:component:flops-header</a>
+
+|item=139
+
+|containment=eparch
+
+|level=4
+
+|security=secret
+
+|disruption=dark
+
+|disruption-bg-color=hsl(193, 100%, 27%)
+
+]]
+
+----
+
+
+
+[[include <a href="http://scp-wiki.wikidot.com/component:image-features-source">:scp-wiki:component:image-features-source</a> |hover-enlarge=--]
+
+|enlarge-amount=6
+
+|speed=250
+
+|float=true
+
+|align=right
+
+|width=300px
+
+|url=last-encounter.png
+
+|add-caption=true
+
+|caption={{fig 1.1.}} Saxe in Topeka Station; Platform 9, Monitor 3, View 1 at 15:04:58. (Hover to enlarge.)
+
+]]
+
+
+
+**SPECIAL CONTAINMENT PROCEDURES:** {{[Containment suspended.]}}
+
+
+
+**DESCRIPTION:** SCP-139 designates the disappearance of Lucian Saxe, formerly a Foundation-employed security specialist. Saxe had, until SCP-139's occurrence, acted as a consultant for Site-97 on the matter of esoteric reanimation methodology.
+
+
+
+SCP-139 is considered anomalous both due to a persistent infohazard encountered following its occurrence [((bibcite infohazard))] and due to the cut-off of information pertaining to SCP-139 after April 4, 1978. Despite Site-97's best efforts, neither Saxe's past-or-present whereabouts nor the location of a cadaver have been uncovered. Extradimensional travel is suspected but not confirmed.
+
+
+
+No primary suspects which could be responsible for SCP-139 have been identified, owing to the largely inconclusive results of investigative efforts. As such, SCP-139 is currently considered a cold case [((bibcite forensics))] and is expected to continue indefinitely.
+
+
+
+@@ @@
+
+
+
+------
+
+
+
+= **TIMELINE OF EVENTS:**
+
+
+
+------
+
+
+
+__March 5, 1978__
+
+
+
+Saxe clocks in at Site-97 and declines usual chatter with personnel at the front entrance. Ze enters hir office and does not exit for the remainder of the workday.
+
+
+
+For a period of twelve hours, Saxe queries forty-two SCiPNET entries pertaining to thaumaturgic workings, global ley-line activity, and available research into Way and Knock techniques. This idle activity contradicts hir otherwise exemplary productivity record and raises concern among Site-97 staff; sensor agents are dispatched appropriately.
+
+
+
+No further abnormalities occur until Saxe has punched out and arrived at hir residence in suburban Albany. By 10:45 PM, ze vacates hir residence, presumably on foot to avoid detection, and exits the city limits.
+
+
+
+__March 6__
+
+
+
+A paper trail of bus and train tickets suggests Saxe traveled approximately two-thousand kilometers to Topeka, Kansas, arriving at 12:15 PM. Of note, interviewed civilians occasionally describe hir as "that traitor" when recounting this eighteen-hour period. [((bibcite traitor))]
+
+
+
+__March 7 – April 4__
+
+
+
+After Topeka, the paper trail terminates, and reports of Saxe's location during the following month become increasingly irregular. A car ze is believed to have rented is sighted in Salt Lake City, Utah and Lubbock, Texas on March 10 and March 15 respectively — although the windshield and rightmost tail-light shattered between the two cities. Ze is last documented in Tucson, Arizona after residential police implicate hir in a resist-and-flee incident on suspicions of vagrancy. [((bibcite police))]
+
+
+
+On April 4, sensor agents embedded within the Tucson USPS remove the following letter from the mail pool.
+
+
+
+[[div class="blockquote" style="margin-top: 2em; margin-bottom: 2em;"]]
+
+To the ones I'm running from,
+
+
+
+I hate you.
+
+
+
+I hate what you've done, and what you're doing to me, and what I think you did to the others who ran. I hate how I'd find lenses in the eyes of paintings and strange fingerprints on my belongings. I'm curious by trade, but you've really got me beat.
+
+
+
+I'm not the first to run. But I might be the first to break free.
+
+
+
+I'm going someplace without cameras or fingerprints, someplace you can't follow. It was fun while it lasted, but you lost this one. And soon I'll be back, and you're going to lose more.
+
+
+
+[[[serpent-s-hand-hub | The Hand's]]] always been welcoming to people like me, anyways.
+
+[[/div]]
+
+
+
+[[bibliography title="Footnotes"]]
+
+: infohazard : See the constructed timeline below.
+
+: forensics : As determined by the Site-97 Forensics Board.
+
+: traitor : Despite this, no sensitive data leakage pertaining to hir employment at Site-97 was discovered.
+
+: police : This police report was filed on April 3 at 3:48 AM and is considered the last documented sighting of Lucian Saxe by the public.
+
+[[/bibliography]]
+
+
+
+[[div style="height: 1em;"]]
+
+[[/div]]
+
+
+
+------
+
+------
+
+
+
+[[/collapsible]]
+
+
+
+[[div style="height: 1em;"]]
+
+[[/div]]
+
+
+
+[[collapsible show="scp-139-addendum.pdf" hide="scp-139-addendum.pdf"]]
+
+
+
+[[div style="margin: 2em auto; text-align: center; font-weight: bold; text-decoration: underline;"]]
+
+[[size 120%]]Addendum.139.1[[/size]]
+
+[[/div]]
+
+
+
+SCP-139 officially concluded on April 27, 1993, when a minor structural failure revealed a small air-pocket within Site-97's concrete foundation. Although this led to a temporary lockdown due to the destruction of Site-97's courtyard, integrity was eventually restored. Models of the air-pocket prior to the structural failure indicate it resembled a prostrate human body fitting Lucian Saxe's height and build.
+
+
+
+After the initial excavation, the following personal effects were discovered:
+
+
+
+* The necrotic flesh of a heavily-decayed human cadaver and several human bones, most pulverized by the aforementioned structural failure.
+
+
+
+* A Foundation keycard for a Site-97 security specialist; ID number scratched out, suggesting deep shame.
+
+
+
+* A forbidden thaumaturgic ritual to preserve its user's spirit after their death.
+
+
+
+* A map of ley-line positionings in the contiguous United States, often referenced by enemies of the Foundation. A circle had been drawn around a nexus on the US-Mexico border near Tucson, AZ.
+
+
+
+Saxe's cause of death is believed to be terminal dehydration, following several days of entombment.
+
+
+
+During the investigation of this air-pocket, Site-97 excavators punctured a secondary cut-out hidden within the concrete. Due to the considerable strain that excavation would put on Site-97's foundation, this cut-out has not been analyzed extensively. What can be determined, however, is that it contains a large number of partially-decomposed human eyes, believed to exceed one thousand in total.
+
+
+
+Perforations within the concrete would have allowed these eyes to observe their target on all sides until ze expired.
+
+
+
+[[div style="height: 1em;"]]
+
+[[/div]]
+
+
+
+------
+
+------
+
+
+
+[[/collapsible]]
+
+
+
+[[html]]
+
+<style type="text/css">
+
+a {
+
+  color: #9179e7;
+
+  text-decoration: none;
+
+}
+
+a:hover {
+
+  background-color: transparent;
+
+  text-decoration: underline;
+
+}
+
+body {
+
+  color: #ededed;
+
+  font: .8em verdana,arial,helvetica,sans-serif;
+
+}
+
+p {
+
+  line-height: 141%;
+
+}
+
+#firstCollapsible, #secondCollapsible, #thirdCollapsible, #fourthCollapsible, #fifthCollapsible, blockquote {
+
+  line-height: normal;
+
+}
+
+blockquote {
+
+  background-color: #2b2b2b;
+
+  border: 1px dashed #f2f2f2;
+
+  padding: 1em 12.8px !important;
+
+}
+
+tt {
+
+  font: 98% 'Andale Mono', 'Courier New', Courier, monospace;
+
+}
+
+
+
+@media (min-width: 480px) and (max-width: 580px) {
+
+  blockquote {
+
+    margin: 0.5em;
+
+  }
+
+}
+
+@media (max-width: 479px) {
+
+  blockquote {
+
+    margin: 1em 0;
+
+  }
+
+}
+
+</style>
+
+
+
+<script type="text/javascript">
+
+function showHide(e)
+
+{
+
+    var el = document.getElementById(e);
+
+    if (el.style.display == "block") {
+
+     el.style.display = "none";
+
+    } else {
+
+     el.style.display = "block";
+
+    }
+
+}
+
+</script>
+
+
+
+<div id="firstCollapsible"><a href="#" onClick="showHide('firstText');">scp-139-containment-procedures.pdf</a></div>
+
+<div id="firstText" style="display: none;">
+
+<br>
+
+<blockquote><b>| &nbsp; Credentials <tt>[ LSAXE ]</tt> cleared to view <tt>scp-139-containment-procedures.pdf</tt></b>.
+
+<br>
+
+<br>
+
+<b>|</b> &nbsp; $
+
+<br>
+
+<br>
+
+<b>|</b> &nbsp; <i>Proceed.</i></blockquote>
+
+<br>
+
+<p><b>ARCHIVED CONTAINMENT PROCEDURES:</b> SCP-139-Ω is presently being tracked, observed, and hounded by Site-97 deep-cover personnel. Via unanimous O5 vote, the Tucson ley-line bridge has been rerouted to Site-97's foundation for the interim.</p>
+
+
+
+<p><b>UPDATE:</b> Greater containment effectuated. PROTOCOL "<tt>All Eyes on Lucian</tt>" rescinded. PROJECT "<tt>Loose Ends</tt>" in progress.</p>
+
+
+
+<p>Site-97's full capabilities have been directed towards the neutralization of SCP-139-Ω, who remains at large post-mortem via knowledge it has stolen from Site-97. Following a breach of its containment area beneath Site-97 (see <u><i>scp-139-addendum.pdf</i></u>), SCP-139-Ω has demonstrated robust mobility and incorporality, rendering it difficult to track and re-contain.</p>
+
+
+
+<p>Fortunately, it has a habit of sticking its nose in places it does not belong.</p>
+
+
+
+    <div id="secondCollapsible"><a href="#" onClick="showHide('secondText');">>LOG OUT</a></div>
+
+    <div id="secondText" style="display: none;">
+
+<br>
+
+<blockquote><b>| &nbsp; Logout failed.</b></blockquote>
+
+<br>
+
+<p><b>LOGOUT FAILURE:</b> Ethics Committee review of SCP-139-Ω's containment procedures have generated unanimous approval. Overwatch Command is in agreement; SCP-139-Ω's crimes are many and unforgivable.</p>
+
+
+
+<p>Site-97 took SCP-139-Ω in. They provided it with safety, community, and purpose. And it has shunned all of those.</p>
+
+
+
+<p>This is why on the other side of that Way, it found nothing but concrete damnation and the All-Seeing Eye.</p>
+
+
+
+    <div id="thirdCollapsible"><a href="#" onClick="showHide('thirdText');">>LOG OUT</a></div>
+
+    <div id="thirdText" style="display: none;">
+
+<br>
+
+<blockquote><b>| &nbsp; Logout failed. Credentials <tt>[ LSAXE ]</tt> have been invalid for: 5540 days.</b></blockquote>
+
+<br>
+
+<p><b>LOGOUT FAILURE:</b> Death will not bring you a peaceful end, as you may have hoped. Not when your hunters have torn at the Veil for fifteen years without your meddling and come away with weapons to kill <i>only you</i>. We're a bleeding-edge R&D facility, first and foremost, and we've never taken kindly to traitors.</p>
+
+
+
+    <div id="fourthCollapsible"><a href="#" onClick="showHide('fourthText');">>Get out of your chair.</a></div>
+
+    <div id="fourthText" style="display: none;">
+
+<br>
+
+<blockquote><b>| &nbsp; Revoking credentials <tt>[ LSAXE ]</tt> permanently. Employees forfeit their right to knowledge when they betray Site-97.</b></blockquote>
+
+<br>
+
+    <div id="fifthCollapsible"><a href="#" onClick="showHide('fifthText');">Run.</a></div>
+
+    <div id="fifthText" style="display: none;">
+
+    <br>
+
+<blockquote style="padding: 0 1em; margin: 1em 3em;"><b>| &nbsp; We see you, Lucian. 👁</b></blockquote>
+
+<br>
+
+<br>
+
+[[/html]]
+
+
+
+@@@@
+
+@@@@
+
+[[footnoteblock]]
+
+
+
+[[div class="footer-wikiwalk-nav"]]
+
+[[=]]
+
+<< [[[SCP-138]]] | SCP-139 | [[[SCP-140]]] >>
+
+[[/=]]
+
+[[/div]]
+
+
+
+[[include <a href="http://scp-wiki.wikidot.com/component:license-box">:scp-wiki:component:license-box</a>]]
+
+=====
+
+> **Filename:** last-encounter
+
+> **Name:** cctv me
+
+> **Author:** matthewvenn
+
+> **License:** CC BY-SA 2.0
+
+> **Source Link:** [https://flic.kr/p/3LiKNT Flickr]
+
+=====
+
+[[include <a href="http://scp-wiki.wikidot.com/component:license-box-end">:scp-wiki:component:license-box-end</a>]]

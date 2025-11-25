@@ -1,0 +1,30 @@
+[
+    {
+        "incident_id": 1,
+        "mtf_id": 3
+    },
+    {
+        "incident_id": 2,
+        "mtf_id": 1
+    },
+    {
+        "incident_id": 3,
+        "mtf_id": 2
+    },
+    {
+        "incident_id": 4,
+        "mtf_id": 7
+    },
+    {
+        "incident_id": 5,
+        "mtf_id": 4
+    },
+    {
+        "incident_id": 6,
+        "mtf_id": 5
+    },
+    {
+        "incident_id": 7,
+        "mtf_id": 6
+    }
+]

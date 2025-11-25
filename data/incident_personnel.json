@@ -1,0 +1,27 @@
+[
+    {
+        "incident_id": 12,
+        "person_id": 3,
+        "duty": ""
+    },
+    {
+        "incident_id": 19,
+        "person_id": 11,
+        "duty": ""
+    },
+    {
+        "incident_id": 16,
+        "person_id": 14,
+        "duty": ""
+    },
+    {
+        "incident_id": 15,
+        "person_id": 4,
+        "duty": ""
+    },
+    {
+        "incident_id": 2,
+        "person_id": 20,
+        "duty": ""
+    }
+]

@@ -166,6 +166,43 @@ TABLE_MAPPINGS = {
             'reason'
         ]
     },
+    'INCIDENT_MTF': {
+        'file': '../data/incident_mtf.json',
+        'sql': """
+            INSERT INTO INCIDENT_MTF
+            (incident_id, mtf_id)
+            VALUES (%s, %s)
+        """,
+        'json_keys': [
+            'incident_id',
+            'mtf_id'
+        ]
+    },
+    'INCIDENT_SCP': {
+        'file': '../data/incident_scp.json',
+        'sql': """
+            INSERT INTO INCIDENT_SCP
+            (incident_id, scp_id)
+            VALUES (%s, %s)
+        """,
+        'json_keys': [
+            'incident_id',
+            'scp_id'
+        ]
+    },
+    'INCIDENT_PERSONNEL': {
+        'file': '../data/incident_personnel.json',
+        'sql': """
+            INSERT INTO INCIDENT_PERSONNEL
+            (incident_id, person_id, duty)
+            VALUES (%s, %s, %s)
+        """,
+        'json_keys': [
+            'incident_id',
+            'person_id',
+            'duty'
+        ]
+    }
     # To add suff later, just add a new entry here:
 }
 

@@ -1,0 +1,138 @@
+[
+    {
+        "incident_id": 1,
+        "scp_id": 22
+    },
+    {
+        "incident_id": 3,
+        "scp_id": 23
+    },
+    {
+        "incident_id": 4,
+        "scp_id": 26
+    },
+    {
+        "incident_id": 5,
+        "scp_id": 29
+    },
+    {
+        "incident_id": 6,
+        "scp_id": 30
+    },
+    {
+        "incident_id": 7,
+        "scp_id": 33
+    },
+    {
+        "incident_id": 8,
+        "scp_id": 47
+    },
+    {
+        "incident_id": 9,
+        "scp_id": 49
+    },
+    {
+        "incident_id": 10,
+        "scp_id": 57
+    },
+    {
+        "incident_id": 11,
+        "scp_id": 66
+    },
+    {
+        "incident_id": 12,
+        "scp_id": 70
+    },
+    {
+        "incident_id": 13,
+        "scp_id": 80
+    },
+    {
+        "incident_id": 14,
+        "scp_id": 85
+    },
+    {
+        "incident_id": 15,
+        "scp_id": 96
+    },
+    {
+        "incident_id": 16,
+        "scp_id": 100
+    },
+    {
+        "incident_id": 17,
+        "scp_id": 105
+    },
+    {
+        "incident_id": 18,
+        "scp_id": 117
+    },
+    {
+        "incident_id": 19,
+        "scp_id": 121
+    },
+    {
+        "incident_id": 21,
+        "scp_id": 122
+    },
+    {
+        "incident_id": 22,
+        "scp_id": 130
+    },
+    {
+        "incident_id": 23,
+        "scp_id": 132
+    },
+    {
+        "incident_id": 24,
+        "scp_id": 136
+    },
+    {
+        "incident_id": 25,
+        "scp_id": 148
+    },
+    {
+        "incident_id": 26,
+        "scp_id": 149
+    },
+    {
+        "incident_id": 27,
+        "scp_id": 152
+    },
+    {
+        "incident_id": 28,
+        "scp_id": 155
+    },
+    {
+        "incident_id": 29,
+        "scp_id": 157
+    },
+    {
+        "incident_id": 30,
+        "scp_id": 174
+    },
+    {
+        "incident_id": 31,
+        "scp_id": 178
+    },
+    {
+        "incident_id": 32,
+        "scp_id": 182
+    },
+    {
+        "incident_id": 33,
+        "scp_id": 185
+    },
+    {
+        "incident_id": 34,
+        "scp_id": 192
+    },
+    {
+        "incident_id": 35,
+        "scp_id": 197
+    },
+    {
+        "incident_id": 36,
+        "scp_id": 198
+    }
+]

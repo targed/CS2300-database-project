@@ -2,6 +2,13 @@
 # e.g., for Node.js use: FROM node:18
 FROM python:3.10-slim
 
+# Install Fish shell
+RUN apt-get update && apt-get install -y fish && rm -rf /var/lib/apt/lists/*
+
+# Set Fish as the default shell
+ENV SHELL=/usr/bin/fish
+SHELL ["/usr/bin/fish", "-c"]
+
 # Set the working directory in the container to /workspace
 WORKDIR /workspace
 

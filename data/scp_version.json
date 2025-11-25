@@ -1,0 +1,14 @@
+[
+    {
+        "scp_id": 166,
+        "version_date": "2020-01-10",
+        "change_summary": "Rewrote the file to make SCP-166 no longer a 'Succubus' character whatsoever",
+        "content": "Removed old version. Added new version."
+    },
+    {
+        "scp_id": 173,
+        "version_date": "2021-06-15",
+        "change_summary": "SCP-173 orginal image removed dure to copyright",
+        "content": "Added CC SCP-173 Image"
+    }
+]

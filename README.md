@@ -2,10 +2,10 @@
 
 ## Data for each table checklist
 
-[ ] Agent
-[ ] Containment Chamber
+[x] Agent
+[x] Containment Chamber
 [x] Facility
-[ ] Incident
+[x] Incident
 [ ] Incident_MTF
 [ ] INCIDENT_PERSONNEL
 [ ] INCIDENT_SCP
@@ -15,7 +15,8 @@
 [x] PERSONNEL_ASSIGNMENT
 [x] RESEARCHER
 [x] SCP
-[ ] SCP_ASSIGNMENT
-[ ] SCP_VERSION
+[x] SCP_ASSIGNMENT
+[x] SCP_VERSION
 [x] SECURITY_CLEARANCE
-[ ] SECURITY_OFFICER
+[x] SECURITY_OFFICER
+

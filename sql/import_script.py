@@ -80,8 +80,93 @@ TABLE_MAPPINGS = {
             'tags', 
             'object_class'
         ]
-    }
-    # To add SCPs later, just add a new entry here:
+    },
+    'INCIDENT': {
+        'file': '../data/incident.json',
+        'sql': """
+            INSERT INTO INCIDENT 
+            (incident_id, title, incident_date, summary, severity_level)
+            VALUES (%s, %s, %s, %s, %s)
+        """,
+        'json_keys': [
+            'incident_id', 
+            'title', 
+            'incident_date', 
+            'summary', 
+            'severity_level'
+        ]
+    },
+    'CONTAINMENT_CHAMBER': {
+        'file': '../data/containment_chamber.json',
+        'sql': """
+            INSERT INTO CONTAINMENT_CHAMBER 
+            (facility_id, chamber_no, chamber_type, capacity, special_equipment, chamber_notes)
+            VALUES (%s, %s, %s, %s, %s, %s)
+        """,
+        'json_keys': [
+            'facility_id',
+            'chamber_no',
+            'chamber_type',
+            'capacity',
+            'special_equipment',
+            'chamber_notes'
+        ]
+    },
+    'AGENT': {
+        'file': '../data/agent.json',
+        'sql': """
+            INSERT INTO AGENT 
+            (person_id, badge_number)
+            VALUES (%s, %s)
+        """,
+        'json_keys': [
+            'person_id', 
+            'badge_number'
+        ]
+    },
+    'SECURITY_OFFICER': {
+        'file': '../data/security_officer.json',
+        'sql': """
+            INSERT INTO SECURITY_OFFICER
+            (person_id, certifications)
+            VALUES (%s, %s)
+        """,
+        'json_keys': [
+            'person_id', 
+            'certifications'
+        ]
+    },
+    'SCP_VERSION': {
+        'file': '../data/scp_version.json',
+        'sql': """
+            INSERT INTO SCP_VERSION
+            (scp_id, version_date, change_summary, content)
+            VALUES (%s, %s, %s, %s)
+        """,
+        'json_keys': [
+            'scp_id',
+            'version_date',
+            'change_summary',
+            'content'
+        ]
+    },
+    'SCP_ASSIGNMENT': {
+        'file': '../data/scp_assignment.json',
+        'sql': """
+            INSERT INTO SCP_ASSIGNMENT
+            (scp_id, facility_id, chamber_no, start_date, end_date, reason)
+            VALUES (%s, %s, %s, %s, %s, %s)
+        """,
+        'json_keys': [
+            'scp_id',
+            'facility_id',
+            'chamber_no',
+            'start_date',
+            'end_date',
+            'reason'
+        ]
+    },
+    # To add suff later, just add a new entry here:
 }
 
 def import_data_from_json(cursor, table_name, config):

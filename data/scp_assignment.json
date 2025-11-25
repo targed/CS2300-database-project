@@ -1,0 +1,42 @@
+[
+    {
+        "scp_id": 8,
+        "facility_id": 13,
+        "chamber_no": "B-203",
+        "start_date": "2008-04-08",
+        "end_date": "2024-01-15",
+        "reason": "SCP-008's room can be accessed using a level 4 keycard. SCP-008's chamber consists of three small rooms. The first room contains a table with SCP-008's document and a control panel. The second room is a small airlock with a decontaminating shower head and storage area containing the hazmat suit propped up on a stand. The third room can be entered from here, and this room consists of a short catwalk leading to SCP-008's container."
+    },
+    {
+        "scp_id": 12,
+        "facility_id": 13,
+        "chamber_no": "C-205",
+        "start_date": "2008-11-23",
+        "end_date": "2024-02-10",
+        "reason": "Behind a keycard-locked door and down a flight of stairs lies SCP-012's chamber. The first door requires a level 3 keycard. At the bottom of the stairs is a room with a control panel with SCP-012's document sitting on it. The panel has a button labelled \"Hoist\", a powered-on computer screen from where the \"On Mount Golgotha\" score plays, and a label reading \"Caution Lights On\" with a light above it that flashes red when the lights in the second room are on. In the next room is SCP-012 itself, suspended in a container by an automated pulley system."
+    },
+    {
+        "scp_id": 49,
+        "facility_id": 13,
+        "chamber_no": "H-047",
+        "start_date": "2009-03-17",
+        "end_date": "2024-03-22",
+        "reason": "In the containment chamber are two shelves and a lever with the settings \"on\" and \"off\". On the left side, there is a table with a chair in front of it. On the table is the Document of SCP-049. Next to the table are two control terminals. On the right control lays a Level 4 keycard and it is connected to a lever with a sign above it reading, \"Elevator Power Feed\"."
+    },
+    {
+        "scp_id": 96,
+        "facility_id": 13,
+        "chamber_no": "H-047",
+        "start_date": "2010-03-15",
+        "end_date": "2024-04-30",
+        "reason": "Secured because of incident 096-1-A"
+    },
+    {
+        "scp_id": 173,
+        "facility_id": 13,
+        "chamber_no": "C-205",
+        "start_date": "2007-06-01",
+        "end_date": "2024-05-12",
+        "reason": "It consists of the containment chamber for SCP-173, an inaccessible door to the right, a balcony to the left where the ladder and spectator present on the platform, and a room where the intercom voice resides. After the breach events starts and you walk down the stairs on the right from where the scientists are working at, SCP-173 can be seen with a guard directly staring at it. "
+    }
+]

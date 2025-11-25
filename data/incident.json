@@ -1,0 +1,224 @@
+[
+    {
+        "title": "Incident 022-827",
+        "incident_date": "1994-03-12",
+        "summary": "The original vault door sealing SCP-022 was violently destroyed from the inside by an unknown force. Attempts to replace the door failed until a new protocol involving automated incineration systems was established.",
+        "severity_level": 2
+    },
+    {
+        "title": "Incident Report 023-26",
+        "incident_date": "2005-09-18",
+        "summary": "SCP-023 broke containment and encountered several personnel in a hallway. While no immediate deaths occurred, three staff members made direct eye contact and were subsequently terminated to prevent the anomaly's delayed kill effect from targeting their families.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident 023-27",
+        "incident_date": "2007-02-14",
+        "summary": "SCP-023 utilized reflective surfaces within its containment cell to project its gaze outside the chamber, affecting two security guards monitoring the feeds. This resulted in the death of the guards and their families one year later, necessitating the removal of all screens and reflective materials from the containment perimeter.",
+        "severity_level": 2
+    },
+    {
+        "title": "Incident Report 026-12",
+        "incident_date": "1998-11-05",
+        "summary": "Agent Malek was found unconscious in the main foyer of SCP-026. Upon being removed from the school grounds, he awoke briefly in a state of agitation before suffering rapid dehydration and death, consistent with other victims found within the anomaly.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident 029-34a",
+        "incident_date": "2008-07-22",
+        "summary": "SCP-029 ceased all intake of food and water for a period of three weeks with no ill effects. Following this event, containment procedures were updated to cease feeding, as the subject appears to require no sustenance to survive.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident 030-1",
+        "incident_date": "2008-11-14",
+        "summary": "SCP-030 utilized basic materials—potting soil, ginger, quartz, and copper wire—to construct an unknown device capable of emitting directed ultraviolet light. The device was confiscated and research privileges were temporarily suspended pending review of SCP-030's knowledge of the photoelectric effect.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident report 033-D",
+        "incident_date": "2009-05-22",
+        "summary": "SCP-033 demonstrated the ability to 'leap' from a safe storage medium to a standard electronic device, causing immediate destabilization of the device's logic systems. This event necessitated the implementation of a 30-meter safe distance for all electronic equipment and non-safe paper products.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident Report Yersinia-047-01",
+        "incident_date": "2010-01-30",
+        "summary": "A containment breach resulted in the release of SCP-047's mutagenic gas, creating a highly virulent strain of bacteria designated Propionibacterium 047-A. The breach caused multiple staff fatalities and required a site-wide lockdown to prevent a pandemic-level event.",
+        "severity_level": 1
+    },
+    {
+        "title": "04/16/2017 Incident",
+        "incident_date": "2017-04-16",
+        "summary": "During a routine interview, SCP-049 became agitated and attacked Dr. Raymond Hamm, killing him instantly. SCP-049 subsequently performed surgery on Dr. Hamm's corpse, converting it into an instance of SCP-049-2. This marked the first direct hostility SCP-049 showed towards cooperative Foundation staff.",
+        "severity_level": 2
+    },
+    {
+        "title": "Incident 057-1",
+        "incident_date": "2002-08-12",
+        "summary": "An excavation worker unauthorizedly entered SCP-057, causing the entrance to seal and the internal mechanism to activate. The worker was trapped inside as the monoliths shifted, and was presumed crushed to death. The artifact reset to its dormant state several hours later.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident 066-2",
+        "incident_date": "2008-04-18",
+        "summary": "During a scheduled test where D-066-4437 attempted to cut a piece of SCP-066, the object rolled away and spoke the phrase \"Are you Eric?\". When the D-class responded negatively, SCP-066 transformed into a hostile state, emitting dissonant noise and exhibiting high-speed tentacle movement, causing permanent hearing damage to nearby personnel.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident 070-1",
+        "incident_date": "2009-12-11",
+        "summary": "SCP-070 breached containment while apparently asleep, using its chains to anchor into walls and ceilings to traverse Site-██. It broke into a canteen, consumed food and water, and returned to containment without waking or recalling the event.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident 080-1",
+        "incident_date": "2010-06-22",
+        "summary": "Two senior researchers conducting an observation of SCP-080 fell asleep 40 minutes into the session despite believing they were shielded by black-out curtains. Upon retrieval, they were found [DATA EXPUNGED], while other site personnel reported improved sleep quality following the event.",
+        "severity_level": 2
+    },
+    {
+        "title": "Incident 085-A",
+        "incident_date": "2012-09-04",
+        "summary": "A researcher accidentally introduced a hard copy of SCP-085's containment procedures into her environment. SCP-085 read the document, discovering her nature as a 2D drawing, which led to a severe depressive state. The O5 Council voted against termination despite the breach.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident 096-1-A",
+        "incident_date": "2013-05-19",
+        "summary": "SCP-096 breached containment after viewing a photograph containing four pixels of its face. It traveled hundreds of kilometers to terminate the viewer, destroying military assets and compromising secrecy. The failure of the \"SCRAMBLE\" gear designed to block its face led to the termination of the project and the eventual sentencing of Dr. Dan.",
+        "severity_level": 1
+    },
+    {
+        "title": "Incident 100-A",
+        "incident_date": "2005-06-03",
+        "summary": "SCP-100-1 created a unique, highly detailed humanoid construct designated 'J.J.', marking the first time a humanoid figure was crafted. After 'J.J.' was confiscated, SCP-100-1 displayed signs of distress and ceased all activity for ten days.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident X45-Site-17",
+        "incident_date": "2011-08-12",
+        "summary": "Dr. Dantensen aided SCP-105 in an attempted containment breach at Site-17. The attempt failed, SCP-105 was re-contained, and investigation revealed Dr. Dantensen had encouraged SCP-105 to feign the loss of her abilities to lower security protocols.",
+        "severity_level": 2
+    },
+    {
+        "title": "Incident Report #117-3f",
+        "incident_date": "2008-09-16",
+        "summary": "An attempt to use SCP-117 to communicate with SCP-363 resulted in the creation of an unknown device that caused [DATA EXPUNGED]. This event led to the immediate suspension of all cross-testing between SCP-117 and biological or telepathic anomalies.",
+        "severity_level": 1
+    },
+    {
+        "title": "Incident 121-A",
+        "incident_date": "1998-11-04",
+        "summary": "A loud 'muffled siren' sound was heard across the region for five minutes, immediately followed by the violent fragmentation of a floating building (SCP-121-1). The debris contained traces of aluminum slag and biological remnants usually found in SCP-121-2 entities.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident 121-B",
+        "incident_date": "2012-05-09",
+        "summary": "A 1991 Dodge Caravan detached from the ground and became suspended 53 meters in the air, behaving like an SCP-121-1 instance. The windows were obscured by wool cloth, preventing internal observation.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident 122-1",
+        "incident_date": "2017-02-12",
+        "summary": "SCP-122-1 subject Janna Marston was lost during a power blackout event. This incident confirmed the necessity of redundant failsafes to prevent SCP-122 from entering an unpowered state, during which hostile entities manifest.",
+        "severity_level": 2
+    },
+    {
+        "title": "Incident 130-6",
+        "incident_date": "1995-05-18",
+        "summary": "A civilian arrived at SCP-130 driven by an unexplained compulsion to retrieve a package addressed to him. Upon opening the package, he experienced [REDACTED]. He was administered Class-A amnestics and released.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident 132-01",
+        "incident_date": "2004-03-22",
+        "summary": "Dr. Richardson knocked an instance of SCP-132 off a desk, shattering it. This caused the immediate area to be buffeted by extreme desert winds corresponding to the location depicted in the shard, confirming the object acts as a portal rather than an illusion.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident I-136-c",
+        "incident_date": "2010-11-05",
+        "summary": "During a routine test, a Class D subject vanished from the containment chamber, and a psychic shockwave affected everyone within a thousand yards. Dr. Meyers requested termination of SCP-136 but was instead removed from the project.",
+        "severity_level": 2
+    },
+    {
+        "title": "Incident Report 148-████-1",
+        "incident_date": "2009-02-14",
+        "summary": "During a test with a mind-affecting SCP, a sample of SCP-148 rapidly increased in mass, nullifying the anomaly's effect before suddenly shedding mass and amplifying the psychic effect onto nearby personnel. This resulted in a site-wide lockdown.",
+        "severity_level": 1
+    },
+    {
+        "title": "Incident 149-1",
+        "incident_date": "2010-06-03",
+        "summary": "An instance of SCP-149 escaped its containment and infected multiple D-class personnel. The infection went unreported until the parasites matured and burst from the hosts, infecting further staff members. Site containment was only maintained by sealing off four sub-levels.",
+        "severity_level": 1
+    },
+    {
+        "title": "Incident Report 152-05",
+        "incident_date": "2011-09-15",
+        "summary": "Security footage captured SCP-152 vanishing from its secure reading room for exactly one second. This disappearance coincided with the appearance of a new entry in the book, suggesting the book is being physically replaced rather than updated.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident 155-08",
+        "incident_date": "2008-04-12",
+        "summary": "A flawed program executed on SCP-155 entered an infinite loop, causing the computer's processing speed to approach infinity. The resulting buildup of heat and radiation melted through the containment chamber, causing 11 casualties and destroying the site's C-wing.",
+        "severity_level": 1
+    },
+    {
+        "title": "Incident 157-01",
+        "incident_date": "2010-11-20",
+        "summary": "A civilian victim mistook a colony of SCP-157 for shampoo and applied it to his scalp. The organism began consuming him, but he was immune to its anesthetic effect and screamed for help. The victim survived with chemical burns, and the colony was captured.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident 174-A",
+        "incident_date": "2012-05-18",
+        "summary": "Dr. A█████████ discovered SCP-174 sitting outside its locked containment unit, staring at the door. The unit had been sealed for a week, indicating SCP-174 possesses the ability to teleport or translocate when unobserved.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident #178-14-Alpha",
+        "incident_date": "2004-10-02",
+        "summary": "During a test, a researcher attempted to communicate with an entity visible through SCP-178. This interaction triggered a violent reaction from the entities, resulting in severe lacerations and the death of the subject and nearby personnel.",
+        "severity_level": 2
+    },
+    {
+        "title": "Incident Report 182-7",
+        "incident_date": "1994-11-20",
+        "summary": "Following the approval of sedation for SCP-182, the subject suffered severe nightmares which unconsciously projected a powerful hallucinatory field. This resulted in the mental breakdown, madness, and subsequent death of Dr. ███████ and Agent J██████, and the suicide of Agent █████.",
+        "severity_level": 2
+    },
+    {
+        "title": "Incident 185-1",
+        "incident_date": "2006-08-14",
+        "summary": "During a test, SCP-185 was set to receive a signal from the creation of the universe (-13.73 billion years). The resulting sound waves caused massive structural damage to the site, ruptured the lungs of all personnel within 200 meters, and neutralized a nearby SCP object.",
+        "severity_level": 1
+    },
+    {
+        "title": "Incident report 192-03█-02",
+        "incident_date": "2014-05-12",
+        "summary": "In an attempt to use SCP-192 as a treatment device, a second X-ray was taken of subject D-192-03█. The machine produced a blurry image which instantly caused the subject's internal anatomy to distort violently, resulting in immediate death. The operating personnel suffered psychological trauma.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident 197-a644",
+        "incident_date": "2002-09-09",
+        "summary": "Dahila Kingsley was decapitated inside SCP-197 by a sentient ivy plant. The plant displayed no remorse, viewing the act as 'picking a pretty flower'. This marked the first violent action by SCP-197 organisms and led to the termination of all testing and the abandonment of the site.",
+        "severity_level": 2
+    },
+    {
+        "title": "Incident 198-A",
+        "incident_date": "2013-03-12",
+        "summary": "SCP-198 spontaneously breached containment and replaced a researcher's thermos in an adjacent observation room. The researcher became bonded to the object and was forced to consume its contents to survive dehydration for 31 hours before expiring.",
+        "severity_level": 3
+    },
+    {
+        "title": "Incident 198-B",
+        "incident_date": "2013-06-08",
+        "summary": "SCP-198 disappeared from containment and reappeared as a bottle of creamer three floors away. A security guard attempted to use it and became bonded. He chose self-termination rather than consuming the fluids inside. This incident prompted the reclassification of SCP-198 to Euclid.",
+        "severity_level": 3
+    }
+]

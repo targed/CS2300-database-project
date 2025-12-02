@@ -8,10 +8,11 @@
             "extensions": [
                 "ms-python.python",
                 "mtxr.sqltools",
-                "mtxr.sqltools-driver-mysql"
+                "mtxr.sqltools-driver-mysql",
+                "ms-python.vscode-python-envs"
             ]
         }
-    },
+    }
     // This tells VS Code to run a command after the container is created.
     // Uncomment and adapt if need to install dependencies, e.g., for Python:
     // "postCreateCommand": "pip install -r requirements.txt",

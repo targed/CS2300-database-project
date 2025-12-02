@@ -202,8 +202,19 @@ TABLE_MAPPINGS = {
             'person_id',
             'duty'
         ]
+    },
+    'RESEARCHER': {
+        'file': '../data/researchers.json',
+        'sql': """
+            INSERT INTO RESEARCHER
+            (person_id, lab_affiliation)
+            VALUES (%s, %s)
+        """,
+        'json_keys': [
+            'person_id',
+            'lab_affiliation'
+        ]
     }
-    # To add suff later, just add a new entry here:
 }
 
 def import_data_from_json(cursor, table_name, config):

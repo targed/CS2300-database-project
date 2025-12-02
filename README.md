@@ -24,6 +24,22 @@ Since there is a lot, there may be mistakes, so please fix it if you see them
 [x] SECURITY_CLEARANCE
 [x] SECURITY_OFFICER
 
+## Functions checklist 
+[x] get_scp_by_code
+[x] get_personnel_by_id
+[x] get_all_facilities
+[x] log_new_scp
+[x] update_scp_assignment
+[x] decommission_personnel
+[x] retrieve_full_scp_dossier
+[x] find_personnel_by_criteria
+[x] generate_facility_statistics
+
+[x] all getters
+[x] all insertions
+[x] all updates
+[x] all deletions
+
 ## Activate the python venev
 
 ```bash

@@ -1,0 +1,34 @@
+[
+    {
+        "person_id": 1,
+        "lab_affiliation": "Site-19"
+    },
+    {
+        "person_id": 2,
+        "lab_affiliation": "Site-43"
+    },
+    {
+        "person_id": 3,
+        "lab_affiliation": "Site-43"
+    },
+    {
+        "person_id": 4,
+        "lab_affiliation": "Site-44"
+    },
+    {
+        "person_id": 5,
+        "lab_affiliation": "Site-45"
+    },
+    {
+        "person_id": 6,
+        "lab_affiliation": "Site-45"
+    },
+    {
+        "person_id": 7,
+        "lab_affiliation": "Site-76"
+    },
+    {
+        "person_id": 8,
+        "lab_affiliation": "Site-81"
+    }
+]

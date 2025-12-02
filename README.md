@@ -35,10 +35,18 @@ Since there is a lot, there may be mistakes, so please fix it if you see them
 [x] find_personnel_by_criteria
 [x] generate_facility_statistics
 
+## Flask API
 [x] all getters
 [x] all insertions
 [x] all updates
 [x] all deletions
+
+
+## Make the venv
+
+```bash
+    python -m venv .venv
+```
 
 ## Activate the python venev
 

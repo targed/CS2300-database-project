@@ -1,5 +1,5 @@
-from db_connection import execute_query, execute_update, execute_transaction
-from database_getters import get_scp_by_code, get_personnel_by_id, get_all_facilities
+from .db_connection import execute_query, execute_update, execute_transaction
+from .database_getters import get_scp_by_code, get_personnel_by_id, get_all_facilities
 
 # Data Management Functions:
 

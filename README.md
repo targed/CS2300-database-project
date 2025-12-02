@@ -90,6 +90,16 @@ You will now see all the created tables
 If you expand a table, you can see what attributes it takes
 If you want to see the data in a table, right click on the table you want and click "Show Table Records"
 
+## Database query funtions
+I created functions for getting, inserting, updating, and deleting values from most tables. They are in `src/database_queries`. You can test them/see how to use them by looking in test.py
+
+## Running the flask app
+We now have flask api calls for all our functions. If you run `./run.sh` it will launch the flask app. 
+
+Our api endpoints are at `http://localhost:5000/api/***`. For example, if I wanted to get SCP-173, I could do this `http://localhost:5000/api/scp/code/SCP-173`. 
+
+I also made a Swagger page that details all our APIs so we can see them, manage them, and test them eaiser. You can get to it [here ](http://localhost:5000/api/docs)
+
 ## MISC
 
 In the `src/scripts` and `raw_scp_files` directories, I made a bunch of scripts to help me get and parse the data

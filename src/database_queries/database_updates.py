@@ -1,4 +1,4 @@
-from db_connection import execute_update, execute_transaction
+from .db_connection import execute_update, execute_transaction
 
 # Agent
 def update_agent(person_id, badge_number=None):

@@ -1,6 +1,6 @@
 import sys
 from pathlib import Path
-from db_connection import execute_query
+from .db_connection import execute_query
 
 # General table data retrieval
 def get_specified_table_data(table_name):

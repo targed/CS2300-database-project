@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Report | SCP Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#141414',
+                        'background-light': '#f7f7f7',
+                        'background-dark': '#191919'
+                    },
+                    fontFamily: {
+                        'space': ['"Space Grotesk"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .incident-summary {
+            white-space: pre-wrap;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen">
+    <!-- Header -->
+    <header class="border-b border-primary/10 dark:border-primary/20 bg-white/50 dark:bg-black/50 backdrop-blur-sm sticky top-0 z-40">
+        <div class="max-w-4xl mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo and Title -->
+                <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition">
+                    <div class="w-10 h-10 bg-primary dark:bg-white rounded flex items-center justify-center">
+                        <span class="text-white dark:text-primary font-bold text-lg">SCP</span>
+                    </div>
+                    <div class="hidden sm:block">
+                        <h1 class="font-bold text-stone-900 dark:text-stone-100 tracking-tight">SCP Foundation</h1>
+                        <p class="text-xs text-stone-500 dark:text-stone-400">Secure. Contain. Protect.</p>
+                    </div>
+                </a>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center gap-4">
+                    <a href="index.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition">Home</a>
+                    <a href="search.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition">Advanced Search</a>
+                    <a href="personnel.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition">Personnel</a>
+                    <a href="mtf.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition">MTF Registry</a>
+                    <a href="facilities.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition">Facilities</a>
+                    <a href="incidents.html" class="text-sm text-red-600 dark:text-red-400 font-medium">Incidents</a>
+                </nav>
+
+                <!-- Back Button -->
+                <a href="incidents.html" class="flex items-center gap-2 text-sm text-stone-600 dark:text-stone-300 hover:text-red-600 dark:hover:text-red-400 transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    <span class="hidden sm:inline">Back to Incidents</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Loading State -->
+        <div id="loadingState" class="flex items-center justify-center py-24">
+            <div class="flex flex-col items-center gap-3">
+                <svg class="animate-spin w-10 h-10 text-red-600" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span class="text-sm text-stone-500 dark:text-stone-400">Loading incident report...</span>
+            </div>
+        </div>
+
+        <!-- Error State -->
+        <div id="errorState" class="hidden border border-red-500/30 bg-red-500/10 rounded-lg p-8 text-center">
+            <svg class="w-16 h-16 mx-auto text-red-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+            <h3 class="text-lg font-bold text-red-600 mb-2">Incident Not Found</h3>
+            <p id="errorMessage" class="text-sm text-stone-500 dark:text-stone-400 mb-4">The requested incident report could not be located.</p>
+            <a href="incidents.html" class="inline-flex items-center gap-2 px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Return to Incidents
+            </a>
+        </div>
+
+        <!-- Incident Content -->
+        <div id="incidentContent" class="hidden">
+            <!-- Header Section -->
+            <div class="mb-8">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-14 h-14 rounded-lg bg-red-600/20 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-7 h-7 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex flex-wrap items-center gap-2 mb-2">
+                            <span id="severityBadge" class="px-2 py-0.5 text-xs font-bold uppercase rounded"></span>
+                            <span id="incidentDate" class="text-sm text-stone-500 dark:text-stone-400"></span>
+                        </div>
+                        <h1 id="incidentTitle" class="text-2xl md:text-3xl font-bold text-stone-900 dark:text-stone-100 tracking-tight"></h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related SCPs Section -->
+            <div id="relatedSCPsSection" class="hidden mb-8">
+                <div class="border border-primary/20 dark:border-primary/30 rounded-lg overflow-hidden">
+                    <div class="px-6 py-4 border-b border-primary/10 dark:border-primary/20 bg-red-600/5">
+                        <h2 class="text-sm font-bold text-stone-900 dark:text-stone-100 uppercase tracking-wider flex items-center gap-2">
+                            <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                            </svg>
+                            Related SCP Entries
+                        </h2>
+                    </div>
+                    <div id="relatedSCPsList" class="p-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <!-- SCP links will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Incident Summary Section -->
+            <div class="border border-primary/20 dark:border-primary/30 rounded-lg overflow-hidden">
+                <div class="px-6 py-4 border-b border-primary/10 dark:border-primary/20">
+                    <h2 class="text-sm font-bold text-stone-900 dark:text-stone-100 uppercase tracking-wider flex items-center gap-2">
+                        <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        Incident Summary
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div id="incidentSummary" class="incident-summary text-stone-700 dark:text-stone-300 text-sm">
+                        <!-- Summary content will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="border border-primary/20 dark:border-primary/30 rounded-lg p-4">
+                    <div class="text-xs text-stone-500 dark:text-stone-400 uppercase tracking-wider mb-1">Incident ID</div>
+                    <div id="incidentId" class="text-lg font-mono font-bold text-stone-900 dark:text-stone-100"></div>
+                </div>
+                <div class="border border-primary/20 dark:border-primary/30 rounded-lg p-4">
+                    <div class="text-xs text-stone-500 dark:text-stone-400 uppercase tracking-wider mb-1">Facility</div>
+                    <div id="incidentFacility" class="text-lg font-bold text-stone-900 dark:text-stone-100">--</div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="mt-8 pt-6 border-t border-primary/20 dark:border-primary/30 flex justify-between">
+                <a href="incidents.html" class="flex items-center gap-2 text-sm font-medium text-stone-600 dark:text-stone-400 hover:text-red-600 dark:hover:text-red-400 transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Back to All Incidents
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/incident-detail.js"></script>
+</body>
+</html>

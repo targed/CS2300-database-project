@@ -1,5 +1,6 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory, redirect
 from flask_swagger_ui import get_swaggerui_blueprint
+from flask_cors import CORS
 import sys
 import os
 from pathlib import Path
@@ -16,6 +17,12 @@ from database_queries import database_queries as queries
 # Initialize the Flask application
 app = Flask(__name__)
 
+# Enable CORS for all routes
+CORS(app)
+
+# Get the frontend directory path
+FRONTEND_DIR = Path(__file__).resolve().parent.parent / 'frontend'
+
 # Swagger UI configuration
 SWAGGER_URL = '/api/docs'
 API_URL = '/api/swagger.json'
@@ -26,6 +33,25 @@ swaggerui_blueprint = get_swaggerui_blueprint(
     config={'app_name': "SCP Database API"}
 )
 app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
+
+# ============================================================
+# FRONTEND ROUTES
+# ============================================================
+
+@app.route('/')
+def index():
+    """Redirect root to frontend"""
+    return redirect('/frontend/')
+
+@app.route('/frontend/')
+def frontend_index():
+    """Serve the frontend HTML"""
+    return send_from_directory(FRONTEND_DIR, 'index.html')
+
+@app.route('/frontend/<path:path>')
+def serve_frontend(path):
+    """Serve frontend static files"""
+    return send_from_directory(FRONTEND_DIR, path)
 
 # ============================================================
 # SYSTEM ENDPOINTS
@@ -329,6 +355,24 @@ def update_incident(incident_id):
             data.get('severity_level')
         )
         return jsonify({"message": "Incident updated"})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/incident/<int:incident_id>/scps', methods=['GET'])
+def get_incident_scps(incident_id):
+    """Get SCPs related to an incident"""
+    try:
+        scps = getters.get_scps_for_incident(incident_id)
+        return jsonify(scps if scps else [])
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/incidents/with-scps', methods=['GET'])
+def get_incidents_with_scps():
+    """Get all incidents with their related SCP codes"""
+    try:
+        incidents = getters.get_all_incidents_with_scps()
+        return jsonify(incidents if incidents else [])
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

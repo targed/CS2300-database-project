@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 471.49 460.88">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ab0f14;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke-miterlimit: 15.17;
+      }
+
+      .cls-2, .cls-4 {
+        stroke: #000;
+        stroke-width: 15.17px;
+      }
+
+      .cls-5 {
+        fill: #b11116;
+      }
+
+      .cls-6, .cls-3 {
+        font-family: ComicSansMS-Bold, 'Comic Sans MS';
+        font-size: 152px;
+        font-weight: 700;
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        stroke: #fff;
+        stroke-width: 2px;
+      }
+
+      .cls-3, .cls-7 {
+        fill: none;
+      }
+
+      .cls-8 {
+        fill: #d61c23;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-9 {
+        fill: #6f0000;
+      }
+
+      .cls-10 {
+        fill: #9a090d;
+      }
+
+      .cls-11 {
+        fill: #ed1c24;
+      }
+
+      .cls-12 {
+        fill: #f9fdff;
+      }
+
+      .cls-13 {
+        fill: #600;
+      }
+    </style>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <circle class="cls-4" cx="236.5" cy="227.29" r="219.7"/>
+  </g>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="Layer_3" data-name="Layer 3">
+      <path class="cls-2" d="m9.5,165.79l60.2-104.1,43.3,11.5,3.1-2.4c63.2-48.5,149-54.1,218-14.3,7.4,4.3,14.6,9.1,21.4,14.3l3.1,2.4,43.4-11.6,60,103.9-31.7,31.6.5,3.8c5.6,42.9-3.2,86.6-24.8,124.1-21.6,37.4-55,66.8-95.1,83.5l-3.6,1.5-11.6,43.3-120-.1-11.6-43.4-3.6-1.5c-8-3.3-15.7-7.1-23.1-11.4-69-39.8-107.2-117-96.6-195.9l.5-3.8-31.8-31.4Z"/>
+      <polygon class="cls-8" points="86.1 140.39 86.1 314.09 236.5 400.89 386.9 314.09 386.9 140.39 236.5 53.59 86.1 140.39"/>
+      <polygon class="cls-1" points="236.5 400.89 386.9 314.69 386.9 158.19 236.5 244.39 236.5 400.89"/>
+      <polygon class="cls-1" points="236.5 383.39 386.9 297.19 386.9 140.69 236.5 226.89 236.5 383.39"/>
+      <polygon class="cls-9" points="236.4 400.89 86 314.69 86 158.19 236.4 244.39 236.4 400.89"/>
+      <polygon class="cls-9" points="236.4 383.39 86 297.19 86 140.69 236.4 226.89 236.4 383.39"/>
+      <ellipse class="cls-5" cx="235.6" cy="164.39" rx="34.3" ry="23.7"/>
+      <ellipse class="cls-5" cx="235.7" cy="94.89" rx="34.3" ry="24.8"/>
+      <ellipse class="cls-5" cx="170.8" cy="130.59" rx="34.3" ry="23.7"/>
+      <ellipse class="cls-5" cx="300.6" cy="130.59" rx="34.3" ry="23.7"/>
+      <g>
+        <polyline class="cls-10" points="386.9 221.49 386.9 216.29 236.5 302.49 236.5 308.59"/>
+        <polyline class="cls-10" points="236.5 302.49 236.5 309.59 386.9 221.59"/>
+      </g>
+      <g>
+        <polyline class="cls-13" points="86 221.09 86 215.79 236.4 301.99 236.4 308.19"/>
+        <polyline class="cls-13" points="236.4 301.99 236.4 309.09 86 221.19"/>
+      </g>
+      <ellipse class="cls-11" cx="235.6" cy="158.79" rx="34.3" ry="20.3"/>
+      <ellipse class="cls-11" cx="235.7" cy="90.39" rx="34.3" ry="20.3"/>
+      <ellipse class="cls-11" cx="170.8" cy="125.09" rx="34.3" ry="20.3"/>
+      <ellipse class="cls-11" cx="300.6" cy="125.09" rx="34.3" ry="20.3"/>
+    </g>
+    <path id="b" class="cls-12" d="m225.2,445.99h22.7v-138.7h19.3l-30.6-80.9-30.6,80.9h19.3l-.1,138.7"/>
+    <path id="b-2" data-name="b" class="cls-12" d="m432.4,126.59l-11.4-19.7-120.1,69.3-9.6-16.7-54.7,67,85.4-13.9-9.6-16.7,120-69.3"/>
+    <path id="b-3" data-name="b" class="cls-12" d="m52,106.89l-11.3,19.7,120.1,69.3-9.6,16.7,85.4,13.9-54.7-67-9.6,16.7L52,106.89"/>
+  </g>
+  <g id="Layer_4" data-name="Layer 4">
+    <rect class="cls-7" x="71.9" y="127.99" width="327.4" height="176.6"/>
+    <text class="cls-6" transform="translate(96.44 275.39)"><tspan x="0" y="0">387</tspan></text>
+    <text class="cls-3" transform="translate(96.44 275.39)"><tspan x="0" y="0">387</tspan></text>
+  </g>
+</svg>

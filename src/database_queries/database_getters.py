@@ -82,6 +82,28 @@ def get_incident_by_id(incident_id):
     """
     return execute_query(query, (incident_id,), fetch_one=True)
 
+def get_scps_for_incident(incident_id):
+    """Get all SCPs related to an incident"""
+    query = """
+    SELECT S.scp_id, S.scp_code, S.title, S.short_description, S.object_class
+    FROM INCIDENT_SCP I_S
+    JOIN SCP S ON I_S.scp_id = S.scp_id
+    WHERE I_S.incident_id = %s;
+    """
+    return execute_query(query, (incident_id,))
+
+def get_all_incidents_with_scps():
+    """Get all incidents with their related SCP codes"""
+    query = """
+    SELECT I.*, GROUP_CONCAT(S.scp_code SEPARATOR ', ') as related_scps
+    FROM INCIDENT I
+    LEFT JOIN INCIDENT_SCP I_S ON I.incident_id = I_S.incident_id
+    LEFT JOIN SCP S ON I_S.scp_id = S.scp_id
+    GROUP BY I.incident_id
+    ORDER BY I.incident_date DESC;
+    """
+    return execute_query(query)
+
 # Mobile Task Force
 def get_all_mtf_units():
     query = """

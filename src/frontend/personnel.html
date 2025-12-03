@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>SCP Foundation Archives - Personnel Directory</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link href="css/styles.css" rel="stylesheet"/>
+  <style>
+    .form-select {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+      background-position: right 0.5rem center;
+      background-repeat: no-repeat;
+      background-size: 1.5em 1.5em;
+      padding-right: 2.5rem;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    .clearance-1 { background-color: rgba(34, 197, 94, 0.2); color: rgb(34, 197, 94); }
+    .clearance-2 { background-color: rgba(59, 130, 246, 0.2); color: rgb(59, 130, 246); }
+    .clearance-3 { background-color: rgba(234, 179, 8, 0.2); color: rgb(234, 179, 8); }
+    .clearance-4 { background-color: rgba(249, 115, 22, 0.2); color: rgb(249, 115, 22); }
+    .clearance-5 { background-color: rgba(239, 68, 68, 0.2); color: rgb(239, 68, 68); }
+    
+    .role-researcher { background-color: rgba(59, 130, 246, 0.2); color: rgb(59, 130, 246); }
+    .role-agent { background-color: rgba(239, 68, 68, 0.2); color: rgb(239, 68, 68); }
+    .role-security { background-color: rgba(234, 179, 8, 0.2); color: rgb(234, 179, 8); }
+    .role-default { background-color: rgba(107, 114, 128, 0.2); color: rgb(156, 163, 175); }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#141414",
+            "background-light": "#f7f7f7",
+            "background-dark": "#191919",
+          },
+          fontFamily: {
+            display: ["Space Grotesk", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            lg: "0.25rem",
+            xl: "0.5rem",
+            full: "0.75rem",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-stone-900 dark:text-stone-200">
+  <div class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="flex items-center justify-between px-6 py-3 border-b border-primary/20 dark:border-primary/30">
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-3 text-red-600">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z" fill-rule="evenodd"></path>
+            <path d="M12 6V12L16 14" stroke="white" stroke-width="2"></path>
+          </svg>
+          <h1 class="text-lg font-bold text-stone-900 dark:text-stone-100">
+            SCP Foundation Archives
+          </h1>
+        </div>
+        <nav class="hidden md:flex items-center gap-4">
+          <a class="text-sm font-medium text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100" href="index.html">Home</a>
+          <a class="text-sm font-medium text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100" href="search.html">Advanced Search</a>
+          <a class="text-sm font-bold text-stone-900 dark:text-stone-100" href="personnel.html">Personnel</a>
+          <a class="text-sm font-medium text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100" href="mtf.html">MTF Registry</a>
+          <a class="text-sm font-medium text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100" href="facilities.html">Facilities</a>
+          <a class="text-sm font-medium text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100" href="incidents.html">Incidents</a>
+        </nav>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="hidden lg:flex items-center gap-2 bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded">
+          <span class="pl-3 text-stone-500 dark:text-stone-400">
+            <svg fill="currentColor" height="18" viewBox="0 0 256 256" width="18" xmlns="http://www.w3.org/2000/svg">
+              <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+            </svg>
+          </span>
+          <input id="quick-search" class="w-48 bg-transparent text-stone-900 dark:text-stone-200 placeholder-stone-500 dark:placeholder-stone-400 focus:outline-none focus:ring-0 border-none text-sm py-2" placeholder="Search personnel..." type="search"/>
+        </div>
+        <button class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">
+          <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.93,73.93,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8,8,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8,8,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.87,123.66Z"></path>
+          </svg>
+        </button>
+        <div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-white font-bold">
+          A
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <!-- Page Header -->
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold tracking-tight uppercase">Personnel Directory</h2>
+        <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">
+          Foundation staff registry. Access restricted by clearance level.
+        </p>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="border border-primary/20 dark:border-primary/30 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold text-green-500" id="stat-total">-</div>
+          <div class="text-xs uppercase tracking-wider text-stone-500 dark:text-stone-400">Total Personnel</div>
+        </div>
+        <div class="border border-primary/20 dark:border-primary/30 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold text-blue-500" id="stat-researchers">-</div>
+          <div class="text-xs uppercase tracking-wider text-stone-500 dark:text-stone-400">Researchers</div>
+        </div>
+        <div class="border border-primary/20 dark:border-primary/30 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold text-red-500" id="stat-agents">-</div>
+          <div class="text-xs uppercase tracking-wider text-stone-500 dark:text-stone-400">Field Agents</div>
+        </div>
+        <div class="border border-primary/20 dark:border-primary/30 rounded-lg p-3 text-center">
+          <div class="text-2xl font-bold text-yellow-500" id="stat-security">-</div>
+          <div class="text-xs uppercase tracking-wider text-stone-500 dark:text-stone-400">Security</div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="border border-primary/20 dark:border-primary/30 rounded-lg mb-6">
+        <div class="px-4 py-3 border-b border-primary/20 dark:border-primary/30">
+          <h3 class="text-sm font-bold tracking-tight uppercase">Filters</h3>
+        </div>
+        <div class="p-4">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <!-- Search -->
+            <div class="space-y-1">
+              <label class="block text-xs font-medium uppercase tracking-wider text-stone-500 dark:text-stone-400" for="filter-search">
+                Search
+              </label>
+              <input 
+                class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-2 text-sm focus:ring-2 focus:ring-primary/50 dark:focus:ring-primary/60 focus:border-transparent outline-none transition" 
+                id="filter-search" 
+                placeholder="Name or callsign..." 
+                type="text"
+              />
+            </div>
+            
+            <!-- Role Filter -->
+            <div class="space-y-1">
+              <label class="block text-xs font-medium uppercase tracking-wider text-stone-500 dark:text-stone-400" for="filter-role">
+                Role
+              </label>
+              <select 
+                class="form-select w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-2 text-sm appearance-none focus:ring-2 focus:ring-primary/50 dark:focus:ring-primary/60 focus:border-transparent outline-none transition" 
+                id="filter-role"
+              >
+                <option value="">All Roles</option>
+                <option value="Researcher">Researcher</option>
+                <option value="Agent">Field Agent</option>
+                <option value="Security">Security Officer</option>
+              </select>
+            </div>
+            
+            <!-- Clearance Filter -->
+            <div class="space-y-1">
+              <label class="block text-xs font-medium uppercase tracking-wider text-stone-500 dark:text-stone-400" for="filter-clearance">
+                Clearance Level
+              </label>
+              <select 
+                class="form-select w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-2 text-sm appearance-none focus:ring-2 focus:ring-primary/50 dark:focus:ring-primary/60 focus:border-transparent outline-none transition" 
+                id="filter-clearance"
+              >
+                <option value="">All Levels</option>
+                <option value="1">Level 1</option>
+                <option value="2">Level 2</option>
+                <option value="3">Level 3</option>
+                <option value="4">Level 4</option>
+                <option value="5">Level 5</option>
+              </select>
+            </div>
+            
+            <!-- Clear Filters -->
+            <div class="flex items-end">
+              <button 
+                id="clear-filters-btn"
+                class="w-full px-4 py-2 text-sm font-medium bg-primary/10 dark:bg-primary/20 rounded hover:bg-primary/20 dark:hover:bg-primary/30 transition"
+              >
+                Clear Filters
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading State -->
+      <div id="loading-state" class="text-center py-12">
+        <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-red-600"></div>
+        <p class="mt-2 text-sm text-stone-500 dark:text-stone-400">Loading personnel records...</p>
+      </div>
+
+      <!-- Error State -->
+      <div id="error-state" class="hidden border border-red-600/30 rounded-lg p-6 bg-red-600/10">
+        <div class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+          </svg>
+          <div>
+            <h3 class="font-bold text-red-600">Error</h3>
+            <p id="error-message" class="text-sm text-stone-300"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Info -->
+      <div id="results-info" class="hidden flex items-center justify-between mb-4">
+        <h3 class="text-sm font-medium text-stone-600 dark:text-stone-400">
+          Showing <span id="results-count" class="font-bold text-stone-900 dark:text-stone-100">0</span> personnel
+        </h3>
+        <div class="text-xs text-stone-500 dark:text-stone-400">
+          Click on a card to view details
+        </div>
+      </div>
+
+      <!-- Personnel Grid -->
+      <div id="personnel-grid" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Personnel cards will be inserted here -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="empty-state" class="hidden text-center py-12">
+        <svg class="w-16 h-16 mx-auto text-stone-500 dark:text-stone-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        <p class="text-lg font-medium text-stone-500 dark:text-stone-400">No personnel found</p>
+        <p class="text-sm text-stone-500 dark:text-stone-500 mt-2">Try adjusting your filters</p>
+      </div>
+
+      <!-- Personnel Detail Modal -->
+      <div id="detail-modal" class="hidden fixed inset-0 z-50 overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center">
+          <!-- Backdrop -->
+          <div class="fixed inset-0 bg-black/60 transition-opacity" onclick="closeModal()"></div>
+          
+          <!-- Modal Content -->
+          <div class="relative bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30 rounded-lg max-w-lg w-full mx-auto shadow-xl transform transition-all">
+            <div class="px-6 py-4 border-b border-primary/20 dark:border-primary/30 flex items-center justify-between">
+              <h3 id="modal-title" class="text-lg font-bold">Personnel File</h3>
+              <button onclick="closeModal()" class="text-stone-500 hover:text-stone-700 dark:hover:text-stone-300">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </button>
+            </div>
+            <div id="modal-content" class="p-6">
+              <!-- Modal content will be inserted here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/api.js"></script>
+  <script src="js/personnel.js"></script>
+</body>
+</html>

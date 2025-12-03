@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Reports | SCP Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#141414',
+                        'background-light': '#f7f7f7',
+                        'background-dark': '#191919'
+                    },
+                    fontFamily: {
+                        'space': ['"Space Grotesk"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen">
+    <!-- Header -->
+    <header class="border-b border-primary/10 dark:border-primary/20 bg-white/50 dark:bg-black/50 backdrop-blur-sm sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo and Title -->
+                <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition">
+                    <div class="w-10 h-10 bg-primary dark:bg-white rounded flex items-center justify-center">
+                        <span class="text-white dark:text-primary font-bold text-lg">SCP</span>
+                    </div>
+                    <div class="hidden sm:block">
+                        <h1 class="font-bold text-stone-900 dark:text-stone-100 tracking-tight">SCP Foundation</h1>
+                        <p class="text-xs text-stone-500 dark:text-stone-400">Secure. Contain. Protect.</p>
+                    </div>
+                </a>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center gap-4">
+                    <a href="index.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition">Home</a>
+                    <a href="search.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition">Advanced Search</a>
+                    <a href="personnel.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition">Personnel</a>
+                    <a href="mtf.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition">MTF Registry</a>
+                    <a href="facilities.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition">Facilities</a>
+                    <a href="incidents.html" class="text-sm text-red-600 dark:text-red-400 font-medium">Incidents</a>
+                </nav>
+
+                <!-- Quick Search -->
+                <div class="flex items-center gap-2">
+                    <div class="relative">
+                        <input type="text" id="quickSearch" placeholder="Quick search..." 
+                            class="w-32 sm:w-40 px-3 py-1.5 text-sm bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500/50 text-stone-900 dark:text-stone-100 placeholder-stone-400">
+                    </div>
+                    <!-- Mobile menu button -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 text-stone-600 dark:text-stone-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav id="mobileMenu" class="hidden md:hidden mt-3 pt-3 border-t border-primary/10 dark:border-primary/20">
+                <div class="flex flex-col gap-2">
+                    <a href="index.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition py-1">Home</a>
+                    <a href="search.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition py-1">Advanced Search</a>
+                    <a href="personnel.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition py-1">Personnel</a>
+                    <a href="mtf.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition py-1">MTF Registry</a>
+                    <a href="facilities.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition py-1">Facilities</a>
+                    <a href="incidents.html" class="text-sm text-red-600 dark:text-red-400 font-medium py-1">Incidents</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Page Header -->
+        <div class="mb-8">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-12 h-12 rounded-lg bg-red-600/20 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">Incident Reports</h1>
+                    <p class="text-sm text-stone-500 dark:text-stone-400">Security Breaches & Containment Failures</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div class="border border-primary/20 dark:border-primary/30 rounded-lg p-4 bg-white/50 dark:bg-black/20">
+                <div class="text-2xl font-bold text-stone-900 dark:text-stone-100" id="totalIncidents">--</div>
+                <div class="text-xs text-stone-500 dark:text-stone-400 uppercase tracking-wider">Total Incidents</div>
+            </div>
+            <div class="border border-primary/20 dark:border-primary/30 rounded-lg p-4 bg-white/50 dark:bg-black/20">
+                <div class="text-2xl font-bold text-red-600" id="criticalCount">--</div>
+                <div class="text-xs text-stone-500 dark:text-stone-400 uppercase tracking-wider">Critical (Lvl 4+)</div>
+            </div>
+            <div class="border border-primary/20 dark:border-primary/30 rounded-lg p-4 bg-white/50 dark:bg-black/20">
+                <div class="text-2xl font-bold text-orange-500" id="highCount">--</div>
+                <div class="text-xs text-stone-500 dark:text-stone-400 uppercase tracking-wider">High (Lvl 3)</div>
+            </div>
+            <div class="border border-primary/20 dark:border-primary/30 rounded-lg p-4 bg-white/50 dark:bg-black/20">
+                <div class="text-2xl font-bold text-yellow-500" id="mediumLowCount">--</div>
+                <div class="text-xs text-stone-500 dark:text-stone-400 uppercase tracking-wider">Medium/Low (Lvl 1-2)</div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="border border-primary/20 dark:border-primary/30 rounded-lg mb-6 bg-white/50 dark:bg-black/20">
+            <div class="px-4 py-3 border-b border-primary/10 dark:border-primary/20">
+                <h3 class="text-sm font-bold text-stone-900 dark:text-stone-100 tracking-tight uppercase">Filters</h3>
+            </div>
+            <div class="p-4">
+                <div class="flex flex-col md:flex-row gap-4">
+                    <!-- Severity Filter Tabs -->
+                    <div class="flex flex-wrap gap-2">
+                        <button data-severity="all" class="severity-filter px-4 py-2 text-sm font-medium rounded-lg bg-red-600 text-white transition">
+                            All
+                        </button>
+                        <button data-severity="critical" class="severity-filter px-4 py-2 text-sm font-medium rounded-lg bg-stone-200 dark:bg-stone-700 text-stone-700 dark:text-stone-300 hover:bg-red-600 hover:text-white transition">
+                            Critical
+                        </button>
+                        <button data-severity="high" class="severity-filter px-4 py-2 text-sm font-medium rounded-lg bg-stone-200 dark:bg-stone-700 text-stone-700 dark:text-stone-300 hover:bg-red-600 hover:text-white transition">
+                            High
+                        </button>
+                        <button data-severity="medium-low" class="severity-filter px-4 py-2 text-sm font-medium rounded-lg bg-stone-200 dark:bg-stone-700 text-stone-700 dark:text-stone-300 hover:bg-red-600 hover:text-white transition">
+                            Medium/Low
+                        </button>
+                    </div>
+                    
+                    <!-- Search Input -->
+                    <div class="flex-grow">
+                        <input type="text" id="incidentSearch" placeholder="Search by title, SCP code, or summary..."
+                            class="w-full px-4 py-2 text-sm bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500/50 text-stone-900 dark:text-stone-100 placeholder-stone-400">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="flex items-center justify-center py-12">
+            <div class="flex flex-col items-center gap-3">
+                <svg class="animate-spin w-8 h-8 text-red-600" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span class="text-sm text-stone-500 dark:text-stone-400">Loading incident reports...</span>
+            </div>
+        </div>
+
+        <!-- Error State -->
+        <div id="errorState" class="hidden border border-red-500/30 bg-red-500/10 rounded-lg p-6 text-center">
+            <svg class="w-12 h-12 mx-auto text-red-500 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+            <h3 class="font-bold text-red-600 mb-1">Error Loading Incidents</h3>
+            <p id="errorMessage" class="text-sm text-stone-500 dark:text-stone-400"></p>
+            <button onclick="loadIncidents()" class="mt-4 px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition">
+                Retry
+            </button>
+        </div>
+
+        <!-- Results Info -->
+        <div id="resultsInfo" class="hidden mb-4">
+            <span class="text-sm text-stone-500 dark:text-stone-400">
+                Showing <span id="resultsCount" class="font-medium text-stone-700 dark:text-stone-300">0</span> incident reports
+            </span>
+            <span class="text-sm text-stone-400 dark:text-stone-500 ml-2">• Click a report for full details</span>
+        </div>
+
+        <!-- Incidents Grid -->
+        <div id="incidentsGrid" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Incident cards will be inserted here -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden border border-primary/20 dark:border-primary/30 rounded-lg p-12 text-center">
+            <svg class="w-16 h-16 mx-auto text-stone-300 dark:text-stone-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <h3 class="font-bold text-stone-700 dark:text-stone-300 mb-1">No Incidents Found</h3>
+            <p class="text-sm text-stone-500 dark:text-stone-400">Try adjusting your search or filter criteria</p>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/incidents.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+
+        // Quick search redirect
+        document.getElementById('quickSearch').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && this.value.trim()) {
+                window.location.href = `search.html?q=${encodeURIComponent(this.value.trim())}`;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -296,22 +296,23 @@ async function loadMTFUnits() {
 
         let html = '';
         displayedUnits.forEach(unit => {
-            const name = unit.unit_name || unit.name || 'Unknown Unit';
-            const designation = unit.designation || unit.unit_code || '';
-            const specialization = unit.specialization || unit.specialty || '';
+            // MTF data has: designation, nickname, primary_role, notes
+            const name = unit.nickname || 'Unknown Unit';
+            const designation = unit.designation || '';
+            const primaryRole = unit.primary_role || '';
 
             html += `
-                <div class="flex items-center justify-between p-2 rounded hover:bg-primary/5 dark:hover:bg-primary/10">
+                <a href="mtf.html" class="flex items-center justify-between p-2 rounded hover:bg-primary/5 dark:hover:bg-primary/10 transition">
                     <div>
-                        <div class="text-sm font-medium">${escapeHtml(name)}</div>
-                        ${designation ? `<div class="text-xs text-stone-500 dark:text-stone-400">${escapeHtml(designation)}</div>` : ''}
+                        <div class="text-sm font-medium">"${escapeHtml(name)}"</div>
+                        ${designation ? `<div class="text-xs text-stone-500 dark:text-stone-400">MTF ${escapeHtml(designation)}</div>` : ''}
                     </div>
-                    ${specialization ? `
+                    ${primaryRole ? `
                         <span class="text-xs px-2 py-0.5 rounded bg-purple-600/10 text-purple-500">
-                            ${escapeHtml(truncateText(specialization, 20))}
+                            ${escapeHtml(truncateText(primaryRole, 20))}
                         </span>
                     ` : ''}
-                </div>
+                </a>
             `;
         });
 

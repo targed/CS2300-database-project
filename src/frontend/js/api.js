@@ -1,4 +1,3 @@
-// API Base URL
 const API_BASE_URL = 'http://localhost:5000/api';
 
 /**
@@ -162,10 +161,6 @@ async function fetchAllFacilities() {
         throw new Error(`Failed to fetch facilities: ${error.message}`);
     }
 }
-
-// ============================================================
-// FACILITY CRUD FUNCTIONS
-// ============================================================
 
 /**
  * Fetch a single facility by ID
@@ -362,10 +357,6 @@ async function fetchIncidentSCPs(incidentId) {
     }
 }
 
-// ============================================================
-// INCIDENT CRUD FUNCTIONS
-// ============================================================
-
 /**
  * Create a new incident record
  * @param {Object} incidentData - Incident data object
@@ -514,10 +505,6 @@ async function fetchAllMTFUnits() {
         throw new Error(`Failed to fetch MTF units: ${error.message}`);
     }
 }
-
-// ============================================================
-// MTF CRUD FUNCTIONS
-// ============================================================
 
 /**
  * Fetch a single MTF unit by ID
@@ -694,10 +681,6 @@ async function deleteSCPEntry(scpId) {
         throw new Error(`Failed to delete SCP: ${error.message}`);
     }
 }
-
-// ============================================================
-// PERSONNEL CRUD FUNCTIONS
-// ============================================================
 
 /**
  * Fetch a single personnel by ID

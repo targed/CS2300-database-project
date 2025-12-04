@@ -1,15 +1,3 @@
-/**
- * Incidents Page JavaScript
- * Handles loading, filtering, and displaying SCP Foundation incident reports
- * 
- * DEFCON-style severity scale (1 = most severe, 5 = least severe):
- * - Level 1: Critical - Catastrophic breach requiring immediate response
- * - Level 2: Severe - Major containment failure, significant casualties possible
- * - Level 3: Elevated - Moderate risk, containment compromised but manageable
- * - Level 4: Moderate - Minor breach, situation under control
- * - Level 5: Low - Minimal impact, routine incident
- */
-
 // State
 let allIncidents = [];
 let filteredIncidents = [];

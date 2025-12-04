@@ -1,8 +1,3 @@
-/**
- * Facilities Page JavaScript
- * Handles loading, filtering, and displaying SCP Foundation facilities
- */
-
 // State
 let allFacilities = [];
 let filteredFacilities = [];
@@ -351,8 +346,6 @@ function closeFacilityModal() {
     document.getElementById('facilityModal').classList.add('hidden');
     document.body.style.overflow = '';
 }
-
-// ============ CRUD Functions ============
 
 /**
  * Toggle form location fields visibility

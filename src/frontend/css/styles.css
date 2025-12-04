@@ -1,5 +1,3 @@
-/* Custom styles beyond Tailwind */
-
 /* Smooth transitions */
 * {
     transition-property: background-color, border-color, color, opacity;
@@ -86,19 +84,11 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    /* This is important! The background color will be the color of your bars. */
     background-color: #222222;
 }
 
 .video-container video {
-    /* Make the video element fill the container */
     width: 100%;
     height: 100%;
-
-    /* This is the key property. It does exactly what you want:
-       - Scales the video up or down to fit inside the container.
-       - Maintains the video's original aspect ratio.
-       - Does NOT crop the video.
-       - The empty space is filled by the container's background color. */
     object-fit: contain;
 }

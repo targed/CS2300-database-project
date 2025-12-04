@@ -3,9 +3,6 @@ import re
 import os
 import html
 
-# ----------------------------------------------------------------------------
-# CONFIGURATION
-# ----------------------------------------------------------------------------
 # List the SCPs you want to download
 # Get scps 21 - 200
 SCPS_TO_FETCH = list(range(21, 201))
@@ -14,9 +11,6 @@ SCPS_TO_FETCH = list(range(21, 201))
 # Output directory
 OUTPUT_DIR = "raw_scp_files"
 
-# ----------------------------------------------------------------------------
-# LOGIC
-# ----------------------------------------------------------------------------
 def get_wikidot_source(scp_number):
     """
     Fetches the RAW Wikidot source code by mimicking the 'View Source' button click.
@@ -109,9 +103,6 @@ def save_to_file(filename, content):
         f.write(content)
     print(f"  Saved to {filepath}")
 
-# ----------------------------------------------------------------------------
-# EXECUTION
-# ----------------------------------------------------------------------------
 if __name__ == "__main__":
     for scp_num in SCPS_TO_FETCH:
         source_code = get_wikidot_source(scp_num)

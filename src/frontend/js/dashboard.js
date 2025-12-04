@@ -1,8 +1,3 @@
-/**
- * SCP Foundation Dashboard
- * Handles loading and displaying dashboard data
- */
-
 // Store all SCPs for random selection
 let allSCPs = [];
 
@@ -323,8 +318,6 @@ async function loadMTFUnits() {
         container.innerHTML = '<p class="text-sm text-stone-500 dark:text-stone-400 text-center py-2">Unable to load MTF units</p>';
     }
 }
-
-// ============ Utility Functions ============
 
 /**
  * Get color for object class

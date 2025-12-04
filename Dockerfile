@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     wget \
     build-essential \
+    default-mysql-client \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Fish shell

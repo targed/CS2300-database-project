@@ -81,7 +81,7 @@
           <!-- Logo and Title -->
           <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition">
             <div class="w-10 h-10 bg-primary dark:bg-white rounded flex items-center justify-center">
-              <img src="assets/foundation_assets/SCP_Foundation_(emblem).svg" alt="SCP" class="w-8 h-8 dark:invert">
+              <img src="assets/foundation_assets/SCP_Foundation_(emblem).svg" alt="SCP" class="w-8 h-8">
             </div>
             <div class="hidden sm:block">
               <h1 class="font-bold text-stone-900 dark:text-stone-100 tracking-tight">SCP Foundation</h1>
@@ -131,11 +131,19 @@
     <!-- Main Content -->
     <main class="flex-grow w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <!-- Page Header -->
-      <div class="mb-8">
-        <h2 class="text-2xl font-bold tracking-tight uppercase">Mobile Task Force Registry</h2>
-        <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">
-          Specialized Foundation units for containment, response, and investigation operations.
-        </p>
+      <div class="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight uppercase">Mobile Task Force Registry</h2>
+          <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">
+            Specialized Foundation units for containment, response, and investigation operations.
+          </p>
+        </div>
+        <button id="add-mtf-btn" onclick="openCreateModal()" class="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-bold uppercase tracking-wider bg-purple-600 text-white rounded hover:bg-purple-700 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+          </svg>
+          Add MTF Unit
+        </button>
       </div>
 
       <!-- Stats Row -->
@@ -311,7 +319,169 @@
           </div>
         </div>
       </div>
+
+      <!-- Create/Edit MTF Form Modal -->
+      <div id="form-modal" class="hidden fixed inset-0 z-50 overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center">
+          <!-- Backdrop -->
+          <div class="fixed inset-0 bg-black/60 transition-opacity" onclick="closeFormModal()"></div>
+          
+          <!-- Modal Content -->
+          <div class="relative bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30 rounded-lg max-w-lg w-full mx-auto shadow-xl transform transition-all">
+            <div class="px-6 py-4 border-b border-primary/20 dark:border-primary/30 flex items-center justify-between">
+              <h3 id="form-modal-title" class="text-lg font-bold">Add MTF Unit</h3>
+              <button onclick="closeFormModal()" class="text-stone-500 hover:text-stone-700 dark:hover:text-stone-300">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </button>
+            </div>
+            <form id="mtf-form" class="p-6" onsubmit="saveMTF(event)">
+              <input type="hidden" id="form-mtf-id" value="">
+              
+              <div class="space-y-4">
+                <!-- Greek Letter Dropdown -->
+                <div>
+                  <label for="form-greek-letter" class="block text-xs font-medium uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-1">
+                    Greek Letter <span class="text-red-500">*</span>
+                  </label>
+                  <select id="form-greek-letter" required
+                    class="form-select w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-2 text-sm focus:ring-2 focus:ring-purple-500/50 focus:border-transparent outline-none transition">
+                    <option value="">Select Greek Letter</option>
+                    <option value="Alpha">Alpha (Α)</option>
+                    <option value="Beta">Beta (Β)</option>
+                    <option value="Gamma">Gamma (Γ)</option>
+                    <option value="Delta">Delta (Δ)</option>
+                    <option value="Epsilon">Epsilon (Ε)</option>
+                    <option value="Zeta">Zeta (Ζ)</option>
+                    <option value="Eta">Eta (Η)</option>
+                    <option value="Theta">Theta (Θ)</option>
+                    <option value="Iota">Iota (Ι)</option>
+                    <option value="Kappa">Kappa (Κ)</option>
+                    <option value="Lambda">Lambda (Λ)</option>
+                    <option value="Mu">Mu (Μ)</option>
+                    <option value="Nu">Nu (Ν)</option>
+                    <option value="Xi">Xi (Ξ)</option>
+                    <option value="Omicron">Omicron (Ο)</option>
+                    <option value="Pi">Pi (Π)</option>
+                    <option value="Rho">Rho (Ρ)</option>
+                    <option value="Sigma">Sigma (Σ)</option>
+                    <option value="Tau">Tau (Τ)</option>
+                    <option value="Upsilon">Upsilon (Υ)</option>
+                    <option value="Phi">Phi (Φ)</option>
+                    <option value="Chi">Chi (Χ)</option>
+                    <option value="Psi">Psi (Ψ)</option>
+                    <option value="Omega">Omega (Ω)</option>
+                  </select>
+                </div>
+                
+                <!-- Unit Number -->
+                <div>
+                  <label for="form-unit-number" class="block text-xs font-medium uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-1">
+                    Unit Number <span class="text-red-500">*</span>
+                  </label>
+                  <input type="number" id="form-unit-number" min="1" max="999" required
+                    placeholder="e.g., 1, 7, 12..."
+                    class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-2 text-sm focus:ring-2 focus:ring-purple-500/50 focus:border-transparent outline-none transition">
+                </div>
+                
+                <!-- Designation Preview -->
+                <div class="p-3 bg-purple-600/10 border border-purple-600/20 rounded">
+                  <label class="block text-xs font-medium uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-1">
+                    Designation Preview
+                  </label>
+                  <p id="designation-preview" class="text-lg font-bold text-purple-500">MTF ---</p>
+                </div>
+                
+                <!-- Nickname -->
+                <div>
+                  <label for="form-nickname" class="block text-xs font-medium uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-1">
+                    Nickname / Codename
+                  </label>
+                  <input type="text" id="form-nickname"
+                    placeholder="e.g., Red Right Hand, Maz Hatters..."
+                    class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-2 text-sm focus:ring-2 focus:ring-purple-500/50 focus:border-transparent outline-none transition">
+                </div>
+                
+                <!-- Primary Role -->
+                <div>
+                  <label for="form-primary-role" class="block text-xs font-medium uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-1">
+                    Primary Role & Capabilities
+                  </label>
+                  <textarea id="form-primary-role" rows="3"
+                    placeholder="Describe the unit's specialization, capabilities, and typical operations..."
+                    class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-2 text-sm focus:ring-2 focus:ring-purple-500/50 focus:border-transparent outline-none transition resize-none"></textarea>
+                </div>
+                
+                <!-- Notes -->
+                <div>
+                  <label for="form-notes" class="block text-xs font-medium uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-1">
+                    Additional Notes
+                  </label>
+                  <textarea id="form-notes" rows="2"
+                    placeholder="Additional operational notes..."
+                    class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-2 text-sm focus:ring-2 focus:ring-purple-500/50 focus:border-transparent outline-none transition resize-none"></textarea>
+                </div>
+              </div>
+              
+              <!-- Form Actions -->
+              <div class="mt-6 flex justify-end gap-3">
+                <button type="button" onclick="closeFormModal()"
+                  class="px-4 py-2 text-sm font-medium bg-stone-200 dark:bg-stone-700 text-stone-700 dark:text-stone-300 rounded hover:bg-stone-300 dark:hover:bg-stone-600 transition">
+                  Cancel
+                </button>
+                <button type="submit"
+                  class="px-4 py-2 text-sm font-medium bg-purple-600 text-white rounded hover:bg-purple-700 transition">
+                  Save MTF Unit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Disband Confirmation Modal -->
+      <div id="disband-modal" class="hidden fixed inset-0 z-50 overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center">
+          <!-- Backdrop -->
+          <div class="fixed inset-0 bg-black/60 transition-opacity" onclick="closeDisbandModal()"></div>
+          
+          <!-- Modal Content -->
+          <div class="relative bg-background-light dark:bg-background-dark border border-red-600/30 rounded-lg max-w-md w-full mx-auto shadow-xl transform transition-all">
+            <div class="p-6">
+              <div class="flex items-center justify-center w-12 h-12 mx-auto bg-red-600/20 rounded-full mb-4">
+                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold text-stone-900 dark:text-stone-100 mb-2">Disband MTF Unit</h3>
+              <p class="text-sm text-stone-600 dark:text-stone-400 mb-4">
+                Are you sure you want to disband <span id="disband-mtf-name" class="font-bold text-red-500"></span>? 
+                This action cannot be undone and will remove all incident associations.
+              </p>
+              <input type="hidden" id="disband-mtf-id" value="">
+              
+              <div class="flex justify-center gap-3">
+                <button type="button" onclick="closeDisbandModal()"
+                  class="px-4 py-2 text-sm font-medium bg-stone-200 dark:bg-stone-700 text-stone-700 dark:text-stone-300 rounded hover:bg-stone-300 dark:hover:bg-stone-600 transition">
+                  Cancel
+                </button>
+                <button type="button" onclick="confirmDisband()"
+                  class="px-4 py-2 text-sm font-medium bg-red-600 text-white rounded hover:bg-red-700 transition">
+                  Disband Unit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="hidden fixed bottom-4 right-4 z-50 flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg border transition-all duration-300">
+      <span id="toast-icon"></span>
+      <span id="toast-message" class="text-sm font-medium"></span>
+    </div>
   </div>
 
   <!-- JavaScript -->

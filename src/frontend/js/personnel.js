@@ -6,14 +6,75 @@
 // Store all personnel for filtering
 let allPersonnel = [];
 let filteredPersonnel = [];
+let securityClearances = [];
+let currentEditPerson = null;
 
 /**
  * Initialize personnel page on load
  */
 document.addEventListener('DOMContentLoaded', async () => {
+    await loadSecurityClearances();
     await loadPersonnel();
     setupEventListeners();
 });
+
+/**
+ * Load security clearances for dropdown
+ */
+async function loadSecurityClearances() {
+    try {
+        securityClearances = await fetchSecurityClearances();
+        populateClearanceDropdown();
+    } catch (error) {
+        console.error('Error loading security clearances:', error);
+    }
+}
+
+/**
+ * Populate security clearance dropdown in form
+ */
+function populateClearanceDropdown() {
+    const select = document.getElementById('form-clearance');
+    if (!select) return;
+
+    select.innerHTML = '<option value="">Select Clearance</option>';
+
+    securityClearances.forEach(sc => {
+        const option = document.createElement('option');
+        option.value = sc.clearance_id;
+        option.textContent = sc.level_name || `Level ${sc.clearance_id}`;
+        select.appendChild(option);
+    });
+}
+
+/**
+ * Get the level name for a clearance_id
+ * @param {number} clearanceId - The clearance_id from the database
+ * @returns {string} - The level name (e.g., "Level 4")
+ */
+function getClearanceLevelName(clearanceId) {
+    if (!clearanceId) return 'Unknown';
+    const sc = securityClearances.find(s => s.clearance_id === clearanceId);
+    if (sc && sc.level_name) {
+        return sc.level_name;
+    }
+    return `Level ${clearanceId}`;
+}
+
+/**
+ * Get the numeric level from clearance_id (extracts number from level_name)
+ * @param {number} clearanceId - The clearance_id from the database
+ * @returns {number} - The numeric level (0-5)
+ */
+function getClearanceLevel(clearanceId) {
+    if (!clearanceId) return 0;
+    const sc = securityClearances.find(s => s.clearance_id === clearanceId);
+    if (sc && sc.level_name) {
+        const match = sc.level_name.match(/Level\s*(\d+)/i);
+        if (match) return parseInt(match[1]);
+    }
+    return clearanceId;
+}
 
 /**
  * Setup event listeners
@@ -52,10 +113,18 @@ function setupEventListeners() {
         }, 300));
     }
 
+    // Add Personnel button
+    const addBtn = document.getElementById('add-personnel-btn');
+    if (addBtn) {
+        addBtn.addEventListener('click', openCreateModal);
+    }
+
     // Close modal on escape
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             closeModal();
+            closeFormModal();
+            closeDeleteModal();
         }
     });
 }
@@ -212,7 +281,9 @@ function createPersonnelCard(person) {
     const fullName = [person.given_name, person.surname].filter(Boolean).join(' ') || 'Unknown';
     const callsign = person.callsign || null;
     const role = person.role || 'Unknown';
-    const clearance = person.clearance_id || person.clearance_level || 0;
+    const clearanceId = person.clearance_id || person.clearance_level || 0;
+    const clearanceLevel = getClearanceLevel(clearanceId);
+    const clearanceName = getClearanceLevelName(clearanceId);
 
     // Get role class
     let roleClass = 'role-default';
@@ -220,8 +291,8 @@ function createPersonnelCard(person) {
     else if (role === 'Agent') roleClass = 'role-agent';
     else if (role === 'Security Officer' || role === 'Security') roleClass = 'role-security';
 
-    // Get clearance class
-    const clearanceClass = `clearance-${clearance}`;
+    // Get clearance class (use numeric level for styling)
+    const clearanceClass = `clearance-${clearanceLevel}`;
 
     // Get initials for avatar
     const initials = getInitials(fullName);
@@ -244,7 +315,7 @@ function createPersonnelCard(person) {
                         ${escapeHtml(role)}
                     </span>
                     <span class="px-2 py-0.5 text-xs font-bold rounded ${clearanceClass}">
-                        Level ${clearance}
+                        ${escapeHtml(clearanceName)}
                     </span>
                 </div>
                 
@@ -272,7 +343,9 @@ function showPersonnelDetail(person) {
     const fullName = [person.given_name, person.surname].filter(Boolean).join(' ') || 'Unknown';
     const callsign = person.callsign || null;
     const role = person.role || 'Unknown';
-    const clearance = person.clearance_id || person.clearance_level || 0;
+    const clearanceId = person.clearance_id || person.clearance_level || 0;
+    const clearanceLevel = getClearanceLevel(clearanceId);
+    const clearanceName = getClearanceLevelName(clearanceId);
     const hireDate = person.hire_date || null;
     const notes = person.notes || null;
 
@@ -282,7 +355,7 @@ function showPersonnelDetail(person) {
     else if (role === 'Agent') roleClass = 'role-agent';
     else if (role === 'Security Officer' || role === 'Security') roleClass = 'role-security';
 
-    const clearanceClass = `clearance-${clearance}`;
+    const clearanceClass = `clearance-${clearanceLevel}`;
     const initials = getInitials(fullName);
 
     modalTitle.textContent = callsign ? `Dr. ${callsign}` : fullName;
@@ -301,7 +374,7 @@ function showPersonnelDetail(person) {
                 ${escapeHtml(role)}
             </span>
             <span class="px-3 py-1 text-sm font-bold rounded ${clearanceClass}">
-                Clearance Level ${clearance}
+                ${escapeHtml(clearanceName)}
             </span>
         </div>
         
@@ -335,9 +408,23 @@ function showPersonnelDetail(person) {
         </div>
         
         <div class="mt-6 pt-4 border-t border-primary/10 dark:border-primary/20">
-            <p class="text-xs text-stone-500 dark:text-stone-500 text-center uppercase tracking-wider">
-                [ACCESS RESTRICTED - LEVEL ${clearance} CLEARANCE REQUIRED]
+            <p class="text-xs text-stone-500 dark:text-stone-500 text-center uppercase tracking-wider mb-4">
+                [ACCESS RESTRICTED - ${escapeHtml(clearanceName).toUpperCase()} CLEARANCE REQUIRED]
             </p>
+            <div class="flex justify-center gap-3">
+                <button onclick="openEditModal(${person.person_id})" class="px-4 py-2 text-sm font-medium bg-blue-600/20 text-blue-400 border border-blue-600/40 rounded hover:bg-blue-600/30 transition flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                    </svg>
+                    Edit
+                </button>
+                <button onclick="openDeleteModal(${person.person_id}, '${escapeHtml(fullName).replace(/'/g, "\\'")}')" class="px-4 py-2 text-sm font-medium bg-red-600/20 text-red-400 border border-red-600/40 rounded hover:bg-red-600/30 transition flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                    </svg>
+                    Decommission
+                </button>
+            </div>
         </div>
     `;
 
@@ -456,4 +543,205 @@ function debounce(func, wait) {
         clearTimeout(timeout);
         timeout = setTimeout(later, wait);
     };
+}
+
+// ============ CRUD Functions ============
+
+/**
+ * Open create personnel modal
+ */
+function openCreateModal() {
+    currentEditPerson = null;
+    document.getElementById('form-modal-title').textContent = 'Add Personnel';
+    document.getElementById('form-person-id').value = '';
+    document.getElementById('form-given-name').value = '';
+    document.getElementById('form-surname').value = '';
+    document.getElementById('form-callsign').value = '';
+    document.getElementById('form-role').value = '';
+    document.getElementById('form-clearance').value = '';
+    document.getElementById('form-hire-date').value = '';
+    document.getElementById('form-notes').value = '';
+
+    document.getElementById('form-modal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+/**
+ * Open edit personnel modal
+ * @param {number} personId - Personnel ID to edit
+ */
+function openEditModal(personId) {
+    // Find the person in our local data
+    const person = allPersonnel.find(p => p.person_id === personId);
+    if (!person) {
+        showToast('Personnel not found', 'error');
+        return;
+    }
+
+    currentEditPerson = person;
+
+    // Close detail modal first
+    closeModal();
+
+    document.getElementById('form-modal-title').textContent = 'Edit Personnel';
+    document.getElementById('form-person-id').value = person.person_id;
+    document.getElementById('form-given-name').value = person.given_name || '';
+    document.getElementById('form-surname').value = person.surname || '';
+    document.getElementById('form-callsign').value = person.callsign || '';
+    document.getElementById('form-role').value = person.role || '';
+    document.getElementById('form-clearance').value = person.clearance_id || '';
+    document.getElementById('form-hire-date').value = person.hire_date ? person.hire_date.split('T')[0] : '';
+    document.getElementById('form-notes').value = person.notes || '';
+
+    document.getElementById('form-modal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+/**
+ * Close form modal
+ */
+function closeFormModal() {
+    document.getElementById('form-modal').classList.add('hidden');
+    document.body.style.overflow = '';
+    currentEditPerson = null;
+}
+
+/**
+ * Save personnel (create or update)
+ */
+async function savePersonnel() {
+    const personId = document.getElementById('form-person-id').value;
+    const givenName = document.getElementById('form-given-name').value.trim();
+    const surname = document.getElementById('form-surname').value.trim();
+    const callsign = document.getElementById('form-callsign').value.trim();
+    const role = document.getElementById('form-role').value;
+    const clearanceId = document.getElementById('form-clearance').value;
+    const hireDate = document.getElementById('form-hire-date').value;
+    const notes = document.getElementById('form-notes').value.trim();
+
+    // Validate required fields
+    if (!givenName) {
+        showToast('Given name is required', 'error');
+        return;
+    }
+    if (!surname) {
+        showToast('Surname is required', 'error');
+        return;
+    }
+    if (!role) {
+        showToast('Role is required', 'error');
+        return;
+    }
+    if (!clearanceId) {
+        showToast('Security clearance is required', 'error');
+        return;
+    }
+
+    const personnelData = {
+        given_name: givenName,
+        surname: surname,
+        callsign: callsign || null,
+        role: role,
+        clearance_id: parseInt(clearanceId),
+        hire_date: hireDate || null,
+        notes: notes || null
+    };
+
+    try {
+        if (personId) {
+            // Update existing
+            await updatePersonnelRecord(parseInt(personId), personnelData);
+            showToast('Personnel updated successfully', 'success');
+        } else {
+            // Create new
+            await createPersonnelRecord(personnelData);
+            showToast('Personnel created successfully', 'success');
+        }
+
+        closeFormModal();
+
+        // Reload personnel data
+        await loadPersonnel();
+
+    } catch (error) {
+        showToast(`Failed to save: ${error.message}`, 'error');
+    }
+}
+
+/**
+ * Open delete confirmation modal
+ * @param {number} personId - Personnel ID to delete
+ * @param {string} personName - Personnel name for display
+ */
+function openDeleteModal(personId, personName) {
+    // Close detail modal first
+    closeModal();
+
+    document.getElementById('delete-person-id').value = personId;
+    document.getElementById('delete-person-name').textContent = personName;
+    document.getElementById('delete-modal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+/**
+ * Close delete confirmation modal
+ */
+function closeDeleteModal() {
+    document.getElementById('delete-modal').classList.add('hidden');
+    document.body.style.overflow = '';
+}
+
+/**
+ * Confirm and execute personnel decommission
+ */
+async function confirmDecommission() {
+    const personId = document.getElementById('delete-person-id').value;
+
+    if (!personId) {
+        showToast('Error: No personnel ID found', 'error');
+        return;
+    }
+
+    try {
+        await decommissionPersonnel(parseInt(personId));
+        closeDeleteModal();
+        showToast('Personnel decommissioned successfully', 'success');
+
+        // Reload personnel data
+        await loadPersonnel();
+
+    } catch (error) {
+        showToast(`Failed to decommission: ${error.message}`, 'error');
+    }
+}
+
+/**
+ * Show toast notification
+ * @param {string} message - Message to display
+ * @param {string} type - 'success' or 'error'
+ */
+function showToast(message, type) {
+    const toast = document.getElementById('toast');
+    const toastIcon = document.getElementById('toast-icon');
+    const toastMessage = document.getElementById('toast-message');
+
+    if (!toast) return;
+
+    // Set icon and style based on type
+    if (type === 'success') {
+        toast.className = 'fixed bottom-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg transform transition-all duration-300 bg-green-600/90 border border-green-500';
+        toastIcon.innerHTML = '<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
+    } else {
+        toast.className = 'fixed bottom-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg transform transition-all duration-300 bg-red-600/90 border border-red-500';
+        toastIcon.innerHTML = '<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
+    }
+
+    toastMessage.textContent = message;
+    toastMessage.className = 'text-sm font-medium text-white';
+    toast.classList.remove('hidden');
+
+    // Auto-hide after 4 seconds
+    setTimeout(() => {
+        toast.classList.add('hidden');
+    }, 4000);
 }

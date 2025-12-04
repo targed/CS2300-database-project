@@ -56,7 +56,7 @@
                 <!-- Logo and Title -->
                 <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition">
                     <div class="w-10 h-10 bg-primary dark:bg-white rounded flex items-center justify-center">
-                        <img src="assets/foundation_assets/SCP_Foundation_(emblem).svg" alt="SCP" class="w-8 h-8 dark:invert">
+                        <img src="assets/foundation_assets/SCP_Foundation_(emblem).svg" alt="SCP" class="w-8 h-8">
                     </div>
                     <div class="hidden sm:block">
                         <h1 class="font-bold text-stone-900 dark:text-stone-100 tracking-tight">SCP Foundation</h1>
@@ -106,8 +106,8 @@
     <!-- Main Content -->
     <main class="max-w-6xl mx-auto px-4 py-8">
         <!-- Page Header -->
-        <div class="mb-8">
-            <div class="flex items-center gap-3 mb-2">
+        <div class="mb-8 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+            <div class="flex items-center gap-3">
                 <div class="w-12 h-12 rounded-lg bg-amber-600/20 flex items-center justify-center">
                     <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
@@ -118,6 +118,12 @@
                     <p class="text-sm text-stone-500 dark:text-stone-400">Foundation Sites, Areas & Installations</p>
                 </div>
             </div>
+            <button id="add-facility-btn" onclick="openCreateModal()" class="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-bold uppercase tracking-wider bg-amber-600 text-white rounded hover:bg-amber-700 transition">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                </svg>
+                Add Facility
+            </button>
         </div>
 
         <!-- Stats Row -->
@@ -269,9 +275,183 @@
                             <div id="modalLocation"><!-- Location details --></div>
                         </div>
                     </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="mt-6 pt-4 border-t border-primary/10 dark:border-primary/20">
+                        <p class="text-xs text-stone-500 dark:text-stone-500 text-center uppercase tracking-wider mb-4">
+                            [FACILITY ADMINISTRATION - LEVEL 4 CLEARANCE REQUIRED]
+                        </p>
+                        <div id="modalActions" class="flex justify-center gap-3">
+                            <!-- Edit/Decommission buttons will be inserted here -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Create/Edit Facility Form Modal -->
+    <div id="form-modal" class="hidden fixed inset-0 z-50 overflow-y-auto">
+        <div class="fixed inset-0 bg-black/60 backdrop-blur-sm" onclick="closeFormModal()"></div>
+        <div class="relative min-h-screen flex items-center justify-center p-4">
+            <div class="relative bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30 rounded-lg max-w-lg w-full max-h-[90vh] overflow-hidden">
+                <!-- Modal Header -->
+                <div class="px-6 py-4 border-b border-primary/10 dark:border-primary/20 flex items-center justify-between">
+                    <h3 id="form-modal-title" class="text-lg font-bold text-stone-900 dark:text-stone-100">Add Facility</h3>
+                    <button onclick="closeFormModal()" class="p-2 text-stone-400 hover:text-stone-600 dark:hover:text-stone-200 transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Form Content -->
+                <form id="facility-form" class="p-6 overflow-y-auto max-h-[calc(90vh-140px)]" onsubmit="saveFacility(event)">
+                    <input type="hidden" id="form-facility-id" value="">
+                    
+                    <div class="space-y-4">
+                        <!-- Facility Name -->
+                        <div>
+                            <label for="form-name" class="block text-xs font-medium uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-1">
+                                Facility Name <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" id="form-name" required
+                                placeholder="e.g., Research Site-87"
+                                class="w-full bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-sm focus:ring-2 focus:ring-amber-500/50 focus:border-transparent outline-none transition text-stone-900 dark:text-stone-100">
+                        </div>
+                        
+                        <!-- Facility Code -->
+                        <div>
+                            <label for="form-code-type" class="block text-xs font-medium uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-1">
+                                Facility Code <span class="text-red-500">*</span>
+                            </label>
+                            <div class="flex gap-2">
+                                <select id="form-code-type" required
+                                    class="w-32 bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-sm focus:ring-2 focus:ring-amber-500/50 focus:border-transparent outline-none transition text-stone-900 dark:text-stone-100">
+                                    <option value="SITE">SITE</option>
+                                    <option value="AREA">AREA</option>
+                                </select>
+                                <span class="flex items-center text-stone-400">-</span>
+                                <input type="text" id="form-code-number" required
+                                    placeholder="e.g., 87, 02, Θ"
+                                    pattern="[A-Za-z0-9Θθ⌘]+"
+                                    class="flex-grow bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-sm focus:ring-2 focus:ring-amber-500/50 focus:border-transparent outline-none transition text-stone-900 dark:text-stone-100">
+                            </div>
+                            <p class="text-xs text-stone-400 mt-1">Format: SITE-XX or AREA-XX (e.g., SITE-19, AREA-02)</p>
+                        </div>
+                        
+                        <!-- Purpose -->
+                        <div>
+                            <label for="form-purpose" class="block text-xs font-medium uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-1">
+                                Purpose & Description
+                            </label>
+                            <textarea id="form-purpose" rows="3"
+                                placeholder="Describe the facility's purpose, specialization, and capabilities..."
+                                class="w-full bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2 text-sm focus:ring-2 focus:ring-amber-500/50 focus:border-transparent outline-none transition resize-none text-stone-900 dark:text-stone-100"></textarea>
+                        </div>
+                        
+                        <!-- Location Section (Collapsible) -->
+                        <div class="border border-stone-200 dark:border-stone-700 rounded-lg">
+                            <button type="button" onclick="toggleFormLocation()" class="w-full px-4 py-2 flex items-center justify-between text-sm font-medium text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 transition rounded-lg">
+                                <span>Location Information (Optional)</span>
+                                <svg id="form-location-chevron" class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="form-location-fields" class="hidden px-4 pb-4 space-y-3">
+                                <div>
+                                    <label for="form-street" class="block text-xs text-stone-500 dark:text-stone-400 mb-1">Street Address</label>
+                                    <input type="text" id="form-street" placeholder="Street or 'Undisclosed'"
+                                        class="w-full bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded p-2 text-sm text-stone-900 dark:text-stone-100">
+                                </div>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label for="form-city" class="block text-xs text-stone-500 dark:text-stone-400 mb-1">City</label>
+                                        <input type="text" id="form-city" placeholder="City"
+                                            class="w-full bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded p-2 text-sm text-stone-900 dark:text-stone-100">
+                                    </div>
+                                    <div>
+                                        <label for="form-state" class="block text-xs text-stone-500 dark:text-stone-400 mb-1">State/Province</label>
+                                        <input type="text" id="form-state" placeholder="State/Province"
+                                            class="w-full bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded p-2 text-sm text-stone-900 dark:text-stone-100">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label for="form-country" class="block text-xs text-stone-500 dark:text-stone-400 mb-1">Country</label>
+                                        <input type="text" id="form-country" placeholder="Country"
+                                            class="w-full bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded p-2 text-sm text-stone-900 dark:text-stone-100">
+                                    </div>
+                                    <div>
+                                        <label for="form-postal" class="block text-xs text-stone-500 dark:text-stone-400 mb-1">Postal Code</label>
+                                        <input type="text" id="form-postal" placeholder="Postal Code"
+                                            class="w-full bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded p-2 text-sm text-stone-900 dark:text-stone-100">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="form-coords" class="block text-xs text-stone-500 dark:text-stone-400 mb-1">Coordinates</label>
+                                    <input type="text" id="form-coords" placeholder="GPS coordinates or 'Undisclosed'"
+                                        class="w-full bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded p-2 text-sm text-stone-900 dark:text-stone-100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Form Actions -->
+                    <div class="mt-6 flex justify-end gap-3">
+                        <button type="button" onclick="closeFormModal()"
+                            class="px-4 py-2 text-sm font-medium bg-stone-200 dark:bg-stone-700 text-stone-700 dark:text-stone-300 rounded-lg hover:bg-stone-300 dark:hover:bg-stone-600 transition">
+                            Cancel
+                        </button>
+                        <button type="submit"
+                            class="px-4 py-2 text-sm font-medium bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition">
+                            Save Facility
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Decommission Confirmation Modal -->
+    <div id="decommission-modal" class="hidden fixed inset-0 z-50 overflow-y-auto">
+        <div class="fixed inset-0 bg-black/60 backdrop-blur-sm" onclick="closeDecommissionModal()"></div>
+        <div class="relative min-h-screen flex items-center justify-center p-4">
+            <div class="relative bg-background-light dark:bg-background-dark border border-red-600/30 rounded-lg max-w-md w-full">
+                <div class="p-6">
+                    <div class="flex items-center justify-center w-12 h-12 mx-auto bg-red-600/20 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-stone-900 dark:text-stone-100 text-center mb-2">Decommission Facility</h3>
+                    <p class="text-sm text-stone-600 dark:text-stone-400 text-center mb-2">
+                        Are you sure you want to decommission <span id="decommission-facility-name" class="font-bold text-red-500"></span>?
+                    </p>
+                    <p class="text-xs text-stone-500 dark:text-stone-500 text-center mb-4">
+                        This will close all active SCP and personnel assignments. Containment chambers will be removed. Incident records will be preserved.
+                    </p>
+                    <input type="hidden" id="decommission-facility-id" value="">
+                    
+                    <div class="flex justify-center gap-3">
+                        <button type="button" onclick="closeDecommissionModal()"
+                            class="px-4 py-2 text-sm font-medium bg-stone-200 dark:bg-stone-700 text-stone-700 dark:text-stone-300 rounded-lg hover:bg-stone-300 dark:hover:bg-stone-600 transition">
+                            Cancel
+                        </button>
+                        <button type="button" onclick="confirmDecommission()"
+                            class="px-4 py-2 text-sm font-medium bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
+                            Decommission
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="hidden fixed bottom-4 right-4 z-50 flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg border transition-all duration-300">
+        <span id="toast-icon"></span>
+        <span id="toast-message" class="text-sm font-medium"></span>
     </div>
 
     <!-- Scripts -->

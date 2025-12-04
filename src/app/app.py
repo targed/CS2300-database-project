@@ -13,6 +13,7 @@ from database_queries import database_getters as getters
 from database_queries import database_updates as updates  
 from database_queries import database_insertions as insertions
 from database_queries import database_queries as queries
+from database_queries import database_delete as deletes
 
 # Initialize the Flask application
 app = Flask(__name__)
@@ -144,6 +145,15 @@ def update_scp(scp_id):
             data.get('object_class')
         )
         return jsonify({"message": "SCP updated"})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/scp/<int:scp_id>', methods=['DELETE'])
+def delete_scp(scp_id):
+    """Delete SCP entry"""
+    try:
+        deletes.delete_scp(scp_id)
+        return jsonify({"message": "SCP deleted successfully"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -292,6 +302,15 @@ def update_facility(facility_id):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/facility/<int:facility_id>', methods=['DELETE'])
+def delete_facility(facility_id):
+    """Decommission facility (closes active assignments, warns about incidents)"""
+    try:
+        result = deletes.delete_facility_cascade(facility_id)
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 @app.route('/api/facility/<int:facility_id>/stats', methods=['GET'])
 def get_facility_stats(facility_id):
     """Get facility statistics"""
@@ -355,6 +374,34 @@ def update_incident(incident_id):
             data.get('severity_level')
         )
         return jsonify({"message": "Incident updated"})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/incident/<int:incident_id>', methods=['DELETE'])
+def delete_incident(incident_id):
+    """Delete incident (cascade deletes SCP, MTF, Personnel associations)"""
+    try:
+        result = deletes.delete_incident_cascade(incident_id)
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/incident/<int:incident_id>/scp', methods=['POST'])
+def link_incident_scp(incident_id):
+    """Link an SCP to an incident"""
+    try:
+        data = request.get_json()
+        insertions.insert_incident_scp(incident_id, data['scp_id'])
+        return jsonify({"message": "SCP linked to incident"}), 201
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/incident/<int:incident_id>/scp/<int:scp_id>', methods=['DELETE'])
+def unlink_incident_scp(incident_id, scp_id):
+    """Unlink an SCP from an incident"""
+    try:
+        deletes.delete_incident_scp(incident_id, scp_id)
+        return jsonify({"message": "SCP unlinked from incident"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -480,6 +527,31 @@ def create_mtf():
             data.get('notes')
         )
         return jsonify({"message": "MTF unit created", "mtf_id": mtf_id}), 201
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/mtf/<int:mtf_id>', methods=['PUT'])
+def update_mtf(mtf_id):
+    """Update MTF unit"""
+    try:
+        data = request.get_json()
+        updates.update_mtf_unit(
+            mtf_id,
+            data.get('designation'),
+            data.get('nickname'),
+            data.get('primary_role'),
+            data.get('notes')
+        )
+        return jsonify({"message": "MTF unit updated"})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/mtf/<int:mtf_id>', methods=['DELETE'])
+def delete_mtf(mtf_id):
+    """Disband MTF unit (cascade deletes incident associations)"""
+    try:
+        deletes.delete_mtf_unit_cascade(mtf_id)
+        return jsonify({"message": f"MTF unit {mtf_id} disbanded"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

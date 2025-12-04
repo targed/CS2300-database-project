@@ -5,6 +5,7 @@
 
 // Current SCP data
 let currentSCP = null;
+let objectClasses = [];
 
 /**
  * Initialize the entry viewer page
@@ -27,9 +28,215 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Set up quick search
     setupQuickSearch();
 
+    // Set up CRUD button handlers
+    setupCRUDButtons();
+
+    // Load object classes for edit form
+    await loadObjectClasses();
+
     // Load SCP dossier
     await loadSCPDossier(scpCode);
 });
+
+/**
+ * Set up CRUD button event handlers
+ */
+function setupCRUDButtons() {
+    const editBtn = document.getElementById('edit-scp-btn');
+    const deleteBtn = document.getElementById('delete-scp-btn');
+
+    if (editBtn) {
+        editBtn.addEventListener('click', openEditModal);
+    }
+
+    if (deleteBtn) {
+        deleteBtn.addEventListener('click', openDeleteModal);
+    }
+}
+
+/**
+ * Load object classes from API
+ */
+async function loadObjectClasses() {
+    try {
+        objectClasses = await fetchObjectClasses();
+        populateObjectClassDropdown();
+    } catch (error) {
+        console.error('Error loading object classes:', error);
+    }
+}
+
+/**
+ * Populate object class dropdown in edit form
+ */
+function populateObjectClassDropdown() {
+    const select = document.getElementById('edit-object-class');
+    if (!select) return;
+
+    select.innerHTML = '<option value="">Select Object Class</option>';
+
+    objectClasses.forEach(oc => {
+        const option = document.createElement('option');
+        option.value = oc.class_name || oc.name;
+        option.textContent = oc.class_name || oc.name;
+        select.appendChild(option);
+    });
+}
+
+/**
+ * Open edit modal with current SCP data
+ */
+function openEditModal() {
+    if (!currentSCP) return;
+
+    const scp = currentSCP.scp_data || currentSCP.scp || currentSCP;
+
+    // Populate form fields
+    document.getElementById('edit-scp-id').value = scp.scp_id || '';
+    document.getElementById('edit-scp-code').value = scp.scp_code || '';
+    document.getElementById('edit-title').value = (scp.title || '').replace(/^["']|["']$/g, '');
+    document.getElementById('edit-containment').value = scp.special_containment_procedures || scp.containment_procedures || '';
+    document.getElementById('edit-description').value = scp.short_description || scp.description || '';
+    document.getElementById('edit-tags').value = scp.tags_list || '';
+
+    // Set object class
+    const objectClass = scp.object_class_name || scp.object_class || '';
+    document.getElementById('edit-object-class').value = objectClass;
+
+    // Show modal
+    document.getElementById('edit-modal').classList.remove('hidden');
+}
+
+/**
+ * Close edit modal
+ */
+function closeEditModal() {
+    document.getElementById('edit-modal').classList.add('hidden');
+}
+
+/**
+ * Save changes to SCP
+ */
+async function saveChanges() {
+    const scpId = document.getElementById('edit-scp-id').value;
+
+    if (!scpId) {
+        showToast('Error: No SCP ID found', 'error');
+        return;
+    }
+
+    const scpData = {
+        scp_code: document.getElementById('edit-scp-code').value.trim(),
+        title: document.getElementById('edit-title').value.trim(),
+        containment_procedures: document.getElementById('edit-containment').value.trim(),
+        short_description: document.getElementById('edit-description').value.trim(),
+        tags_list: document.getElementById('edit-tags').value.trim(),
+        object_class: document.getElementById('edit-object-class').value
+    };
+
+    // Validate required fields
+    if (!scpData.scp_code) {
+        showToast('SCP Code is required', 'error');
+        return;
+    }
+
+    if (!scpData.object_class) {
+        showToast('Object Class is required', 'error');
+        return;
+    }
+
+    try {
+        await updateSCP(scpId, scpData);
+        closeEditModal();
+        showToast('SCP entry updated successfully', 'success');
+
+        // Reload the page to show updated data
+        setTimeout(() => {
+            window.location.reload();
+        }, 1500);
+    } catch (error) {
+        showToast(`Failed to update: ${error.message}`, 'error');
+    }
+}
+
+/**
+ * Open delete confirmation modal
+ */
+function openDeleteModal() {
+    if (!currentSCP) return;
+
+    const scp = currentSCP.scp_data || currentSCP.scp || currentSCP;
+    const title = (scp.title || 'Untitled').replace(/^["']|["']$/g, '');
+
+    document.getElementById('delete-scp-name').textContent = `${scp.scp_code} - ${title}`;
+    document.getElementById('delete-modal').classList.remove('hidden');
+}
+
+/**
+ * Close delete confirmation modal
+ */
+function closeDeleteModal() {
+    document.getElementById('delete-modal').classList.add('hidden');
+}
+
+/**
+ * Confirm and execute SCP deletion
+ */
+async function confirmDelete() {
+    if (!currentSCP) return;
+
+    const scp = currentSCP.scp_data || currentSCP.scp || currentSCP;
+    const scpId = scp.scp_id;
+
+    if (!scpId) {
+        showToast('Error: No SCP ID found', 'error');
+        return;
+    }
+
+    try {
+        await deleteSCPEntry(scpId);
+        closeDeleteModal();
+        showToast('SCP entry deleted successfully', 'success');
+
+        // Redirect to search page after deletion
+        setTimeout(() => {
+            window.location.href = 'search.html';
+        }, 1500);
+    } catch (error) {
+        showToast(`Failed to delete: ${error.message}`, 'error');
+    }
+}
+
+/**
+ * Show toast notification
+ * @param {string} message - Message to display
+ * @param {string} type - 'success' or 'error'
+ */
+function showToast(message, type) {
+    const toast = document.getElementById('toast');
+    const toastIcon = document.getElementById('toast-icon');
+    const toastMessage = document.getElementById('toast-message');
+
+    if (!toast) return;
+
+    // Set icon and style based on type
+    if (type === 'success') {
+        toast.className = 'fixed bottom-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg transform transition-all duration-300 bg-green-600/90 border border-green-500';
+        toastIcon.innerHTML = '<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
+    } else {
+        toast.className = 'fixed bottom-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg transform transition-all duration-300 bg-red-600/90 border border-red-500';
+        toastIcon.innerHTML = '<svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
+    }
+
+    toastMessage.textContent = message;
+    toastMessage.className = 'text-sm font-medium text-white';
+    toast.classList.remove('hidden');
+
+    // Auto-hide after 4 seconds
+    setTimeout(() => {
+        toast.classList.add('hidden');
+    }, 4000);
+}
 
 /**
  * Set up quick search functionality

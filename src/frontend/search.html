@@ -54,7 +54,7 @@
           <!-- Logo and Title -->
           <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition">
             <div class="w-10 h-10 bg-primary dark:bg-white rounded flex items-center justify-center">
-              <img src="assets/foundation_assets/SCP_Foundation_(emblem).svg" alt="SCP" class="w-8 h-8 dark:invert">
+              <img src="assets/foundation_assets/SCP_Foundation_(emblem).svg" alt="SCP" class="w-8 h-8">
             </div>
             <div class="hidden sm:block">
               <h1 class="font-bold text-stone-900 dark:text-stone-100 tracking-tight">SCP Foundation</h1>
@@ -105,13 +105,21 @@
     <main class="flex-grow w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <!-- Search Form -->
       <div class="border border-primary/20 dark:border-primary/30 rounded-lg">
-        <div class="px-6 py-4 border-b border-primary/20 dark:border-primary/30">
-          <h2 class="text-2xl font-bold tracking-tight">
-            ADVANCED SEARCH // ARCHIVE DATABASE
-          </h2>
-          <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">
-            Filter by specific criteria to narrow down your search results.
-          </p>
+        <div class="px-6 py-4 border-b border-primary/20 dark:border-primary/30 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h2 class="text-2xl font-bold tracking-tight">
+              ADVANCED SEARCH // ARCHIVE DATABASE
+            </h2>
+            <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">
+              Filter by specific criteria to narrow down your search results.
+            </p>
+          </div>
+          <a href="create-scp.html" class="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-bold uppercase tracking-wider bg-green-600 text-white rounded hover:bg-green-700 transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+            </svg>
+            Create New SCP
+          </a>
         </div>
         
         <form id="search-form" class="p-6 space-y-8">

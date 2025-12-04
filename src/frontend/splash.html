@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCP Archives</title>
+    <!-- Assuming your style.css is in a static folder -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay muted id="splashVideo">
+            <!-- Use url_for for static files like your video -->
+            <source src="assets/foundation_assets/SCP-Intro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        const video = document.getElementById('splashVideo');
+        video.playbackRate = 2.0; // Play at 2x speed
+
+        // THIS IS THE KEY PART:
+        // When the video finishes playing, redirect the user.
+        video.addEventListener('ended', function() {
+            // Redirect back to the main URL. Flask will now send them to the dashboard.
+            window.location.href = "/";
+        });
+    </script>
+</body>
+</html>

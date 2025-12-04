@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Create New SCP Entry - SCP Foundation Archives</title>
+  <link rel="icon" type="image/svg+xml" href="assets/foundation_assets/SCP_Foundation_(emblem).svg">
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link href="css/styles.css" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#141414",
+            "background-light": "#f7f7f7",
+            "background-dark": "#191919",
+          },
+          fontFamily: {
+            display: ["Space Grotesk", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            lg: "0.25rem",
+            xl: "0.5rem",
+            full: "0.75rem",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-stone-900 dark:text-stone-200">
+  <div class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="border-b border-primary/10 dark:border-primary/20 bg-white/50 dark:bg-black/50 backdrop-blur-sm sticky top-0 z-40">
+      <div class="max-w-6xl mx-auto px-4 py-3">
+        <div class="flex items-center justify-between">
+          <!-- Logo and Title -->
+          <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition">
+            <div class="w-10 h-10 bg-primary dark:bg-white rounded flex items-center justify-center">
+              <img src="assets/foundation_assets/SCP_Foundation_(emblem).svg" alt="SCP" class="w-8 h-8 dark:invert">
+            </div>
+            <div class="hidden sm:block">
+              <h1 class="font-bold text-stone-900 dark:text-stone-100 tracking-tight">SCP Foundation</h1>
+              <p class="text-xs text-stone-500 dark:text-stone-400">Secure. Contain. Protect.</p>
+            </div>
+          </a>
+
+          <!-- Navigation -->
+          <nav class="hidden md:flex items-center gap-4">
+            <a href="index.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition">Home</a>
+            <a href="search.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition">Advanced Search</a>
+            <a href="personnel.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition">Personnel</a>
+            <a href="mtf.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition">MTF Registry</a>
+            <a href="facilities.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition">Facilities</a>
+            <a href="incidents.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition">Incidents</a>
+          </nav>
+
+          <!-- Mobile menu button -->
+          <button id="mobileMenuBtn" class="md:hidden p-2 text-stone-600 dark:text-stone-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav id="mobileMenu" class="hidden md:hidden mt-3 pt-3 border-t border-primary/10 dark:border-primary/20">
+          <div class="flex flex-col gap-2">
+            <a href="index.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition py-1">Home</a>
+            <a href="search.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition py-1">Advanced Search</a>
+            <a href="personnel.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition py-1">Personnel</a>
+            <a href="mtf.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition py-1">MTF Registry</a>
+            <a href="facilities.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition py-1">Facilities</a>
+            <a href="incidents.html" class="text-sm text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white transition py-1">Incidents</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-6 text-sm">
+        <a class="text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100" href="search.html">Search</a>
+        <span class="mx-2 text-stone-400">/</span>
+        <span class="text-stone-900 dark:text-stone-100 font-medium">Create New SCP</span>
+      </nav>
+
+      <!-- Form Container -->
+      <div class="border border-primary/20 dark:border-primary/30 rounded-lg">
+        <div class="px-6 py-4 border-b border-primary/20 dark:border-primary/30 bg-primary/5 dark:bg-primary/10">
+          <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+            <svg class="w-7 h-7 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            CREATE NEW SCP ENTRY
+          </h2>
+          <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">
+            Document a new anomalous object, entity, or phenomenon.
+          </p>
+        </div>
+        
+        <form id="create-scp-form" class="p-6 space-y-6">
+          <!-- Basic Info Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-2" for="scp-code">
+                SCP Designation *
+              </label>
+              <input type="text" id="scp-code" required
+                class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-3 text-sm focus:ring-2 focus:ring-green-500/50 focus:border-transparent outline-none transition"
+                placeholder="SCP-XXXX">
+              <p class="text-xs text-stone-500 dark:text-stone-500 mt-1">Format: SCP-XXX (e.g., SCP-173, SCP-1000)</p>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-2" for="object-class">
+                Object Class *
+              </label>
+              <select id="object-class" required
+                class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-3 text-sm focus:ring-2 focus:ring-green-500/50 focus:border-transparent outline-none transition">
+                <option value="">Select Object Class</option>
+                <!-- Options populated by JS -->
+              </select>
+            </div>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-2" for="title">
+              Title
+            </label>
+            <input type="text" id="title"
+              class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-3 text-sm focus:ring-2 focus:ring-green-500/50 focus:border-transparent outline-none transition"
+              placeholder='e.g., "The Sculpture" or "The Plague Doctor"'>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-2" for="containment-procedures">
+              Special Containment Procedures
+            </label>
+            <textarea id="containment-procedures" rows="6"
+              class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-3 text-sm focus:ring-2 focus:ring-green-500/50 focus:border-transparent outline-none transition resize-y"
+              placeholder="Describe the special containment procedures required for this SCP..."></textarea>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-2" for="description">
+              Description *
+            </label>
+            <textarea id="description" rows="8" required
+              class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-3 text-sm focus:ring-2 focus:ring-green-500/50 focus:border-transparent outline-none transition resize-y"
+              placeholder="Provide a detailed description of the SCP, including its appearance, properties, and anomalous effects..."></textarea>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-2" for="tags">
+              Tags (comma separated)
+            </label>
+            <input type="text" id="tags"
+              class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-3 text-sm focus:ring-2 focus:ring-green-500/50 focus:border-transparent outline-none transition"
+              placeholder="humanoid, sentient, dangerous, cognitohazard...">
+            <p class="text-xs text-stone-500 dark:text-stone-500 mt-1">Separate multiple tags with commas</p>
+          </div>
+          
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row justify-end items-center gap-4 pt-6 border-t border-primary/20 dark:border-primary/30">
+            <a href="search.html"
+              class="w-full sm:w-auto px-6 py-2.5 text-center text-sm font-bold uppercase tracking-wider bg-primary/10 dark:bg-primary/20 text-stone-800 dark:text-stone-300 rounded hover:bg-primary/20 dark:hover:bg-primary/30 transition">
+              Cancel
+            </a>
+            <button type="submit"
+              class="w-full sm:w-auto px-8 py-2.5 text-sm font-bold uppercase tracking-wider bg-green-600 text-white rounded hover:bg-green-700 transition flex items-center justify-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Create Entry
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <!-- Success/Error Toast -->
+  <div id="toast" class="hidden fixed bottom-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg transform transition-all duration-300">
+    <div class="flex items-center gap-3">
+      <span id="toast-icon"></span>
+      <span id="toast-message" class="text-sm font-medium"></span>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/api.js"></script>
+  <script src="js/create-scp.js"></script>
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobileMenuBtn')?.addEventListener('click', () => {
+      document.getElementById('mobileMenu')?.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

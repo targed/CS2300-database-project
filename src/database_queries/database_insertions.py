@@ -49,7 +49,7 @@ def insert_incident(facility_id, title, incident_date, summary, severity_level):
 
 def insert_mtf_unit(designation, nickname, primary_role, notes):
     query = """
-    INSERT INTO MTF_UNIT (designation, nickname, primary_role, notes)
+    INSERT INTO MOBILE_TASK_FORCE (designation, nickname, primary_role, notes)
     VALUES (%s, %s, %s, %s);
     """
     params = (designation, nickname, primary_role, notes)
@@ -85,4 +85,13 @@ def insert_scp(scp_code, title, short_description, containment_procedures, full_
     VALUES (%s, %s, %s, %s, %s, %s, %s);
     """
     params = (scp_code, title, short_description, containment_procedures, full_description, tags_list, object_class)
+    return execute_update(query, params)
+
+def insert_incident_scp(incident_id, scp_id):
+    """Link an SCP to an incident."""
+    query = """
+    INSERT INTO INCIDENT_SCP (incident_id, scp_id)
+    VALUES (%s, %s);
+    """
+    params = (incident_id, scp_id)
     return execute_update(query, params)

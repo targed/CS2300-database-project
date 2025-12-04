@@ -7,12 +7,16 @@
 let allMTFUnits = [];
 let filteredMTFUnits = [];
 
+// CRUD state
+let currentEditMTF = null;
+
 /**
  * Initialize MTF page on load
  */
 document.addEventListener('DOMContentLoaded', async () => {
     await loadMTFUnits();
     setupEventListeners();
+    setupFormListeners();
 });
 
 /**
@@ -329,9 +333,23 @@ function showMTFDetail(mtf) {
         </div>
         
         <div class="mt-6 pt-4 border-t border-primary/10 dark:border-primary/20">
-            <p class="text-xs text-stone-500 dark:text-stone-500 text-center uppercase tracking-wider">
+            <p class="text-xs text-stone-500 dark:text-stone-500 text-center uppercase tracking-wider mb-4">
                 [OPERATIONAL DETAILS CLASSIFIED - LEVEL 4 CLEARANCE REQUIRED]
             </p>
+            <div class="flex justify-center gap-3">
+                <button onclick="openEditModal(${mtf.mtf_id})" class="px-4 py-2 text-sm font-medium bg-blue-600/20 text-blue-400 border border-blue-600/40 rounded hover:bg-blue-600/30 transition flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                    </svg>
+                    Edit
+                </button>
+                <button onclick="openDisbandModal(${mtf.mtf_id}, '${escapeHtml(designation).replace(/'/g, "\\'")}')" class="px-4 py-2 text-sm font-medium bg-red-600/20 text-red-400 border border-red-600/40 rounded hover:bg-red-600/30 transition flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                    </svg>
+                    Disband
+                </button>
+            </div>
         </div>
     `;
 
@@ -346,6 +364,245 @@ function closeModal() {
     const modal = document.getElementById('detail-modal');
     modal.classList.add('hidden');
     document.body.style.overflow = '';
+}
+
+// ============ CRUD Functions ============
+
+/**
+ * Setup form event listeners for designation preview
+ */
+function setupFormListeners() {
+    const greekLetterSelect = document.getElementById('form-greek-letter');
+    const unitNumberInput = document.getElementById('form-unit-number');
+
+    if (greekLetterSelect) {
+        greekLetterSelect.addEventListener('change', updateDesignationPreview);
+    }
+    if (unitNumberInput) {
+        unitNumberInput.addEventListener('input', updateDesignationPreview);
+    }
+}
+
+/**
+ * Update the designation preview based on form inputs
+ */
+function updateDesignationPreview() {
+    const greekLetter = document.getElementById('form-greek-letter').value;
+    const unitNumber = document.getElementById('form-unit-number').value;
+    const preview = document.getElementById('designation-preview');
+
+    if (greekLetter && unitNumber) {
+        preview.textContent = `MTF ${greekLetter}-${unitNumber}`;
+    } else if (greekLetter) {
+        preview.textContent = `MTF ${greekLetter}-?`;
+    } else if (unitNumber) {
+        preview.textContent = `MTF ?-${unitNumber}`;
+    } else {
+        preview.textContent = 'MTF ---';
+    }
+}
+
+/**
+ * Open modal to create new MTF unit
+ */
+function openCreateModal() {
+    currentEditMTF = null;
+
+    // Reset form
+    document.getElementById('mtf-form').reset();
+    document.getElementById('form-mtf-id').value = '';
+    document.getElementById('designation-preview').textContent = 'MTF ---';
+
+    // Update title
+    document.getElementById('form-modal-title').textContent = 'Add MTF Unit';
+
+    // Show modal
+    document.getElementById('form-modal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+/**
+ * Open modal to edit existing MTF unit
+ * @param {number} mtfId - MTF unit ID
+ */
+async function openEditModal(mtfId) {
+    try {
+        const mtf = await fetchMTFById(mtfId);
+        currentEditMTF = mtf;
+
+        // Parse designation into letter and number
+        const designation = mtf.designation || '';
+        const match = designation.match(/^([A-Za-z]+)-?(\d+)?$/);
+        const greekLetter = match ? match[1] : '';
+        const unitNumber = match ? match[2] || '' : '';
+
+        // Populate form
+        document.getElementById('form-mtf-id').value = mtf.mtf_id;
+        document.getElementById('form-greek-letter').value = greekLetter;
+        document.getElementById('form-unit-number').value = unitNumber;
+        document.getElementById('form-nickname').value = mtf.nickname || '';
+        document.getElementById('form-primary-role').value = mtf.primary_role || '';
+        document.getElementById('form-notes').value = mtf.notes || '';
+
+        // Update preview
+        updateDesignationPreview();
+
+        // Update title
+        document.getElementById('form-modal-title').textContent = 'Edit MTF Unit';
+
+        // Close detail modal and show form modal
+        closeModal();
+        document.getElementById('form-modal').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+
+    } catch (error) {
+        console.error('Error loading MTF for edit:', error);
+        showToast('Failed to load MTF unit for editing', 'error');
+    }
+}
+
+/**
+ * Close the form modal
+ */
+function closeFormModal() {
+    document.getElementById('form-modal').classList.add('hidden');
+    document.body.style.overflow = '';
+    currentEditMTF = null;
+}
+
+/**
+ * Save MTF unit (create or update)
+ * @param {Event} event - Form submit event
+ */
+async function saveMTF(event) {
+    event.preventDefault();
+
+    const mtfId = document.getElementById('form-mtf-id').value;
+    const greekLetter = document.getElementById('form-greek-letter').value;
+    const unitNumber = document.getElementById('form-unit-number').value;
+    const nickname = document.getElementById('form-nickname').value.trim();
+    const primaryRole = document.getElementById('form-primary-role').value.trim();
+    const notes = document.getElementById('form-notes').value.trim();
+
+    // Validate required fields
+    if (!greekLetter || !unitNumber) {
+        showToast('Greek letter and unit number are required', 'error');
+        return;
+    }
+
+    // Build designation
+    const designation = `${greekLetter}-${unitNumber}`;
+
+    const mtfData = {
+        designation: designation,
+        nickname: nickname || null,
+        primary_role: primaryRole || null,
+        notes: notes || null
+    };
+
+    try {
+        if (mtfId) {
+            // Update existing
+            await updateMTFRecord(mtfId, mtfData);
+            showToast(`MTF ${designation} updated successfully`, 'success');
+        } else {
+            // Create new
+            await createMTFRecord(mtfData);
+            showToast(`MTF ${designation} created successfully`, 'success');
+        }
+
+        closeFormModal();
+        await loadMTFUnits(); // Refresh the list
+
+    } catch (error) {
+        console.error('Error saving MTF unit:', error);
+        showToast(error.message || 'Failed to save MTF unit', 'error');
+    }
+}
+
+/**
+ * Open disband confirmation modal
+ * @param {number} mtfId - MTF unit ID
+ * @param {string} designation - MTF designation for display
+ */
+function openDisbandModal(mtfId, designation) {
+    document.getElementById('disband-mtf-id').value = mtfId;
+    document.getElementById('disband-mtf-name').textContent = `MTF ${designation}`;
+
+    // Close detail modal
+    closeModal();
+
+    // Show disband modal
+    document.getElementById('disband-modal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+/**
+ * Close the disband confirmation modal
+ */
+function closeDisbandModal() {
+    document.getElementById('disband-modal').classList.add('hidden');
+    document.body.style.overflow = '';
+}
+
+/**
+ * Confirm and execute MTF unit disbandment
+ */
+async function confirmDisband() {
+    const mtfId = document.getElementById('disband-mtf-id').value;
+    const mtfName = document.getElementById('disband-mtf-name').textContent;
+
+    if (!mtfId) return;
+
+    try {
+        await disbandMTFUnit(mtfId);
+        closeDisbandModal();
+        showToast(`${mtfName} has been disbanded`, 'success');
+        await loadMTFUnits(); // Refresh the list
+
+    } catch (error) {
+        console.error('Error disbanding MTF unit:', error);
+        showToast(error.message || 'Failed to disband MTF unit', 'error');
+    }
+}
+
+/**
+ * Show toast notification
+ * @param {string} message - Message to display
+ * @param {string} type - 'success' or 'error'
+ */
+function showToast(message, type = 'success') {
+    const toast = document.getElementById('toast');
+    const toastIcon = document.getElementById('toast-icon');
+    const toastMessage = document.getElementById('toast-message');
+
+    // Set message
+    toastMessage.textContent = message;
+
+    // Set styling based on type
+    if (type === 'success') {
+        toast.className = 'fixed bottom-4 right-4 z-50 flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg border transition-all duration-300 bg-green-600/20 border-green-600/40 text-green-400';
+        toastIcon.innerHTML = `
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+        `;
+    } else {
+        toast.className = 'fixed bottom-4 right-4 z-50 flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg border transition-all duration-300 bg-red-600/20 border-red-600/40 text-red-400';
+        toastIcon.innerHTML = `
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+            </svg>
+        `;
+    }
+
+    // Show toast
+    toast.classList.remove('hidden');
+
+    // Auto-hide after 4 seconds
+    setTimeout(() => {
+        toast.classList.add('hidden');
+    }, 4000);
 }
 
 // ============ Utility Functions ============

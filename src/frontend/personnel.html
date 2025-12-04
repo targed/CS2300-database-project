@@ -65,7 +65,7 @@
           <!-- Logo and Title -->
           <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition">
             <div class="w-10 h-10 bg-primary dark:bg-white rounded flex items-center justify-center">
-              <img src="assets/foundation_assets/SCP_Foundation_(emblem).svg" alt="SCP" class="w-8 h-8 dark:invert">
+              <img src="assets/foundation_assets/SCP_Foundation_(emblem).svg" alt="SCP" class="w-8 h-8">
             </div>
             <div class="hidden sm:block">
               <h1 class="font-bold text-stone-900 dark:text-stone-100 tracking-tight">SCP Foundation</h1>
@@ -115,11 +115,19 @@
     <!-- Main Content -->
     <main class="flex-grow w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <!-- Page Header -->
-      <div class="mb-8">
-        <h2 class="text-2xl font-bold tracking-tight uppercase">Personnel Directory</h2>
-        <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">
-          Foundation staff registry. Access restricted by clearance level.
-        </p>
+      <div class="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight uppercase">Personnel Directory</h2>
+          <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">
+            Foundation staff registry. Access restricted by clearance level.
+          </p>
+        </div>
+        <button id="add-personnel-btn" class="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-bold uppercase tracking-wider bg-green-600 text-white rounded hover:bg-green-700 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+          </svg>
+          Add Personnel
+        </button>
       </div>
 
       <!-- Stats Row -->
@@ -274,7 +282,153 @@
           </div>
         </div>
       </div>
+
+      <!-- Create/Edit Personnel Form Modal -->
+      <div id="form-modal" class="hidden fixed inset-0 z-50 overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:p-0">
+          <div class="fixed inset-0 transition-opacity bg-black/70" onclick="closeFormModal()"></div>
+          <div class="relative bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30 rounded-lg w-full max-w-xl mx-auto shadow-xl transform transition-all">
+            <div class="px-6 py-4 border-b border-primary/20 dark:border-primary/30 flex items-center justify-between">
+              <h3 id="form-modal-title" class="text-xl font-bold tracking-tight">Add Personnel</h3>
+              <button onclick="closeFormModal()" class="text-stone-400 hover:text-stone-200 transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
+            <form id="personnel-form" class="p-6 space-y-4 max-h-[70vh] overflow-y-auto">
+              <input type="hidden" id="form-person-id">
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-2" for="form-given-name">
+                    Given Name *
+                  </label>
+                  <input type="text" id="form-given-name" required
+                    class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-3 text-sm focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none transition"
+                    placeholder="First name">
+                </div>
+                
+                <div>
+                  <label class="block text-sm font-medium uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-2" for="form-surname">
+                    Surname *
+                  </label>
+                  <input type="text" id="form-surname" required
+                    class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-3 text-sm focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none transition"
+                    placeholder="Last name">
+                </div>
+              </div>
+              
+              <div>
+                <label class="block text-sm font-medium uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-2" for="form-callsign">
+                  Callsign / Alias
+                </label>
+                <input type="text" id="form-callsign"
+                  class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-3 text-sm focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none transition"
+                  placeholder='e.g., "Bright", "Clef", "Gears"'>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-2" for="form-role">
+                    Role *
+                  </label>
+                  <select id="form-role" required
+                    class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-3 text-sm focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none transition">
+                    <option value="">Select Role</option>
+                    <option value="Researcher">Researcher</option>
+                    <option value="Agent">Agent</option>
+                    <option value="Security Officer">Security Officer</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label class="block text-sm font-medium uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-2" for="form-clearance">
+                    Security Clearance *
+                  </label>
+                  <select id="form-clearance" required
+                    class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-3 text-sm focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none transition">
+                    <option value="">Select Clearance</option>
+                    <!-- Options populated by JS -->
+                  </select>
+                </div>
+              </div>
+              
+              <div>
+                <label class="block text-sm font-medium uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-2" for="form-hire-date">
+                  Hire Date
+                </label>
+                <input type="date" id="form-hire-date"
+                  class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-3 text-sm focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none transition">
+              </div>
+              
+              <div>
+                <label class="block text-sm font-medium uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-2" for="form-notes">
+                  Notes
+                </label>
+                <textarea id="form-notes" rows="3"
+                  class="w-full bg-background-light dark:bg-primary/20 border border-primary/20 dark:border-primary/30 rounded p-3 text-sm focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none transition resize-y"
+                  placeholder="Additional notes about this personnel..."></textarea>
+              </div>
+            </form>
+            
+            <div class="px-6 py-4 border-t border-primary/20 dark:border-primary/30 flex justify-end gap-3">
+              <button type="button" onclick="closeFormModal()"
+                class="px-4 py-2 text-sm font-medium bg-primary/10 dark:bg-primary/20 text-stone-800 dark:text-stone-300 rounded hover:bg-primary/20 dark:hover:bg-primary/30 transition">
+                Cancel
+              </button>
+              <button type="button" onclick="savePersonnel()"
+                class="px-4 py-2 text-sm font-medium bg-green-600 text-white rounded hover:bg-green-700 transition">
+                Save Personnel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decommission Confirmation Modal -->
+      <div id="delete-modal" class="hidden fixed inset-0 z-50 overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:p-0">
+          <div class="fixed inset-0 transition-opacity bg-black/70" onclick="closeDeleteModal()"></div>
+          <div class="relative bg-background-light dark:bg-background-dark border border-red-600/30 rounded-lg w-full max-w-md mx-auto shadow-xl transform transition-all">
+            <div class="p-6">
+              <div class="flex items-center justify-center w-12 h-12 mx-auto bg-red-600/20 rounded-full mb-4">
+                <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-center mb-2">Confirm Decommission</h3>
+              <p class="text-sm text-stone-500 dark:text-stone-400 text-center mb-2">
+                You are about to decommission:
+              </p>
+              <p class="text-lg font-bold text-red-500 text-center mb-4" id="delete-person-name">Personnel Name</p>
+              <p class="text-sm text-stone-500 dark:text-stone-400 text-center">
+                This will remove the personnel from active duty. This action cannot be undone.
+              </p>
+              <input type="hidden" id="delete-person-id">
+            </div>
+            <div class="px-6 py-4 border-t border-primary/20 dark:border-primary/30 flex justify-center gap-3">
+              <button type="button" onclick="closeDeleteModal()"
+                class="px-4 py-2 text-sm font-medium bg-primary/10 dark:bg-primary/20 text-stone-800 dark:text-stone-300 rounded hover:bg-primary/20 dark:hover:bg-primary/30 transition">
+                Cancel
+              </button>
+              <button type="button" onclick="confirmDecommission()"
+                class="px-4 py-2 text-sm font-medium bg-red-600 text-white rounded hover:bg-red-700 transition">
+                Decommission
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
+  </div>
+
+  <!-- Success/Error Toast -->
+  <div id="toast" class="hidden fixed bottom-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg transform transition-all duration-300">
+    <div class="flex items-center gap-3">
+      <span id="toast-icon"></span>
+      <span id="toast-message" class="text-sm font-medium"></span>
+    </div>
   </div>
 
   <!-- JavaScript -->

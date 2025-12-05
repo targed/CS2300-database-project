@@ -72,10 +72,6 @@ def serve_frontend(path):
     """Serve frontend static files"""
     return send_from_directory(FRONTEND_DIR, path)
 
-# ============================================================
-# SYSTEM ENDPOINTS
-# ============================================================
-
 @app.route('/api/test', methods=['GET'])
 def test_connection():
     """Test endpoint to verify API is running"""
@@ -217,10 +213,6 @@ def delete_scp(scp_id):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# ============================================================
-# PERSONNEL ENDPOINTS
-# ============================================================
-
 @app.route('/api/personnel', methods=['GET'])
 def get_all_personnel():
     """Get all personnel"""
@@ -318,10 +310,6 @@ def search_personnel():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# ============================================================
-# FACILITY ENDPOINTS
-# ============================================================
-
 @app.route('/api/facilities', methods=['GET'])
 def get_all_facilities():
     """Get all facilities"""
@@ -417,10 +405,6 @@ def get_facility_stats(facility_id):
         return jsonify(stats)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-# ============================================================
-# INCIDENT ENDPOINTS
-# ============================================================
 
 @app.route('/api/incidents', methods=['GET'])
 def get_all_incidents():
@@ -537,10 +521,6 @@ def get_incidents_with_scps():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# ============================================================
-# AGENT ENDPOINTS
-# ============================================================
-
 @app.route('/api/agents', methods=['GET'])
 def get_all_agents():
     """Get all agents"""
@@ -571,10 +551,6 @@ def create_agent():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# ============================================================
-# RESEARCHER ENDPOINTS
-# ============================================================
-
 @app.route('/api/researchers', methods=['GET'])
 def get_all_researchers():
     """Get all researchers"""
@@ -604,10 +580,6 @@ def create_researcher():
         return jsonify({"message": "Researcher created"}), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-# ============================================================
-# MTF ENDPOINTS
-# ============================================================
 
 @app.route('/api/mtf', methods=['GET'])
 def get_all_mtf():
@@ -685,10 +657,6 @@ def delete_mtf(mtf_id):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# ============================================================
-# OBJECT CLASS ENDPOINTS
-# ============================================================
-
 @app.route('/api/object-classes', methods=['GET'])
 def get_all_object_classes():
     """Get all object classes"""
@@ -723,10 +691,6 @@ def create_object_class():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# ============================================================
-# SECURITY CLEARANCE ENDPOINTS
-# ============================================================
-
 @app.route('/api/security-clearances', methods=['GET'])
 def get_all_security_clearances():
     """Get all security clearances"""
@@ -746,10 +710,6 @@ def get_security_clearance_by_id(clearance_id):
         return jsonify({"error": "Security clearance not found"}), 404
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-# ============================================================
-# CONTAINMENT CHAMBER ENDPOINTS
-# ============================================================
 
 @app.route('/api/containment-chambers', methods=['GET'])
 def get_all_containment_chambers():
@@ -796,10 +756,6 @@ def create_containment_chamber():
         return jsonify({"message": "Containment chamber created"}), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-# ============================================================
-# SWAGGER SPECIFICATION
-# ============================================================
 
 @app.route('/api/swagger.json')
 def swagger_spec():

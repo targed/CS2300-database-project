@@ -1,8 +1,3 @@
-/**
- * SCP Foundation Mobile Task Force Registry
- * Handles loading and displaying MTF data
- */
-
 // Store all MTF units for filtering
 let allMTFUnits = [];
 let filteredMTFUnits = [];
@@ -366,8 +361,6 @@ function closeModal() {
     document.body.style.overflow = '';
 }
 
-// ============ CRUD Functions ============
-
 /**
  * Setup form event listeners for designation preview
  */
@@ -604,8 +597,6 @@ function showToast(message, type = 'success') {
         toast.classList.add('hidden');
     }, 4000);
 }
-
-// ============ Utility Functions ============
 
 /**
  * Extract Greek letter from designation

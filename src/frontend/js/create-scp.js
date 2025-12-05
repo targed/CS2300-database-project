@@ -1,8 +1,3 @@
-/**
- * Create SCP Page Handler
- * Handles the creation of new SCP entries
- */
-
 let objectClasses = [];
 
 /**

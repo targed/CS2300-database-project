@@ -780,3 +780,31 @@ async function decommissionPersonnel(personId) {
     }
 }
 
+/**
+ * Perform semantic search
+ * @param {string} query - The search query
+ * @param {number} limit - Max results
+ * @returns {Promise<Array>} - Array of SCP objects
+ */
+async function searchSCPsSemantic(query, limit = 20) {
+    try {
+        const params = new URLSearchParams();
+        params.append('q', query);
+        params.append('limit', limit);
+
+        const url = `${API_BASE_URL}/search/semantic?${params.toString()}`;
+        console.log('Semantic Search:', url);
+
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error('Error in semantic search:', error);
+        throw new Error(`Failed to perform search: ${error.message}`);
+    }
+}
+

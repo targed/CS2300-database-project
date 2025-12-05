@@ -14,6 +14,7 @@ from database_queries import database_updates as updates
 from database_queries import database_insertions as insertions
 from database_queries import database_queries as queries
 from database_queries import database_delete as deletes
+from database_queries import semantic_search
 
 # Initialize the Flask application
 app = Flask(__name__)
@@ -666,6 +667,29 @@ def create_containment_chamber():
         return jsonify({"message": "Containment chamber created"}), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+# ============================================================
+# SEARCH ENDPOINTS
+# ============================================================
+
+@app.route('/api/search/semantic', methods=['GET'])
+def search_semantic():
+    """
+    Perform semantic search on SCP archives.
+    Query Params: q (string), limit (int)
+    """
+    query = request.args.get('q', '')
+    limit = int(request.args.get('limit', 20))
+    
+    if not query:
+        return jsonify([])
+
+    try:
+        results = semantic_search.perform_semantic_search(query, topk=limit)
+        return jsonify(results)
+    except Exception as e:
+        print(f"Search failed: {str(e)}")
+        return jsonify({"error": str(e)}), 500
 
 # ============================================================
 # SWAGGER SPECIFICATION
@@ -686,15 +710,68 @@ def swagger_spec():
             {"name": "System"}, {"name": "SCP"}, {"name": "Personnel"},
             {"name": "Facilities"}, {"name": "Incidents"}, {"name": "Agents"},
             {"name": "Researchers"}, {"name": "MTF"}, {"name": "Object Classes"},
-            {"name": "Security"}, {"name": "Chambers"}
+            {"name": "Security"}, {"name": "Chambers"}, {"name": "Search"}
         ],
         "paths": {
+            # ... [Keep existing paths] ...
             "/api/test": {"get": {"tags": ["System"], "summary": "Test API", "responses": {"200": {"description": "OK"}}}},
+            
+            # --- NEW SEMANTIC SEARCH ENDPOINT ---
+            "/api/search/semantic": {
+                "get": {
+                    "tags": ["Search"],
+                    "summary": "Perform semantic search on SCP archives",
+                    "description": "Uses vector embeddings to find SCPs relevant to the meaning of the query.",
+                    "parameters": [
+                        {
+                            "name": "q",
+                            "in": "query",
+                            "required": True,
+                            "schema": {"type": "string"},
+                            "description": "The search query text",
+                            "example": "scps that can manipulate time"
+                        },
+                        {
+                            "name": "limit",
+                            "in": "query",
+                            "required": False,
+                            "schema": {"type": "integer", "default": 20},
+                            "description": "Maximum number of results to return"
+                        }
+                    ],
+                    "responses": {
+                        "200": {
+                            "description": "List of semantic search results",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "scp_code": {"type": "string"},
+                                                "title": {"type": "string"},
+                                                "score": {"type": "number"},
+                                                "description": {"type": "string"}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            # ------------------------------------
+
             "/api/scps": {"get": {"tags": ["SCP"], "summary": "Get all SCPs", "responses": {"200": {"description": "List of SCPs"}}}},
             "/api/scp/{scp_id}": {
                 "get": {"tags": ["SCP"], "summary": "Get SCP by ID", "parameters": [{"name": "scp_id", "in": "path", "required": True, "schema": {"type": "integer"}}], "responses": {"200": {"description": "SCP details"}}},
                 "put": {"tags": ["SCP"], "summary": "Update SCP", "parameters": [{"name": "scp_id", "in": "path", "required": True, "schema": {"type": "integer"}}], "requestBody": {"required": True, "content": {"application/json": {"schema": {"type": "object"}}}}, "responses": {"200": {"description": "Updated"}}}
             },
+            
+            # ... [Rest of the existing paths] ...
+            
             "/api/scp/code/{scp_code}": {"get": {"tags": ["SCP"], "summary": "Get SCP by code", "parameters": [{"name": "scp_code", "in": "path", "required": True, "schema": {"type": "string"}, "example": "SCP-173"}], "responses": {"200": {"description": "SCP details"}}}},
             "/api/scp/dossier/{scp_code}": {"get": {"tags": ["SCP"], "summary": "Get full SCP dossier", "parameters": [{"name": "scp_code", "in": "path", "required": True, "schema": {"type": "string"}}], "responses": {"200": {"description": "Complete dossier"}}}},
             "/api/scp": {"post": {"tags": ["SCP"], "summary": "Create SCP", "requestBody": {"required": True, "content": {"application/json": {"schema": {"type": "object"}}}}, "responses": {"201": {"description": "Created"}}}},

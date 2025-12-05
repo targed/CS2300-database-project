@@ -180,15 +180,22 @@ async function performSearch() {
 function applyClientSideFilters(scps, filters) {
     let filtered = [...scps];
 
-    // NOTE: We do NOT filter by query here anymore if it was a semantic search,
-    // because the semantic search already retrieved relevant items.
-    // However, if we came from standard fetch, we might still want to filter.
-    // But since performSearch split the logic, we only strictly need to filter Metadata here.
+    if (filters.query && !scps[0]?.score) { 
+        const query = filters.query.toLowerCase();
+        filtered = filtered.filter(scp => {
+            const code = (scp.scp_code || '').toLowerCase();
+            const title = (scp.title || '').toLowerCase();
+            const description = (scp.description || '').toLowerCase();
+            
+            return code.includes(query) ||
+                title.includes(query) ||
+                description.includes(query);
+        });
+    }
 
     // Filter by object class
     if (filters.object_class) {
         filtered = filtered.filter(scp => {
-            // Handle differences in API response fields vs DB fields
             const objectClass = scp.object_class_name || scp.object_class || '';
             return objectClass.toLowerCase() === filters.object_class.toLowerCase();
         });
@@ -198,9 +205,8 @@ function applyClientSideFilters(scps, filters) {
     if (filters.clearance_level) {
         const clearanceLevel = parseInt(filters.clearance_level);
         filtered = filtered.filter(scp => {
-            // Semantic results might not have clearance level attached
-            // If missing, we default to keep it (or you could strict filter)
             if (scp.security_clearance_level === undefined) return true;
+            
             return scp.security_clearance_level === clearanceLevel;
         });
     }

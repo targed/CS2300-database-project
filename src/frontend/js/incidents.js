@@ -370,7 +370,7 @@ async function openDetailModal(incidentId) {
         let scpListHtml = '';
         if (scps && scps.length > 0) {
             scpListHtml = scps.map(scp => `
-                <a href="entry.html?code=${scp.scp_code}" class="px-2 py-1 text-sm font-mono bg-stone-200 dark:bg-stone-700 text-stone-700 dark:text-stone-300 rounded hover:bg-red-600/20 hover:text-red-600 transition">
+                <a href="entry.html?scp=${scp.scp_code}" class="px-2 py-1 text-sm font-mono bg-stone-200 dark:bg-stone-700 text-stone-700 dark:text-stone-300 rounded hover:bg-red-600/20 hover:text-red-600 transition">
                     ${escapeHtml(scp.scp_code)}
                 </a>
             `).join('');

@@ -2,9 +2,6 @@ import json
 import re
 import os
 
-# ==============================================================================
-# CONFIGURATION
-# ==============================================================================
 TEXT_INPUT_FILE = 'short_descriptions.txt'  # The text you pasted the descriptions into
 JSON_INPUT_FILE = 'data/scpjsonmoreatrributes.json'           # Your existing JSON file
 JSON_OUTPUT_FILE = 'scp_data_updated.json'  # The new file to save
@@ -21,12 +18,6 @@ def parse_text_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # Regex Pattern breakdown:
-    # Scp\s+(\d+)                 -> Finds "Scp" followed by the number (Group 1)
-    # \s+                         -> Skips newlines/spaces
-    # "short description":\s*"    -> Finds the key and opening quote
-    # (.*?)                       -> Captures the description text (Group 2)
-    # "                           -> Finds the closing quote
     pattern = re.compile(r'Scp\s+(\d+)\s+"short description":\s*"(.*?)"', re.IGNORECASE | re.DOTALL)
     
     matches = pattern.findall(content)
@@ -76,9 +67,6 @@ def update_json_data(json_path, desc_map, output_path):
     except json.JSONDecodeError:
         print("Error: Failed to decode the JSON file. Please check its format.")
 
-# ==============================================================================
-# MAIN EXECUTION
-# ==============================================================================
 if __name__ == "__main__":
     # 1. Parse the text file
     descriptions = parse_text_file(TEXT_INPUT_FILE)

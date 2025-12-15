@@ -1,8 +1,3 @@
-/**
- * SCP Foundation Personnel Directory
- * Handles loading and displaying personnel data
- */
-
 // Store all personnel for filtering
 let allPersonnel = [];
 let filteredPersonnel = [];
@@ -441,8 +436,6 @@ function closeModal() {
     document.body.style.overflow = '';
 }
 
-// ============ Utility Functions ============
-
 /**
  * Show loading state
  */
@@ -544,8 +537,6 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
-
-// ============ CRUD Functions ============
 
 /**
  * Open create personnel modal

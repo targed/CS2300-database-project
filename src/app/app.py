@@ -3,6 +3,7 @@ from flask_swagger_ui import get_swaggerui_blueprint
 from flask_cors import CORS
 import sys
 import os
+import threading
 from pathlib import Path
 
 # Ensure the project parent directory is on sys.path so sibling packages can be imported
@@ -14,6 +15,7 @@ from database_queries import database_updates as updates
 from database_queries import database_insertions as insertions
 from database_queries import database_queries as queries
 from database_queries import database_delete as deletes
+from database_queries import semantic_search
 
 # Initialize the Flask application
 app = Flask(__name__)
@@ -35,6 +37,22 @@ swaggerui_blueprint = get_swaggerui_blueprint(
 )
 app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
 
+# Helper for Background Updates
+def trigger_semantic_update():
+    """
+    Runs the semantic search index update in a background thread
+    so the API response isn't blocked.
+    """
+    def run_update():
+        try:
+            print("Triggering background semantic index update...")
+            semantic_search.update_vector_store()
+        except Exception as e:
+            print(f"Background semantic update failed: {e}")
+    
+    thread = threading.Thread(target=run_update)
+    thread.start()
+
 # ============================================================
 # FRONTEND ROUTES
 # ============================================================
@@ -54,14 +72,33 @@ def serve_frontend(path):
     """Serve frontend static files"""
     return send_from_directory(FRONTEND_DIR, path)
 
-# ============================================================
-# SYSTEM ENDPOINTS
-# ============================================================
-
 @app.route('/api/test', methods=['GET'])
 def test_connection():
     """Test endpoint to verify API is running"""
     return jsonify({"message": "API is running!"})
+
+# ============================================================
+# SEARCH ENDPOINTS (NEW)
+# ============================================================
+
+@app.route('/api/search/semantic', methods=['GET'])
+def search_semantic():
+    """
+    Perform semantic search on SCP archives.
+    Query Params: q (string), limit (int)
+    """
+    query = request.args.get('q', '')
+    limit = int(request.args.get('limit', 20))
+    
+    if not query:
+        return jsonify([])
+
+    try:
+        results = semantic_search.perform_semantic_search(query, topk=limit)
+        return jsonify(results)
+    except Exception as e:
+        print(f"Search failed: {str(e)}")
+        return jsonify({"error": str(e)}), 500
 
 # ============================================================
 # SCP ENDPOINTS
@@ -123,6 +160,10 @@ def create_scp():
             data.get('tags_list'),
             data.get('object_class')
         )
+        
+        # Trigger Semantic Update
+        trigger_semantic_update()
+
         return jsonify({"message": "SCP created", "scp_id": scp_id}), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -144,6 +185,10 @@ def update_scp(scp_id):
             data.get('tags_list'),
             data.get('object_class')
         )
+
+        # Trigger Semantic Update
+        trigger_semantic_update()
+
         return jsonify({"message": "SCP updated"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -152,14 +197,21 @@ def update_scp(scp_id):
 def delete_scp(scp_id):
     """Delete SCP entry"""
     try:
+        # Retrieve SCP Code before delete to remove from vector store
+        scp = getters.get_scp_by_id(scp_id)
+        
         deletes.delete_scp(scp_id)
+        
+        # Background delete from vector store
+        if scp and scp.get('scp_code'):
+            def run_delete():
+                try: semantic_search.remove_from_vector_store(scp.get('scp_code'))
+                except: pass
+            threading.Thread(target=run_delete).start()
+
         return jsonify({"message": "SCP deleted successfully"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-# ============================================================
-# PERSONNEL ENDPOINTS
-# ============================================================
 
 @app.route('/api/personnel', methods=['GET'])
 def get_all_personnel():
@@ -195,6 +247,10 @@ def create_personnel():
             data.get('notes'),
             data.get('clearance_id')
         )
+        
+        # Trigger Semantic Update
+        trigger_semantic_update()
+
         return jsonify({"message": "Personnel created", "person_id": person_id}), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -214,6 +270,10 @@ def update_personnel(person_id):
             data.get('notes'),
             data.get('clearance_id')
         )
+        
+        # Trigger Semantic Update
+        trigger_semantic_update()
+
         return jsonify({"message": "Personnel updated"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -222,7 +282,20 @@ def update_personnel(person_id):
 def delete_personnel(person_id):
     """Decommission personnel"""
     try:
+        # Get data before delete for semantic removal
+        p = getters.get_personnel_by_id(person_id)
+        
         queries.decommission_personnel(person_id)
+        
+        if p:
+             name = f"{p.get('given_name','')} {p.get('surname','')}".strip()
+             code = p.get('callsign') if p.get('callsign') else name
+             
+             def run_delete():
+                try: semantic_search.remove_from_vector_store(code)
+                except: pass
+             threading.Thread(target=run_delete).start()
+
         return jsonify({"message": f"Personnel {person_id} decommissioned"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -236,10 +309,6 @@ def search_personnel():
         return jsonify(results if results else [])
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-# ============================================================
-# FACILITY ENDPOINTS
-# ============================================================
 
 @app.route('/api/facilities', methods=['GET'])
 def get_all_facilities():
@@ -277,6 +346,10 @@ def create_facility():
             data.get('coords'),
             data.get('purpose')
         )
+        
+        # Trigger Semantic Update
+        trigger_semantic_update()
+
         return jsonify({"message": "Facility created", "facility_id": facility_id}), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -298,6 +371,10 @@ def update_facility(facility_id):
             data.get('coords'),
             data.get('purpose')
         )
+
+        # Trigger Semantic Update
+        trigger_semantic_update()
+
         return jsonify({"message": "Facility updated"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -306,7 +383,16 @@ def update_facility(facility_id):
 def delete_facility(facility_id):
     """Decommission facility (closes active assignments, warns about incidents)"""
     try:
+        f = getters.get_facility_by_id(facility_id)
         result = deletes.delete_facility_cascade(facility_id)
+        
+        if f:
+             code = f.get('code', f"Facility-{facility_id}")
+             def run_delete():
+                try: semantic_search.remove_from_vector_store(code)
+                except: pass
+             threading.Thread(target=run_delete).start()
+
         return jsonify(result)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -319,10 +405,6 @@ def get_facility_stats(facility_id):
         return jsonify(stats)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-# ============================================================
-# INCIDENT ENDPOINTS
-# ============================================================
 
 @app.route('/api/incidents', methods=['GET'])
 def get_all_incidents():
@@ -356,6 +438,10 @@ def create_incident():
             data.get('summary'),
             data.get('severity_level')
         )
+        
+        # Trigger Semantic Update
+        trigger_semantic_update()
+
         return jsonify({"message": "Incident created", "incident_id": incident_id}), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -373,6 +459,10 @@ def update_incident(incident_id):
             data.get('summary'),
             data.get('severity_level')
         )
+        
+        # Trigger Semantic Update
+        trigger_semantic_update()
+
         return jsonify({"message": "Incident updated"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -382,6 +472,14 @@ def delete_incident(incident_id):
     """Delete incident (cascade deletes SCP, MTF, Personnel associations)"""
     try:
         result = deletes.delete_incident_cascade(incident_id)
+        
+        # Delete from vector store
+        code = f"INC-{incident_id}"
+        def run_delete():
+            try: semantic_search.remove_from_vector_store(code)
+            except: pass
+        threading.Thread(target=run_delete).start()
+
         return jsonify(result)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -423,10 +521,6 @@ def get_incidents_with_scps():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# ============================================================
-# AGENT ENDPOINTS
-# ============================================================
-
 @app.route('/api/agents', methods=['GET'])
 def get_all_agents():
     """Get all agents"""
@@ -457,10 +551,6 @@ def create_agent():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# ============================================================
-# RESEARCHER ENDPOINTS
-# ============================================================
-
 @app.route('/api/researchers', methods=['GET'])
 def get_all_researchers():
     """Get all researchers"""
@@ -490,10 +580,6 @@ def create_researcher():
         return jsonify({"message": "Researcher created"}), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-# ============================================================
-# MTF ENDPOINTS
-# ============================================================
 
 @app.route('/api/mtf', methods=['GET'])
 def get_all_mtf():
@@ -526,6 +612,10 @@ def create_mtf():
             data.get('primary_role'),
             data.get('notes')
         )
+        
+        # Trigger Semantic Update
+        trigger_semantic_update()
+
         return jsonify({"message": "MTF unit created", "mtf_id": mtf_id}), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -542,6 +632,10 @@ def update_mtf(mtf_id):
             data.get('primary_role'),
             data.get('notes')
         )
+        
+        # Trigger Semantic Update
+        trigger_semantic_update()
+
         return jsonify({"message": "MTF unit updated"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -550,14 +644,18 @@ def update_mtf(mtf_id):
 def delete_mtf(mtf_id):
     """Disband MTF unit (cascade deletes incident associations)"""
     try:
+        m = getters.get_mtf_unit_by_id(mtf_id)
         deletes.delete_mtf_unit_cascade(mtf_id)
+        
+        if m:
+             def run_delete():
+                try: semantic_search.remove_from_vector_store(m['designation'])
+                except: pass
+             threading.Thread(target=run_delete).start()
+
         return jsonify({"message": f"MTF unit {mtf_id} disbanded"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-# ============================================================
-# OBJECT CLASS ENDPOINTS
-# ============================================================
 
 @app.route('/api/object-classes', methods=['GET'])
 def get_all_object_classes():
@@ -593,10 +691,6 @@ def create_object_class():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# ============================================================
-# SECURITY CLEARANCE ENDPOINTS
-# ============================================================
-
 @app.route('/api/security-clearances', methods=['GET'])
 def get_all_security_clearances():
     """Get all security clearances"""
@@ -616,10 +710,6 @@ def get_security_clearance_by_id(clearance_id):
         return jsonify({"error": "Security clearance not found"}), 404
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-# ============================================================
-# CONTAINMENT CHAMBER ENDPOINTS
-# ============================================================
 
 @app.route('/api/containment-chambers', methods=['GET'])
 def get_all_containment_chambers():
@@ -667,10 +757,6 @@ def create_containment_chamber():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# ============================================================
-# SWAGGER SPECIFICATION
-# ============================================================
-
 @app.route('/api/swagger.json')
 def swagger_spec():
     """Generate Swagger/OpenAPI specification"""
@@ -686,10 +772,55 @@ def swagger_spec():
             {"name": "System"}, {"name": "SCP"}, {"name": "Personnel"},
             {"name": "Facilities"}, {"name": "Incidents"}, {"name": "Agents"},
             {"name": "Researchers"}, {"name": "MTF"}, {"name": "Object Classes"},
-            {"name": "Security"}, {"name": "Chambers"}
+            {"name": "Security"}, {"name": "Chambers"}, {"name": "Search"}
         ],
         "paths": {
             "/api/test": {"get": {"tags": ["System"], "summary": "Test API", "responses": {"200": {"description": "OK"}}}},
+            "/api/search/semantic": {
+                "get": {
+                    "tags": ["Search"],
+                    "summary": "Perform semantic search on SCP archives",
+                    "description": "Uses vector embeddings to find SCPs relevant to the meaning of the query.",
+                    "parameters": [
+                        {
+                            "name": "q",
+                            "in": "query",
+                            "required": True,
+                            "schema": {"type": "string"},
+                            "description": "The search query text",
+                            "example": "scps that can manipulate time"
+                        },
+                        {
+                            "name": "limit",
+                            "in": "query",
+                            "required": False,
+                            "schema": {"type": "integer", "default": 20},
+                            "description": "Maximum number of results to return"
+                        }
+                    ],
+                    "responses": {
+                        "200": {
+                            "description": "List of semantic search results",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "scp_code": {"type": "string"},
+                                                "title": {"type": "string"},
+                                                "score": {"type": "number"},
+                                                "description": {"type": "string"}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "/api/scps": {"get": {"tags": ["SCP"], "summary": "Get all SCPs", "responses": {"200": {"description": "List of SCPs"}}}},
             "/api/scp/{scp_id}": {
                 "get": {"tags": ["SCP"], "summary": "Get SCP by ID", "parameters": [{"name": "scp_id", "in": "path", "required": True, "schema": {"type": "integer"}}], "responses": {"200": {"description": "SCP details"}}},

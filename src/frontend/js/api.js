@@ -1,4 +1,3 @@
-// API Base URL
 const API_BASE_URL = 'http://localhost:5000/api';
 
 /**
@@ -162,10 +161,6 @@ async function fetchAllFacilities() {
         throw new Error(`Failed to fetch facilities: ${error.message}`);
     }
 }
-
-// ============================================================
-// FACILITY CRUD FUNCTIONS
-// ============================================================
 
 /**
  * Fetch a single facility by ID
@@ -362,10 +357,6 @@ async function fetchIncidentSCPs(incidentId) {
     }
 }
 
-// ============================================================
-// INCIDENT CRUD FUNCTIONS
-// ============================================================
-
 /**
  * Create a new incident record
  * @param {Object} incidentData - Incident data object
@@ -514,10 +505,6 @@ async function fetchAllMTFUnits() {
         throw new Error(`Failed to fetch MTF units: ${error.message}`);
     }
 }
-
-// ============================================================
-// MTF CRUD FUNCTIONS
-// ============================================================
 
 /**
  * Fetch a single MTF unit by ID
@@ -695,10 +682,6 @@ async function deleteSCPEntry(scpId) {
     }
 }
 
-// ============================================================
-// PERSONNEL CRUD FUNCTIONS
-// ============================================================
-
 /**
  * Fetch a single personnel by ID
  * @param {number} personId - Personnel ID
@@ -794,6 +777,34 @@ async function decommissionPersonnel(personId) {
     } catch (error) {
         console.error('Error decommissioning personnel:', error);
         throw new Error(`Failed to decommission personnel: ${error.message}`);
+    }
+}
+
+/**
+ * Perform semantic search
+ * @param {string} query - The search query
+ * @param {number} limit - Max results
+ * @returns {Promise<Array>} - Array of SCP objects
+ */
+async function searchSCPsSemantic(query, limit = 20) {
+    try {
+        const params = new URLSearchParams();
+        params.append('q', query);
+        params.append('limit', limit);
+
+        const url = `${API_BASE_URL}/search/semantic?${params.toString()}`;
+        console.log('Semantic Search:', url);
+
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error('Error in semantic search:', error);
+        throw new Error(`Failed to perform search: ${error.message}`);
     }
 }
 

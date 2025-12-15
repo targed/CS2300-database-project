@@ -1,15 +1,3 @@
-/**
- * Incidents Page JavaScript
- * Handles loading, filtering, and displaying SCP Foundation incident reports
- * 
- * DEFCON-style severity scale (1 = most severe, 5 = least severe):
- * - Level 1: Critical - Catastrophic breach requiring immediate response
- * - Level 2: Severe - Major containment failure, significant casualties possible
- * - Level 3: Elevated - Moderate risk, containment compromised but manageable
- * - Level 4: Moderate - Minor breach, situation under control
- * - Level 5: Low - Minimal impact, routine incident
- */
-
 // State
 let allIncidents = [];
 let filteredIncidents = [];
@@ -382,7 +370,7 @@ async function openDetailModal(incidentId) {
         let scpListHtml = '';
         if (scps && scps.length > 0) {
             scpListHtml = scps.map(scp => `
-                <a href="entry.html?code=${scp.scp_code}" class="px-2 py-1 text-sm font-mono bg-stone-200 dark:bg-stone-700 text-stone-700 dark:text-stone-300 rounded hover:bg-red-600/20 hover:text-red-600 transition">
+                <a href="entry.html?scp=${scp.scp_code}" class="px-2 py-1 text-sm font-mono bg-stone-200 dark:bg-stone-700 text-stone-700 dark:text-stone-300 rounded hover:bg-red-600/20 hover:text-red-600 transition">
                     ${escapeHtml(scp.scp_code)}
                 </a>
             `).join('');

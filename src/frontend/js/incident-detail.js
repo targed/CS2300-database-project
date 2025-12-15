@@ -1,9 +1,4 @@
 /**
- * Incident Detail Page JavaScript
- * Handles loading and displaying a single incident report with related SCPs
- */
-
-/**
  * Get severity badge classes
  */
 function getSeverityBadgeClass(level) {

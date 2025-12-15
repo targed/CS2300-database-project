@@ -101,8 +101,24 @@ async function performSearch() {
 
         console.log('Searching with filters:', currentFilters, 'Page:', currentPage, 'Limit:', currentLimit);
 
-        // Fetch results from API
-        const results = await fetchSCPs(currentFilters, currentPage, currentLimit);
+        let results;
+        
+        // DECISION: Use Semantic Search if text is present, otherwise standard DB fetch
+        if (currentFilters.query && currentFilters.query.trim().length > 0) {
+            // 1. Fetch via Semantic Search
+            const semanticResults = await searchSCPsSemantic(currentFilters.query, currentLimit);
+            
+            // 2. Format results to match expected structure
+            // The semantic API returns flat array, we wrap it to look like paginated response
+            results = {
+                scps: semanticResults,
+                total: semanticResults.length, // Semantic search is usually limited by top-k
+                total_pages: 1 
+            };
+        } else {
+            // Standard Database Fetch
+            results = await fetchSCPs(currentFilters, currentPage, currentLimit);
+        }
 
         console.log('Search results:', results);
 
@@ -112,27 +128,29 @@ async function performSearch() {
         let totalPages = 1;
 
         if (Array.isArray(results)) {
-            // If API returns a simple array
             scps = results;
             total = results.length;
             totalPages = Math.ceil(total / currentLimit);
         } else if (results.scps) {
-            // If API returns paginated format
             scps = results.scps;
             total = results.total || scps.length;
-            totalPages = results.total_pages || Math.ceil(total / currentLimit);
-        } else {
-            // Unexpected format
-            throw new Error('Unexpected API response format');
+            totalPages = results.total_pages || 1;
         }
 
-        // Apply client-side filtering if needed
+        // Apply client-side filters (Object Class / Clearance)
+        // This allows us to Semantic Search "Keter monsters" and then filter by "Clearance Level 4"
         scps = applyClientSideFilters(scps, currentFilters);
 
-        // Apply client-side pagination if API doesn't support it
-        const paginatedSCPs = paginateResults(scps, currentPage, currentLimit);
-        total = scps.length;
-        totalPages = Math.ceil(total / currentLimit);
+        // Client-side pagination for semantic results (since we fetch top-K all at once)
+        // Only paginate if we aren't using the standard DB pagination
+        const isSemantic = !!currentFilters.query;
+        let paginatedSCPs = scps;
+        
+        if (isSemantic) {
+             paginatedSCPs = paginateResults(scps, currentPage, currentLimit);
+             total = scps.length;
+             totalPages = Math.ceil(total / currentLimit);
+        }
 
         // Render results
         hideLoading();
@@ -143,7 +161,6 @@ async function performSearch() {
         if (totalPages > 1) {
             updatePagination(currentPage, totalPages, handlePageChange);
         } else {
-            // Hide pagination if only one page
             document.getElementById('pagination-container').style.display = 'none';
         }
 
@@ -163,19 +180,16 @@ async function performSearch() {
 function applyClientSideFilters(scps, filters) {
     let filtered = [...scps];
 
-    // Filter by query (search in code, title, description)
-    if (filters.query) {
+    if (filters.query && !scps[0]?.score) { 
         const query = filters.query.toLowerCase();
         filtered = filtered.filter(scp => {
             const code = (scp.scp_code || '').toLowerCase();
             const title = (scp.title || '').toLowerCase();
             const description = (scp.description || '').toLowerCase();
-            const procedures = (scp.special_containment_procedures || '').toLowerCase();
-
+            
             return code.includes(query) ||
                 title.includes(query) ||
-                description.includes(query) ||
-                procedures.includes(query);
+                description.includes(query);
         });
     }
 
@@ -183,7 +197,7 @@ function applyClientSideFilters(scps, filters) {
     if (filters.object_class) {
         filtered = filtered.filter(scp => {
             const objectClass = scp.object_class_name || scp.object_class || '';
-            return objectClass === filters.object_class;
+            return objectClass.toLowerCase() === filters.object_class.toLowerCase();
         });
     }
 
@@ -191,6 +205,8 @@ function applyClientSideFilters(scps, filters) {
     if (filters.clearance_level) {
         const clearanceLevel = parseInt(filters.clearance_level);
         filtered = filtered.filter(scp => {
+            if (scp.security_clearance_level === undefined) return true;
+            
             return scp.security_clearance_level === clearanceLevel;
         });
     }

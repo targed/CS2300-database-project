@@ -1,9 +1,6 @@
 import json
 import os
 
-# ----------------------------------------------------------------------------
-# CONFIGURATION
-# ----------------------------------------------------------------------------
 # 1. Save your parser output to this file
 PARSED_FILE = 'raw_scp_files/output.json'
 
@@ -13,9 +10,6 @@ EXISTING_FILE = 'existing_data.json'
 # 3. Output file name
 OUTPUT_FILE = 'merged_scp_data.json'
 
-# ----------------------------------------------------------------------------
-# MERGE LOGIC
-# ----------------------------------------------------------------------------
 def merge_scp_data(parsed_list, existing_list):
     """
     Merges the parsed text data with the existing metadata.
@@ -70,9 +64,6 @@ def merge_scp_data(parsed_list, existing_list):
 
     return merged_results
 
-# ----------------------------------------------------------------------------
-# MAIN EXECUTION
-# ----------------------------------------------------------------------------
 def main():
     # 1. Load Parsed Data
     if not os.path.exists(PARSED_FILE):
@@ -108,8 +99,6 @@ def main():
         print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    # Create dummy files for demonstration if they don't exist
-    # (You would normally skip this part and just have your files ready)
     if not os.path.exists(PARSED_FILE) and not os.path.exists(EXISTING_FILE):
         print("Note: Please ensure 'parsed_output.json' and 'existing_data.json' exist.")
     else:
